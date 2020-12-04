@@ -1,5 +1,6 @@
 package fi.eriran.day2.philosopher;
 
+import fi.eriran.common.parser.LineInputParser;
 import fi.eriran.day2.philosopher.counter.PartOneValidPasswordCounter;
 
 import java.io.IOException;

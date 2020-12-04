@@ -1,4 +1,4 @@
-package fi.eriran.day1;
+package fi.eriran.common.parser;
 
 import com.google.common.io.Resources;
 
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Get the numbers from provided filename which is fetched from resources directory
  */
-class NumberInputParser {
+public class NumberInputParser {
 
     public List<Integer> parse(URL fileURL) throws IOException {
         //Get file content

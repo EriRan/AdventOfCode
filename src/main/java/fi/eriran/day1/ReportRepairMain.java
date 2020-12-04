@@ -1,6 +1,7 @@
 package fi.eriran.day1;
 
 import com.google.common.io.Resources;
+import fi.eriran.common.parser.NumberInputParser;
 
 import java.io.IOException;
 import java.util.List;

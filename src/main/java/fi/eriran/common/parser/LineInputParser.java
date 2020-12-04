@@ -1,4 +1,4 @@
-package fi.eriran.day2.philosopher;
+package fi.eriran.common.parser;
 
 import com.google.common.io.Resources;
 
@@ -11,7 +11,7 @@ import java.util.Collection;
 /**
  * Get the file from URL and split it by line breaks
  */
-class LineInputParser {
+public class LineInputParser {
 
     public Collection<String> parse(URL filepath) throws IOException {
         //Get file content
