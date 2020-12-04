@@ -7,13 +7,13 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PasswordPhilosopherTest {
+class PasswordPhilosopherPartOneTest {
 
     @Test
     void sameResultAsExample() throws IOException {
         assertEquals(
                 2,
-                new PasswordPhilosopher().countValidPasswords(Resources.getResource("day2TestInput"))
+                new PasswordPhilosopherPartOne().countValidPasswords(Resources.getResource("day2TestInput"))
                 );
     }
 }
