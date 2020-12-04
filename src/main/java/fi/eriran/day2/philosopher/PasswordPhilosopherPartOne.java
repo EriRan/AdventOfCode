@@ -1,4 +1,6 @@
-package fi.eriran.day2;
+package fi.eriran.day2.philosopher;
+
+import fi.eriran.day2.philosopher.counter.PartOneValidPasswordCounter;
 
 import java.io.IOException;
 import java.net.URL;

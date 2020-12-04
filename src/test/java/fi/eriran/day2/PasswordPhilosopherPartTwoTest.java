@@ -1,6 +1,7 @@
 package fi.eriran.day2;
 
 import com.google.common.io.Resources;
+import fi.eriran.day2.philosopher.PasswordPhilosopherPartTwo;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

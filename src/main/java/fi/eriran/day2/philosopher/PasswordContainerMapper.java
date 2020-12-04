@@ -1,7 +1,7 @@
-package fi.eriran.day2;
+package fi.eriran.day2.philosopher;
 
-import fi.eriran.day2.pojo.PasswordContainer;
-import fi.eriran.day2.pojo.PasswordRule;
+import fi.eriran.day2.philosopher.pojo.PasswordContainer;
+import fi.eriran.day2.philosopher.pojo.PasswordRule;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

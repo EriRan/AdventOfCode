@@ -1,4 +1,4 @@
-package fi.eriran.day2;
+package fi.eriran.day2.philosopher;
 
 import java.io.IOException;
 import java.net.URL;

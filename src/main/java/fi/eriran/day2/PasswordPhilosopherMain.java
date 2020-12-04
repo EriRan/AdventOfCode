@@ -1,6 +1,8 @@
 package fi.eriran.day2;
 
 import com.google.common.io.Resources;
+import fi.eriran.day2.philosopher.PasswordPhilosopherPartOne;
+import fi.eriran.day2.philosopher.PasswordPhilosopherPartTwo;
 
 import java.io.IOException;
 

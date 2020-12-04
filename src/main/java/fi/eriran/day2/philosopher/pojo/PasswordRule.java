@@ -1,4 +1,4 @@
-package fi.eriran.day2.pojo;
+package fi.eriran.day2.philosopher.pojo;
 
 public class PasswordRule {
 
