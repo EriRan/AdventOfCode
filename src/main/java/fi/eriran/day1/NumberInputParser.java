@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Get the numbers from provided filename which is fetched from resources directory
  */
-class InputParser {
+class NumberInputParser {
 
     public List<Integer> parse(URL fileURL) throws IOException {
         //Get file content

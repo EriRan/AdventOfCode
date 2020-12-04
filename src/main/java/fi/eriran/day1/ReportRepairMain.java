@@ -8,7 +8,7 @@ import java.util.List;
 public class ReportRepairMain {
 
     public static void main(String[] args) throws IOException {
-        List<Integer> input = new InputParser().parse(Resources.getResource("day1Input"));
+        List<Integer> input = new NumberInputParser().parse(Resources.getResource("day1Input"));
         System.out.println("Part One: " + new ReportRepairerTwoPair().repair(input));
         System.out.println("Part two: " + new ReportRepairerThreePair().repair(input));
     }
