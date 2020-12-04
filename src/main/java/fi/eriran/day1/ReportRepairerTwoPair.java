@@ -4,7 +4,10 @@ import java.util.List;
 
 import static fi.eriran.day1.constant.ReportConstant.NUMBER_TO_FIND;
 
-class ReportRepair {
+/**
+ * Part one
+ */
+class ReportRepairerTwoPair implements ReportRepairer {
 
     public int repair(List<Integer> input) {
         for (int leftPointer = 0; leftPointer < input.size(); leftPointer++) {

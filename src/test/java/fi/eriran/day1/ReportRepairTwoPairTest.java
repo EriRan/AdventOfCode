@@ -7,11 +7,11 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ReportRepairTest {
+class ReportRepairTwoPairTest {
 
     @Test
     void pairFound() throws IOException {
-        int result = new ReportRepair()
+        int result = new ReportRepairerTwoPair()
                 .repair(new InputParser().parse(Resources.getResource("day1TestInput")));
         assertEquals(514579, result);
     }

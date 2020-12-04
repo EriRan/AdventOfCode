@@ -8,7 +8,7 @@ public class ReportRepairMain {
 
     public static void main(String[] args) throws IOException {
         System.out.println(
-                new ReportRepair().repair(new InputParser().parse(Resources.getResource("day1Input")))
+                new ReportRepairerTwoPair().repair(new InputParser().parse(Resources.getResource("day1Input")))
         );
     }
 }
