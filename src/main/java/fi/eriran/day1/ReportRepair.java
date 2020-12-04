@@ -1,12 +1,27 @@
 package fi.eriran.day1;
 
-import java.io.IOException;
-import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
-public class ReportRepair {
+import static fi.eriran.day1.constant.ReportConstant.NUMBER_TO_FIND;
 
-    public void repair() throws IOException {
-        Collection<Integer> day1Input = new InputParser().parse("day1Input");
-        day1Input.stream().sorted(Integer::compareTo);
+class ReportRepair {
+
+    public int repair(List<Integer> input) {
+        List<Integer> sortedInput = input.stream().sorted(Integer::compareTo).collect(Collectors.toList());
+
+        int leftPointer = 0;
+        int rightPointer = sortedInput.size() - 1;
+
+        while (leftPointer < rightPointer) {
+            Integer leftNumber = sortedInput.get(leftPointer);
+            Integer rightNumber = sortedInput.get(rightPointer);
+            if (leftNumber + rightNumber == NUMBER_TO_FIND) {
+                return leftNumber * rightNumber;
+            }
+            leftPointer++;
+            rightPointer--;
+        }
+        throw new IllegalArgumentException("Unable to find numbers that add up to " + NUMBER_TO_FIND + "!");
     }
 }
