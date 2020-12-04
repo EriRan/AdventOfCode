@@ -2,30 +2,32 @@ package fi.eriran.day2.pojo;
 
 public class PasswordRule {
 
-    private int min;
-    private int max;
+    //Min in part one, point one in part two
+    private int valueOne;
+    //Max in part two, point two in part two
+    private int valueTwo;
     private char targetCharacter;
 
-    public PasswordRule(int min, int max, char targetCharacter) {
-        this.min = min;
-        this.max = max;
+    public PasswordRule(int valueOne, int valueTwo, char targetCharacter) {
+        this.valueOne = valueOne;
+        this.valueTwo = valueTwo;
         this.targetCharacter = targetCharacter;
     }
 
-    public int getMin() {
-        return min;
+    public int getValueOne() {
+        return valueOne;
     }
 
-    public void setMin(int min) {
-        this.min = min;
+    public void setValueOne(int valueOne) {
+        this.valueOne = valueOne;
     }
 
-    public int getMax() {
-        return max;
+    public int getValueTwo() {
+        return valueTwo;
     }
 
-    public void setMax(int max) {
-        this.max = max;
+    public void setValueTwo(int valueTwo) {
+        this.valueTwo = valueTwo;
     }
 
     public char getTargetCharacter() {

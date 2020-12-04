@@ -12,7 +12,7 @@ class PartOneValidPasswordCounter implements ValidPasswordCounter {
         for (PasswordContainer container : containers) {
             PasswordRule rule = container.getRule();
             long targetCharacterCount = countTargetCharacterOccurrances(container.getPassword(), rule);
-            if (targetCharacterCount >= rule.getMin() && targetCharacterCount <= rule.getMax()) {
+            if (targetCharacterCount >= rule.getValueOne() && targetCharacterCount <= rule.getValueTwo()) {
                 validCount++;
             }
         }
