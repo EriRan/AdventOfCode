@@ -13,5 +13,10 @@ public class BinaryBoardingMain {
                         new SeatFactory().build(Resources.getResource("day5Input"))
                 )
         );
+        System.out.println("Part two the free seat is: " + new FreeSeatFinder()
+                .find(
+                        new SeatFactory().build(Resources.getResource("day5Input"))
+                )
+        );
     }
 }
