@@ -11,8 +11,8 @@ public class TobogganTreeCounter {
     public int count(List<MapLine> mapLines, TrajectoryDefinition trajectoryDefinition) {
         int treesEncountered = 0;
         int currentXCoordinate = 0;
-        for (int i = 0; i < mapLines.size(); i += trajectoryDefinition.getDown()) {
-            MapLine currentLine = mapLines.get(i);
+        for (int y = 0; y < mapLines.size(); y += trajectoryDefinition.getDown()) {
+            MapLine currentLine = mapLines.get(y);
             //Assuming all lines are equal length
             //If not, some christmas magic will happen
             int currentDifferenceToLineLength = currentXCoordinate - currentLine.getContent().size();
