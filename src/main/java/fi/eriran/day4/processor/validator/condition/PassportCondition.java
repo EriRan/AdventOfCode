@@ -10,7 +10,7 @@ public class PassportCondition {
     private PassportCondition() {
     }
 
-    public static boolean isValid(Passport passport) {
+    public static boolean hasAllRequiredFields(Passport passport) {
         Map<PassportField, String> fields = passport.getFields();
         return fields.containsKey(PassportField.BIRTH_YEAR)
                 && fields.containsKey(PassportField.ISSUE_YEAR)
