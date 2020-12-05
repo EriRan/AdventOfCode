@@ -2,6 +2,12 @@ package fi.eriran.day5.seat.decode.row;
 
 public class RowDecoder {
 
+    private final RowSymbolToBinaryConverter rowSymbolToBinaryConverter;
+
+    public RowDecoder() {
+        rowSymbolToBinaryConverter = new RowSymbolToBinaryConverter();
+    }
+
     /**
      * Its actually a binary int in disguise
      */
@@ -12,16 +18,7 @@ public class RowDecoder {
     private String convertToBinaryString(String substring) {
         StringBuilder binaryStringBuilder = new StringBuilder();
         for (char character : substring.toCharArray()) {
-            switch (character) {
-                case 'F':
-                    binaryStringBuilder.append("0");
-                    break;
-                case 'B':
-                    binaryStringBuilder.append("1");
-                    break;
-                default:
-                    throw new IllegalArgumentException("Encountered unknown character: " + character);
-            }
+            binaryStringBuilder.append(rowSymbolToBinaryConverter.convert(character));
         }
         return binaryStringBuilder.toString();
     }
