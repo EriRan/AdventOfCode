@@ -1,13 +1,15 @@
-package fi.eriran.day5.pojo;
+package fi.eriran.day5.seat.pojo;
 
-public class SeatLocation {
+public class Seat {
 
     private final int row;
     private final int column;
+    private final int id;
 
-    public SeatLocation(int row, int column) {
+    public Seat(int row, int column, int id) {
         this.row = row;
         this.column = column;
+        this.id = id;
     }
 
     public int getRow() {
@@ -16,5 +18,9 @@ public class SeatLocation {
 
     public int getColumn() {
         return column;
+    }
+
+    public int getId() {
+        return id;
     }
 }
