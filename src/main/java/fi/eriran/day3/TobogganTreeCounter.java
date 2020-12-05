@@ -2,15 +2,17 @@ package fi.eriran.day3;
 
 import fi.eriran.day3.pojo.MapLine;
 import fi.eriran.day3.pojo.MapObject;
+import fi.eriran.day3.pojo.TrajectoryDefinition;
 
 import java.util.List;
 
 public class TobogganTreeCounter {
 
-    public int count(List<MapLine> mapLines) {
+    public int count(List<MapLine> mapLines, TrajectoryDefinition trajectoryDefinition) {
         int treesEncountered = 0;
         int currentXCoordinate = 0;
-        for (MapLine currentLine : mapLines) {
+        for (int i = 0; i < mapLines.size(); i += trajectoryDefinition.getDown()) {
+            MapLine currentLine = mapLines.get(i);
             //Assuming all lines are equal length
             //If not, some christmas magic will happen
             int currentDifferenceToLineLength = currentXCoordinate - currentLine.getContent().size();
@@ -25,7 +27,7 @@ public class TobogganTreeCounter {
             if (currentObjectIsTree(currentXCoordinate, currentLine)) {
                 treesEncountered++;
             }
-            currentXCoordinate += 3;
+            currentXCoordinate += trajectoryDefinition.getRight();
         }
         return treesEncountered;
     }
