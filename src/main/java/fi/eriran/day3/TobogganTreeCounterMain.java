@@ -15,8 +15,8 @@ public class TobogganTreeCounterMain {
         System.out.println("Part Two result: " + calculatePartTwoResult(partOneResult));
     }
 
-    private static int calculatePartTwoResult(int partOneResult) throws IOException {
-        return countTrees(1, 1) *
+    private static long calculatePartTwoResult(int partOneResult) throws IOException {
+        return (long) countTrees(1, 1) *
                 partOneResult *
                 countTrees(5, 1) *
                 countTrees(7, 1) *
@@ -24,12 +24,14 @@ public class TobogganTreeCounterMain {
     }
 
     private static int countTrees(int right, int down) throws IOException {
-        return new TobogganTreeCounter()
+        int treesFound = new TobogganTreeCounter()
                 .count(
                         new MapGenerator().generate(
                                 new LineInputParser().parse(Resources.getResource("day3Input"))
                         ),
                         new TrajectoryDefinition(right, down)
                 );
+        System.out.println("Found " + treesFound + " trees!");
+        return treesFound;
     }
 }
