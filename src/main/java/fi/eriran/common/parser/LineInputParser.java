@@ -6,14 +6,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.List;
 
 /**
  * Get the file from URL and split it by line breaks
  */
 public class LineInputParser {
 
-    public Collection<String> parse(URL filepath) throws IOException {
+    public List<String> parse(URL filepath) throws IOException {
         //Get file content
         String fullFileContent = Resources.toString(filepath, StandardCharsets.UTF_8);
         String[] splitByLineEscape = fullFileContent.split("\r\n");
