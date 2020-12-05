@@ -1,7 +1,7 @@
-package fi.eriran.day4.validator.condition;
+package fi.eriran.day4.processor.validator.condition;
 
-import fi.eriran.day4.pojo.Passport;
-import fi.eriran.day4.pojo.PassportField;
+import fi.eriran.day4.processor.pojo.Passport;
+import fi.eriran.day4.processor.pojo.PassportField;
 
 import java.util.Map;
 

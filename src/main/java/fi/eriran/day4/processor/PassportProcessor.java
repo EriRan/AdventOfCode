@@ -1,8 +1,8 @@
-package fi.eriran.day4;
+package fi.eriran.day4.processor;
 
 import fi.eriran.common.parser.LineInputParser;
-import fi.eriran.day4.parser.PassportMapper;
-import fi.eriran.day4.validator.ValidPassportCounter;
+import fi.eriran.day4.processor.parser.PassportMapper;
+import fi.eriran.day4.processor.validator.ValidPassportCounter;
 
 import java.io.IOException;
 import java.net.URL;

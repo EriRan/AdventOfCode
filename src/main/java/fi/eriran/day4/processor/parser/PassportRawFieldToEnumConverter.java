@@ -1,6 +1,6 @@
-package fi.eriran.day4.parser;
+package fi.eriran.day4.processor.parser;
 
-import fi.eriran.day4.pojo.PassportField;
+import fi.eriran.day4.processor.pojo.PassportField;
 
 public class PassportRawFieldToEnumConverter {
 

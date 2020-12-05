@@ -1,4 +1,4 @@
-package fi.eriran.day4.pojo;
+package fi.eriran.day4.processor.pojo;
 
 import java.util.EnumMap;
 import java.util.Map;

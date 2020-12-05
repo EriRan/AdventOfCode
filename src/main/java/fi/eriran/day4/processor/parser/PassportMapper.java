@@ -1,6 +1,6 @@
-package fi.eriran.day4.parser;
+package fi.eriran.day4.processor.parser;
 
-import fi.eriran.day4.pojo.Passport;
+import fi.eriran.day4.processor.pojo.Passport;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 

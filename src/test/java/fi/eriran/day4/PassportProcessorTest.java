@@ -1,6 +1,7 @@
 package fi.eriran.day4;
 
 import com.google.common.io.Resources;
+import fi.eriran.day4.processor.PassportProcessor;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

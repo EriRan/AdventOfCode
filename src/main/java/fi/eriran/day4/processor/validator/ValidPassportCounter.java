@@ -1,7 +1,7 @@
-package fi.eriran.day4.validator;
+package fi.eriran.day4.processor.validator;
 
-import fi.eriran.day4.pojo.Passport;
-import fi.eriran.day4.validator.condition.PassportCondition;
+import fi.eriran.day4.processor.pojo.Passport;
+import fi.eriran.day4.processor.validator.condition.PassportCondition;
 
 import java.util.Collection;
 

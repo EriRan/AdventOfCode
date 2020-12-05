@@ -1,6 +1,6 @@
-package fi.eriran.day4.parser;
+package fi.eriran.day4.processor.parser;
 
-import fi.eriran.day4.pojo.PassportFieldAndValue;
+import fi.eriran.day4.processor.pojo.PassportFieldAndValue;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
