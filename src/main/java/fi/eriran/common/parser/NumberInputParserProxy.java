@@ -8,17 +8,13 @@ import java.util.List;
 /**
  * Get the numbers from provided filename which is fetched from resources directory
  */
-public class NumberInputParserProxy {
-
-    private final NumberInputParser numberInputParser;
-    private final FileContentFetcher fileContentFetcher;
+public class NumberInputParserProxy extends AbstractInputParserProxy<Integer>{
 
     public NumberInputParserProxy() {
-        numberInputParser = new NumberInputParser();
-        fileContentFetcher = new FileContentFetcher();
+        super(new NumberInputParser());
     }
 
-    public List<Integer> parse(String resourceFolderFileName) throws IOException {
-        return numberInputParser.parse(fileContentFetcher.fetch(resourceFolderFileName));
+    public List<Integer> parse(String resourceFolderFileName) {
+        return getConcreteParser().parse(getFileContentFetcher().fetch(resourceFolderFileName));
     }
 }
