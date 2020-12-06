@@ -3,14 +3,11 @@ package fi.eriran.day6.pojo;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * The correct questions for a group
- */
-public class GroupCustomForm {
+public class PersonAnswers {
 
     private final Set<Character> questionCodes;
 
-    public GroupCustomForm() {
+    public PersonAnswers() {
         questionCodes = new HashSet<>();
     }
 

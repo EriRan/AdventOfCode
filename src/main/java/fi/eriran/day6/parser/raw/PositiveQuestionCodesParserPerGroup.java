@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class PositiveQuestionCodesParser {
+public class PositiveQuestionCodesParserPerGroup {
 
     public Collection<Collection<Character>> parse(Collection<String> lines) {
         Collection<Collection<Character>> response = new ArrayList<>();
