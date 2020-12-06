@@ -4,6 +4,7 @@ public class ExpirationYearConstant {
 
     public static final int MIN_ALLOWED_YEAR = 2020;
     public static final int MAX_ALLOWED_YEAR = 2030;
+
     private ExpirationYearConstant() {
     }
 }

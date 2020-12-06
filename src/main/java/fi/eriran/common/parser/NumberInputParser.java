@@ -1,19 +1,15 @@
 package fi.eriran.common.parser;
 
-import com.google.common.io.Resources;
+import fi.eriran.common.parser.constant.ParserConstant;
 
-import java.io.IOException;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
 class NumberInputParser {
 
-    public List<Integer> parse(URL fileURL) throws IOException {
+    public List<Integer> parse(String content) {
         //Get file content
-        String fullFileContent = Resources.toString(fileURL, StandardCharsets.UTF_8);
-        String[] splitByLineEscape = fullFileContent.split("\r\n");
+        String[] splitByLineEscape = content.split(ParserConstant.WINDOWS_LINE_BREAK);
         List<Integer> numbers = new ArrayList<>();
         //Assuming they are all valid numbers
         for (String numberString : splitByLineEscape) {

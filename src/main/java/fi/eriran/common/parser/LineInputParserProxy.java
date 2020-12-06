@@ -1,7 +1,5 @@
 package fi.eriran.common.parser;
 
-import com.google.common.io.Resources;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -11,12 +9,14 @@ import java.util.List;
 public class LineInputParserProxy {
 
     private final LineInputParser lineInputParser;
+    private final FileContentFetcher fileContentFetcher;
 
     public LineInputParserProxy() {
         lineInputParser = new LineInputParser();
+        fileContentFetcher = new FileContentFetcher();
     }
 
     public List<String> parse(String resourceFolderFileName) throws IOException {
-        return lineInputParser.parse(Resources.getResource(resourceFolderFileName));
+        return lineInputParser.parse(fileContentFetcher.fetch(resourceFolderFileName));
     }
 }

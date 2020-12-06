@@ -4,6 +4,7 @@ public class IssueYearConstant {
 
     public static final int MIN_ALLOWED_YEAR = 2010;
     public static final int MAX_ALLOWED_YEAR = 2020;
+
     private IssueYearConstant() {
     }
 }
