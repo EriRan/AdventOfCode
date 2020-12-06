@@ -1,7 +1,6 @@
 package fi.eriran.day6;
 
-import com.google.common.io.Resources;
-import fi.eriran.common.parser.LineInputParser;
+import fi.eriran.common.parser.LineInputParserProxy;
 import fi.eriran.day6.calculation.CommonQuestionSumCalculator;
 import fi.eriran.day6.calculation.UniqueQuestionSumCalculator;
 import fi.eriran.day6.parser.GroupCustomFormAnyoneFactory;
@@ -19,8 +18,8 @@ public class CustomCustomsMain {
                         .calculate(
                                 new GroupCustomFormAnyoneFactory().build(
                                         new PositiveQuestionCodesParserPerGroup().parse(
-                                                new LineInputParser()
-                                                        .parse(Resources.getResource("day6Input"))
+                                                new LineInputParserProxy()
+                                                        .parse("day6Input")
                                         )
                                 )
                         )
@@ -30,8 +29,8 @@ public class CustomCustomsMain {
                         .calculate(
                                 new GroupCustomFormEveryoneFactory().build(
                                         new PositiveQuestionCodesParserPerPerson().parse(
-                                                new LineInputParser()
-                                                        .parse(Resources.getResource("day6Input"))
+                                                new LineInputParserProxy()
+                                                        .parse("day6Input")
                                         )
                                 )
                         )

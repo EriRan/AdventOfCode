@@ -1,11 +1,10 @@
 package fi.eriran.day4.processor;
 
-import com.google.common.io.Resources;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PartTwoPassportProcessorTest {
 
@@ -13,7 +12,7 @@ class PartTwoPassportProcessorTest {
     void exampleInvalids() throws IOException {
         assertEquals(
                 0,
-                new PartTwoPassportProcessor().process(Resources.getResource("day4PartTwoInvalidTestInput"))
+                new PartTwoPassportProcessor().process("day4PartTwoInvalidTestInput")
         );
     }
 
@@ -21,7 +20,7 @@ class PartTwoPassportProcessorTest {
     void exampleValids() throws IOException {
         assertEquals(
                 4,
-                new PartTwoPassportProcessor().process(Resources.getResource("day4PartTwoValidTestInput"))
+                new PartTwoPassportProcessor().process("day4PartTwoValidTestInput")
         );
     }
 }

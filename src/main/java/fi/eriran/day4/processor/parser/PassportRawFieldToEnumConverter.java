@@ -7,7 +7,7 @@ public class PassportRawFieldToEnumConverter {
     public PassportField convert(String fieldString) {
         switch (fieldString) {
             case "byr":
-            return PassportField.BIRTH_YEAR;
+                return PassportField.BIRTH_YEAR;
             case "iyr":
                 return PassportField.ISSUE_YEAR;
             case "eyr":

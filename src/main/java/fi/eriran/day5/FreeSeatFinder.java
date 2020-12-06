@@ -11,7 +11,7 @@ public class FreeSeatFinder {
 
     /**
      * Find the id of the seat that is free
-     *
+     * <p>
      * Seat id cannot be less than the smallest value or more than the largest id.
      */
     public int find(Collection<Seat> seats) {

@@ -1,8 +1,8 @@
 package fi.eriran.day5.seat.decode;
 
 import fi.eriran.day5.seat.decode.column.ColumnDecoder;
-import fi.eriran.day5.seat.pojo.Seat;
 import fi.eriran.day5.seat.decode.row.RowDecoder;
+import fi.eriran.day5.seat.pojo.Seat;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

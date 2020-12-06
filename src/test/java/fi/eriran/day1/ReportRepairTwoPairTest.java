@@ -1,7 +1,6 @@
 package fi.eriran.day1;
 
-import com.google.common.io.Resources;
-import fi.eriran.common.parser.NumberInputParser;
+import fi.eriran.common.parser.NumberInputParserProxy;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -13,7 +12,7 @@ class ReportRepairTwoPairTest {
     @Test
     void pairFound() throws IOException {
         int result = new ReportRepairerTwoPair()
-                .repair(new NumberInputParser().parse(Resources.getResource("day1TestInput")));
+                .repair(new NumberInputParserProxy().parse("day1TestInput"));
         assertEquals(514579, result);
     }
 }

@@ -9,7 +9,7 @@ import java.util.Collections;
 
 class PassportRawFieldParser {
 
-    private PassportRawFieldToEnumConverter fieldToEnumConverter;
+    private final PassportRawFieldToEnumConverter fieldToEnumConverter;
 
     public PassportRawFieldParser() {
         fieldToEnumConverter = new PassportRawFieldToEnumConverter();

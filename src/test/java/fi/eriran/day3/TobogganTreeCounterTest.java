@@ -1,7 +1,6 @@
 package fi.eriran.day3;
 
-import com.google.common.io.Resources;
-import fi.eriran.common.parser.LineInputParser;
+import fi.eriran.common.parser.LineInputParserProxy;
 import fi.eriran.day3.parser.MapGenerator;
 import fi.eriran.day3.pojo.TrajectoryDefinition;
 import org.junit.jupiter.api.Test;
@@ -70,8 +69,8 @@ class TobogganTreeCounterTest {
                 .count(
                         new MapGenerator()
                                 .generate(
-                                        new LineInputParser()
-                                                .parse(Resources.getResource("day3TestInput"))
+                                        new LineInputParserProxy()
+                                                .parse("day3TestInput")
                                 ),
                         new TrajectoryDefinition(right, down)
                 );

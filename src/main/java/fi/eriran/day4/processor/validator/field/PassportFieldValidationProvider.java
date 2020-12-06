@@ -1,10 +1,10 @@
 package fi.eriran.day4.processor.validator.field;
 
 import fi.eriran.day4.processor.pojo.PassportField;
+import fi.eriran.day4.processor.validator.field.day.DayFieldValidator;
 import fi.eriran.day4.processor.validator.field.day.constant.BirthYearConstant;
 import fi.eriran.day4.processor.validator.field.day.constant.ExpirationYearConstant;
 import fi.eriran.day4.processor.validator.field.day.constant.IssueYearConstant;
-import fi.eriran.day4.processor.validator.field.day.DayFieldValidator;
 import fi.eriran.day4.processor.validator.field.eyecolor.EyeColorValidator;
 import fi.eriran.day4.processor.validator.field.haircolor.HairColorValidator;
 import fi.eriran.day4.processor.validator.field.height.HeightValidator;

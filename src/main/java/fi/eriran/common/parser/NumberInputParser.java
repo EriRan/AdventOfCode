@@ -8,10 +8,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Get the numbers from provided filename which is fetched from resources directory
- */
-public class NumberInputParser {
+class NumberInputParser {
 
     public List<Integer> parse(URL fileURL) throws IOException {
         //Get file content

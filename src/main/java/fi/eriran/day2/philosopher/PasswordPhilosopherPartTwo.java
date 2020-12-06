@@ -1,17 +1,16 @@
 package fi.eriran.day2.philosopher;
 
-import fi.eriran.common.parser.LineInputParser;
+import fi.eriran.common.parser.LineInputParserProxy;
 import fi.eriran.day2.philosopher.counter.PartTwoValidPasswordCounter;
 
 import java.io.IOException;
-import java.net.URL;
 
 public class PasswordPhilosopherPartTwo implements PasswordPhilosopher {
     @Override
-    public int countValidPasswords(URL filepath) throws IOException {
+    public int countValidPasswords(String resourceFolderFilename) throws IOException {
         return new PartTwoValidPasswordCounter().count(
                 new PasswordContainerMapper().map(
-                        new LineInputParser().parse(filepath)
+                        new LineInputParserProxy().parse(resourceFolderFilename)
                 )
         );
     }

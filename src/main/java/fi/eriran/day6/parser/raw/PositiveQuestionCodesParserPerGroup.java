@@ -16,7 +16,7 @@ public class PositiveQuestionCodesParserPerGroup {
                 currentGroupQuestionCodes = new ArrayList<>();
             } else {
                 for (char character : line.toCharArray()) {
-                   currentGroupQuestionCodes.add(character);
+                    currentGroupQuestionCodes.add(character);
                 }
             }
         }
