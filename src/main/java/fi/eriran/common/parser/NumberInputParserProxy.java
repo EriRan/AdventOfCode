@@ -1,5 +1,7 @@
 package fi.eriran.common.parser;
 
+import fi.eriran.common.file.FileContentFetcher;
+
 import java.io.IOException;
 import java.util.List;
 
