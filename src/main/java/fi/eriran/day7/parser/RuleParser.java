@@ -32,6 +32,7 @@ public class RuleParser {
     }
 
     private Collection<BagCountContainer> createChildren(String[] splitLine) {
+        //The bag may contain no other bags in this condition, so it's children are left empty
         if ("no".equals(splitLine[4])) {
             return Collections.emptyList();
         }
