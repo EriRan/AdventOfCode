@@ -1,8 +1,8 @@
 package fi.eriran.day7.constant;
 
-import fi.eriran.day7.pojo.bag.Bag;
+import fi.eriran.day7.pojo.bag.Description;
 
 public class CalculationConstant {
 
-    public static final Bag TARGET_BAG = new Bag("shiny", "gold");
+    public static final Description TARGET_BAG = new Description("shiny", "gold");
 }

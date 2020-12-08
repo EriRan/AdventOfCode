@@ -1,26 +1,37 @@
 package fi.eriran.day7.calculation;
 
-import fi.eriran.day7.pojo.Rule;
 import fi.eriran.day7.pojo.bag.Bag;
+import fi.eriran.day7.pojo.bag.BagCountContainer;
+import fi.eriran.day7.pojo.bag.Description;
 
 import java.util.Collection;
+import java.util.Map;
 
 /**
  * Find all bags from rules that can contain the target bag
  */
 public class BagFinder {
 
-    public long find(Bag targetBag, Collection<Rule> rules) {
-        return rules.stream()
-                .filter(rule -> containsBag(rule, targetBag))
+    public long find(Description targetBag, Map<Description, Bag> bagMap) {
+        return bagMap.values().stream()
+                .filter(bag -> containsBag(bag, targetBag))
                 .count();
     }
 
-    private boolean containsBag(Rule rule, Bag targetBag) {
+    private boolean containsBag(Bag bag, Description targetBag) {
         //The target bag's contents aren't considered
-        if (rule.getParent().equals(targetBag)) {
+        if (bag.getDescription().equals(targetBag)) {
             return false;
         }
-        return rule.getChildren().stream().anyMatch(childBag -> childBag.getBag().equals(targetBag));
+        //Let's through the bags possible contents until we run out of options or we find the target bag.
+        return checkIfChildrenHaveTarget(bag.getContainedBags(), targetBag);
+    }
+
+    private boolean checkIfChildrenHaveTarget(Collection<BagCountContainer> containedBags, Description targetBag) {
+        return containedBags.stream()
+                .anyMatch(
+                        containedBag -> targetBag.equals(containedBag.getBag().getDescription())
+                                || checkIfChildrenHaveTarget(containedBag.getBag().getContainedBags(), targetBag)
+                );
     }
 }

@@ -1,43 +1,31 @@
 package fi.eriran.day7.pojo.bag;
 
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class Bag {
 
-    private String adjective;
-    private String color;
+    private Description description;
+    private Collection<BagCountContainer> containedBags;
 
-    public Bag(String adjective, String color) {
-        this.adjective = adjective;
-        this.color = color;
+    public Bag() {
+        containedBags = new ArrayList<>();
     }
 
-    public String getAdjective() {
-        return adjective;
+    public Description getDescription() {
+        return description;
     }
 
-    public void setAdjective(String adjective) {
-        this.adjective = adjective;
+    public void setDescription(Description description) {
+        this.description = description;
     }
 
-    public String getColor() {
-        return color;
+    public Collection<BagCountContainer> getContainedBags() {
+        return containedBags;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setContainedBags(Collection<BagCountContainer> containedBags) {
+        this.containedBags = containedBags;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Bag bag = (Bag) o;
-        return Objects.equals(adjective, bag.adjective) && Objects.equals(color, bag.color);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(adjective, color);
-    }
 }
