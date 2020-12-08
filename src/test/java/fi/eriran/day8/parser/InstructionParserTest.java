@@ -17,7 +17,7 @@ class InstructionParserTest {
     @Test
     void buildExample() {
         List<Instruction> instructions = new InstructionParser()
-                .parse(new LineInputParserProxy().parse("Day8PartOneTestInput"));
+                .parse(new LineInputParserProxy().parse("Day8TestInput"));
         assertFalse(CollectionUtils.isEmpty(instructions));
         assertEquals(9, instructions.size());
         instructions.forEach(instruction -> assertNotNull(instruction.getOperation()));
