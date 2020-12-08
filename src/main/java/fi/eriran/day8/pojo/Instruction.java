@@ -2,7 +2,8 @@ package fi.eriran.day8.pojo;
 
 public class Instruction {
 
-    private final Operation operation;
+    //This needs to be changed during part 2 so it can't be final
+    private Operation operation;
     private final int argument;
     private boolean isExecutedBefore;
 
@@ -14,6 +15,10 @@ public class Instruction {
 
     public Operation getOperation() {
         return operation;
+    }
+
+    public void setOperation(Operation operation) {
+        this.operation = operation;
     }
 
     public int getArgument() {
