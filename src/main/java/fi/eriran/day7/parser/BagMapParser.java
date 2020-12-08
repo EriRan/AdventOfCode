@@ -6,7 +6,7 @@ import fi.eriran.day7.pojo.bag.Description;
 
 import java.util.*;
 
-public class RuleParser {
+public class BagMapParser {
 
     /**
      * Go through all the lines and add all mentioned bags to the map.

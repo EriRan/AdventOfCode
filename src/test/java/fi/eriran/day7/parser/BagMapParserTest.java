@@ -8,17 +8,16 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 import org.junit.jupiter.api.Test;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RuleParserTest {
+class BagMapParserTest {
 
     @Test
     void ableToParseSingleRule() {
-        Map<Description, Bag> bagMap = new RuleParser()
+        Map<Description, Bag> bagMap = new BagMapParser()
                 .parse(Collections.singletonList("light gray bags contain 1 moody blue bag."));
         assertFalse(MapUtils.isEmpty(bagMap));
         //1 is described in detail. 2 is mentioned so the size is 2.
@@ -36,7 +35,7 @@ class RuleParserTest {
 
     @Test
     void ableToParseMultipleContainedBags() {
-        Map<Description, Bag> bagMap = new RuleParser()
+        Map<Description, Bag> bagMap = new BagMapParser()
                 .parse(Collections.singletonList("light gray bags contain 222 moody blue bags, 23 cool red bags, 44 " +
                         "stylish black bags"));
         assertFalse(MapUtils.isEmpty(bagMap));
