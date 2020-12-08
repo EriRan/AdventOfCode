@@ -18,11 +18,11 @@ public abstract class AbstractInputParserProxy<T> {
         return getConcreteParser().parse(getFileContentFetcher().fetch(resourceFolderFileName));
     }
 
-    public InputParser<T> getConcreteParser() {
+    protected InputParser<T> getConcreteParser() {
         return concreteParser;
     }
 
-    public FileContentFetcher getFileContentFetcher() {
+    protected FileContentFetcher getFileContentFetcher() {
         return fileContentFetcher;
     }
 }
