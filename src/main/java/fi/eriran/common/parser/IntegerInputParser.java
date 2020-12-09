@@ -5,7 +5,7 @@ import fi.eriran.common.parser.constant.ParserConstant;
 import java.util.ArrayList;
 import java.util.List;
 
-class NumberInputParser implements InputParser<Integer> {
+class IntegerInputParser implements InputParser<Integer> {
 
     public List<Integer> parse(String content) {
         //Get file content
