@@ -15,7 +15,7 @@ class TargetBagContainingBagFinderTest {
                 4,
                 new BagFinder()
                         .find(CalculationConstant.TARGET_BAG,
-                                new BagMapParser().parse(new LineInputParserProxy().parse("day7TestInput"))
+                                new BagMapParser().parse(new LineInputParserProxy().parse("day7PartOneTestInput"))
                         )
         );
     }
