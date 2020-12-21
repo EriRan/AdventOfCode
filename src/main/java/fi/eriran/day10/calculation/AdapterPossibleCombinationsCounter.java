@@ -15,9 +15,9 @@ public class AdapterPossibleCombinationsCounter {
 
     private long findTotalJoltages(List<Integer> adapters,
                                    int currentEffectiveRating,
-                                   int currentIndex) {
+                                   int startIndex) {
         long currentIterationTotal = 0;
-        for (int i = currentIndex; i < adapters.size(); i++) {
+        for (int i = startIndex; i < adapters.size(); i++) {
             //Adapter two indexes ahead from the current index. Create a new branch
             if (i + 2 < adapters.size()) {
                 Integer thirdAheadJoltage = adapters.get(i + 2);
