@@ -18,17 +18,7 @@ public class AdapterPossibleCombinationsCounter {
                                    int currentIndex) {
         long currentIterationTotal = 0;
         for (int i = currentIndex; i < adapters.size(); i++) {
-            //Adapter after the current one. Create a new branch
-            if (i + 1 < adapters.size()) {
-                Integer secondAheadJoltage = adapters.get(i + 1);
-                if (secondAheadJoltage - currentEffectiveRating < 4) {
-                    currentIterationTotal += findTotalJoltages(
-                            adapters,
-                            secondAheadJoltage,
-                            i + 2);
-                }
-            }
-            //Third
+            //Adapter two indexes ahead from the current index. Create a new branch
             if (i + 2 < adapters.size()) {
                 Integer thirdAheadJoltage = adapters.get(i + 2);
                 if (thirdAheadJoltage - currentEffectiveRating < 4) {
@@ -38,8 +28,18 @@ public class AdapterPossibleCombinationsCounter {
                             i + 3);
                 }
             }
+            //Adapter one index ahead from the current one. Create a new branch
+            if (i + 1 < adapters.size()) {
+                Integer secondAheadJoltage = adapters.get(i + 1);
+                if (secondAheadJoltage - currentEffectiveRating < 4) {
+                    currentIterationTotal += findTotalJoltages(
+                            adapters,
+                            secondAheadJoltage,
+                            i + 2);
+                }
+            }
 
-            //The next adapter. No need to create a separate branch from here
+            //The adapter at the current index. No need to create a new branch
             Integer currentIndexJoltage = adapters.get(i);
             if (currentIndexJoltage - currentEffectiveRating < 4) {
                 currentEffectiveRating = currentIndexJoltage;
