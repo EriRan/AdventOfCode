@@ -1,51 +1,67 @@
 package fi.eriran.day10.calculation;
 
-import java.util.List;
+import org.apache.commons.collections4.CollectionUtils;
+
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class AdapterPossibleCombinationsCounter {
 
     public long count(List<Integer> availableAdapters) {
-        List<Integer> sortedAdapters = availableAdapters.stream().sorted().collect(Collectors.toList());
-        // I probably need to abandon this list structure in its entirety
-        int currentEffectiveRating = 0;
-        int currentIndex = 0;
-        return findTotalJoltages(sortedAdapters, currentEffectiveRating, currentIndex);
-    }
+        int theLastAdapter = availableAdapters.stream()
+                .max(Integer::compareTo)
+                .orElseThrow(() -> new IllegalStateException("Unable to find max value")) + 3;
+        List<Integer> reversedAdapterList = createReversedAdapterList(availableAdapters, theLastAdapter);
 
-    private long findTotalJoltages(List<Integer> adapters,
-                                   int currentEffectiveRating,
-                                   int startIndex) {
-        long currentIterationTotal = 0;
-        for (int i = startIndex; i < adapters.size(); i++) {
-            //Adapter two indexes ahead from the current index. Create a new branch
-            if (i + 2 < adapters.size()) {
-                Integer thirdAheadJoltage = adapters.get(i + 2);
-                if (thirdAheadJoltage - currentEffectiveRating < 4) {
-                    currentIterationTotal += findTotalJoltages(
-                            adapters,
-                            thirdAheadJoltage,
-                            i + 3);
+        Map<Integer, Set<Integer>> graph = new HashMap<>();
+        reversedAdapterList.forEach(adapter -> {
+            graph.put(adapter, new HashSet<>());
+        });
+        for (int i = 0; i < reversedAdapterList.size(); i++) {
+            Integer currentJoltage = reversedAdapterList.get(i);
+            for (int j = i + 1; j < reversedAdapterList.size(); j++) {
+                Integer possibleNeighbour = reversedAdapterList.get(j);
+                if (currentJoltage - possibleNeighbour  < 4) {
+                    graph.get(currentJoltage).add(possibleNeighbour);
                 }
-            }
-            //Adapter one index ahead from the current one. Create a new branch
-            if (i + 1 < adapters.size()) {
-                Integer secondAheadJoltage = adapters.get(i + 1);
-                if (secondAheadJoltage - currentEffectiveRating < 4) {
-                    currentIterationTotal += findTotalJoltages(
-                            adapters,
-                            secondAheadJoltage,
-                            i + 2);
-                }
-            }
-
-            //The adapter at the current index. No need to create a new branch
-            Integer currentIndexJoltage = adapters.get(i);
-            if (currentIndexJoltage - currentEffectiveRating < 4) {
-                currentEffectiveRating = currentIndexJoltage;
             }
         }
-        currentIterationTotal += 1;
-        return currentIterationTotal;
+
+        Map<Integer, Long> waysToPoints = new HashMap<>();
+
+        for (Integer adapter : graph.keySet()) {
+            waysToPoints.put(adapter, 1L);
+        }
+
+        for (int i = reversedAdapterList.size() - 1; i >= 0; i--) {
+            Integer currentAdapter = reversedAdapterList.get(i);
+            Set<Integer> currentAdapterNeighbours = graph.get(currentAdapter);
+
+            //Zero has no neighbours so it will end up here
+            if (CollectionUtils.isEmpty(currentAdapterNeighbours)) {
+                continue;
+            }
+
+            Long waysToPoint = currentAdapterNeighbours.stream()
+                    .map(waysToPoints::get)
+                    .filter(Objects::nonNull)
+                    .reduce(Long::sum)
+                    .orElse(1L);
+            waysToPoints.put(currentAdapter, waysToPoint);
+        }
+
+        return waysToPoints.get(theLastAdapter);
+    }
+
+    private List<Integer> createReversedAdapterList(List<Integer> availableAdapters, int theLastAdapter) {
+        List<Integer> copiedAdapters = new ArrayList<>();
+        copiedAdapters.add(0);
+        copiedAdapters.add(theLastAdapter);
+        copiedAdapters.addAll(availableAdapters);
+        List<Integer> sortedAdapters = copiedAdapters.stream()
+                .sorted()
+                .collect(Collectors.toList());
+        Collections.reverse(sortedAdapters);
+        return sortedAdapters;
     }
 }
