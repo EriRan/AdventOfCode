@@ -1,5 +1,6 @@
 package fi.eriran.day12.calculation.flight;
 
+import fi.eriran.day12.calculation.flight.direct.DirectFlightPathCalculator;
 import fi.eriran.day12.pojo.Command;
 import fi.eriran.day12.pojo.DirectionCommand;
 import fi.eriran.day12.pojo.FlightPathResponse;
@@ -10,12 +11,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FlightPathCalculatorTest {
+class DirectFlightPathCalculatorTest {
 
-    private final FlightPathCalculator flightPathCalculator;
+    private final DirectFlightPathCalculator directFlightPathCalculator;
 
-    public FlightPathCalculatorTest() {
-        flightPathCalculator = new FlightPathCalculator();
+    public DirectFlightPathCalculatorTest() {
+        directFlightPathCalculator = new DirectFlightPathCalculator();
     }
 
     @Test
@@ -27,7 +28,7 @@ class FlightPathCalculatorTest {
         directionCommands.add(new DirectionCommand(Command.LEFT, 90));
         //Move to north
         directionCommands.add(new DirectionCommand(Command.FORWARD, 1));
-        FlightPathResponse response = flightPathCalculator.calculate(directionCommands);
+        FlightPathResponse response = directFlightPathCalculator.calculate(directionCommands);
         assertEquals(1, response.getEast());
         assertEquals(1, response.getNorth());
     }
@@ -41,7 +42,7 @@ class FlightPathCalculatorTest {
         directionCommands.add(new DirectionCommand(Command.RIGHT, 90));
         //Move to south
         directionCommands.add(new DirectionCommand(Command.FORWARD, 1));
-        FlightPathResponse response = flightPathCalculator.calculate(directionCommands);
+        FlightPathResponse response = directFlightPathCalculator.calculate(directionCommands);
         assertEquals(1, response.getEast());
         assertEquals(-1, response.getNorth());
     }
@@ -55,7 +56,7 @@ class FlightPathCalculatorTest {
         directionCommands.add(new DirectionCommand(Command.RIGHT, 450));
         //Move to south
         directionCommands.add(new DirectionCommand(Command.FORWARD, 1));
-        FlightPathResponse response = flightPathCalculator.calculate(directionCommands);
+        FlightPathResponse response = directFlightPathCalculator.calculate(directionCommands);
         assertEquals(1, response.getEast());
         assertEquals(-1, response.getNorth());
     }
@@ -69,7 +70,7 @@ class FlightPathCalculatorTest {
         directionCommands.add(new DirectionCommand(Command.LEFT, 180));
         //Move to west
         directionCommands.add(new DirectionCommand(Command.FORWARD, 1));
-        FlightPathResponse response = flightPathCalculator.calculate(directionCommands);
+        FlightPathResponse response = directFlightPathCalculator.calculate(directionCommands);
         assertEquals(0, response.getEast());
         assertEquals(0, response.getNorth());
     }
