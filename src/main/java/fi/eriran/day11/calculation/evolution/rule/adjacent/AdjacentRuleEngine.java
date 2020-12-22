@@ -1,6 +1,7 @@
 package fi.eriran.day11.calculation.evolution.rule.adjacent;
 
 import fi.eriran.day11.calculation.evolution.rule.RuleEngine;
+import fi.eriran.day11.calculation.evolution.rule.adjacent.constant.AdjacentCalculatorConstant;
 import fi.eriran.day11.pojo.Position;
 import fi.eriran.day11.pojo.seat.SeatMap;
 
@@ -27,6 +28,6 @@ public class AdjacentRuleEngine implements RuleEngine {
     }
 
     private boolean hasFourOrMoreAdjacentOccupied(SeatMap seatMap, int x, int y) {
-        return adjacentCalculator.countAdjacentOccupied(seatMap, x, y) >= 4;
+        return adjacentCalculator.countAdjacentOccupied(seatMap, x, y) >= AdjacentCalculatorConstant.MAX_OCCUPIED_SEATS_TO_BE_USABLE;
     }
 }

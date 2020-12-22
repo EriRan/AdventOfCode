@@ -1,5 +1,6 @@
 package fi.eriran.day11.calculation.evolution.rule.adjacent;
 
+import fi.eriran.day11.calculation.evolution.rule.adjacent.constant.AdjacentCalculatorConstant;
 import fi.eriran.day11.pojo.seat.SeatMap;
 
 public class AdjacentCalculator {
@@ -36,31 +37,31 @@ public class AdjacentCalculator {
     }
 
     public int countAdjacentOccupied(SeatMap seatMap, int x, int y) {
-        int adjacentOccupiedCount = 0;
+        int count = 0;
         if (directionChecker.upperLeft(seatMap, x, y)) {
-            adjacentOccupiedCount++;
+            count++;
         }
-        if (directionChecker.up(seatMap, x, y)) {
-            adjacentOccupiedCount++;
+        if (count < AdjacentCalculatorConstant.MAX_OCCUPIED_SEATS_TO_BE_USABLE && directionChecker.up(seatMap, x, y)) {
+            count++;
         }
-        if (directionChecker.upperRight(seatMap, x, y)) {
-            adjacentOccupiedCount++;
+        if (count < AdjacentCalculatorConstant.MAX_OCCUPIED_SEATS_TO_BE_USABLE && directionChecker.upperRight(seatMap, x, y)) {
+            count++;
         }
-        if (directionChecker.right(seatMap, x, y)) {
-            adjacentOccupiedCount++;
+        if (count < AdjacentCalculatorConstant.MAX_OCCUPIED_SEATS_TO_BE_USABLE && directionChecker.right(seatMap, x, y)) {
+            count++;
         }
-        if (directionChecker.lowerRight(seatMap, x, y)) {
-            adjacentOccupiedCount++;
+        if (count < AdjacentCalculatorConstant.MAX_OCCUPIED_SEATS_TO_BE_USABLE && directionChecker.lowerRight(seatMap, x, y)) {
+            count++;
         }
-        if (directionChecker.down(seatMap, x, y)) {
-            adjacentOccupiedCount++;
+        if (count < AdjacentCalculatorConstant.MAX_OCCUPIED_SEATS_TO_BE_USABLE && directionChecker.down(seatMap, x, y)) {
+            count++;
         }
-        if (directionChecker.lowerLeft(seatMap, x, y)) {
-            adjacentOccupiedCount++;
+        if (count < AdjacentCalculatorConstant.MAX_OCCUPIED_SEATS_TO_BE_USABLE && directionChecker.lowerLeft(seatMap, x, y)) {
+            count++;
         }
-        if (directionChecker.left(seatMap, x, y)) {
-            adjacentOccupiedCount++;
+        if (count < AdjacentCalculatorConstant.MAX_OCCUPIED_SEATS_TO_BE_USABLE && directionChecker.left(seatMap, x, y)) {
+            count++;
         }
-        return adjacentOccupiedCount;
+        return count;
     }
 }

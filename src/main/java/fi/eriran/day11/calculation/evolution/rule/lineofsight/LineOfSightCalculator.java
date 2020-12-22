@@ -2,6 +2,8 @@ package fi.eriran.day11.calculation.evolution.rule.lineofsight;
 
 import fi.eriran.day11.pojo.seat.SeatMap;
 
+import static fi.eriran.day11.calculation.evolution.rule.lineofsight.constant.LineOfSightCalculationConstant.MAX_OCCUPIED_SEATS_TO_BE_USABLE;
+
 public class LineOfSightCalculator {
 
     private final OccupiedLineOfSightDirectionChecker directionChecker;
@@ -40,25 +42,25 @@ public class LineOfSightCalculator {
         if (directionChecker.upperLeft(seatMap, x, y)) {
             count++;
         }
-        if (directionChecker.up(seatMap, x, y)) {
+        if (count < MAX_OCCUPIED_SEATS_TO_BE_USABLE && directionChecker.up(seatMap, x, y)) {
             count++;
         }
-        if (directionChecker.upperRight(seatMap, x, y)) {
+        if (count < MAX_OCCUPIED_SEATS_TO_BE_USABLE && directionChecker.upperRight(seatMap, x, y)) {
             count++;
         }
-        if (directionChecker.right(seatMap, x, y)) {
+        if (count < MAX_OCCUPIED_SEATS_TO_BE_USABLE && directionChecker.right(seatMap, x, y)) {
             count++;
         }
-        if (directionChecker.lowerRight(seatMap, x, y)) {
+        if (count < MAX_OCCUPIED_SEATS_TO_BE_USABLE && directionChecker.lowerRight(seatMap, x, y)) {
             count++;
         }
-        if (directionChecker.down(seatMap, x, y)) {
+        if (count < MAX_OCCUPIED_SEATS_TO_BE_USABLE && directionChecker.down(seatMap, x, y)) {
             count++;
         }
-        if (directionChecker.lowerLeft(seatMap, x, y)) {
+        if (count < MAX_OCCUPIED_SEATS_TO_BE_USABLE && directionChecker.lowerLeft(seatMap, x, y)) {
             count++;
         }
-        if (directionChecker.left(seatMap, x, y)) {
+        if (count < MAX_OCCUPIED_SEATS_TO_BE_USABLE && directionChecker.left(seatMap, x, y)) {
             count++;
         }
         return count;

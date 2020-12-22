@@ -1,6 +1,7 @@
 package fi.eriran.day11.calculation.evolution.rule.lineofsight;
 
 import fi.eriran.day11.calculation.evolution.rule.RuleEngine;
+import fi.eriran.day11.calculation.evolution.rule.lineofsight.constant.LineOfSightCalculationConstant;
 import fi.eriran.day11.pojo.Position;
 import fi.eriran.day11.pojo.seat.SeatMap;
 
@@ -27,6 +28,7 @@ public class LineOfSightRuleEngine implements RuleEngine {
     }
 
     private boolean hasFiveOrMoreAdjacentOccupied(SeatMap seatMap, int x, int y) {
-        return lineOfSightCalculator.countOccupiedSeatsInSight(seatMap, x, y) >= 5;
+        return lineOfSightCalculator
+                .countOccupiedSeatsInSight(seatMap, x, y) >= LineOfSightCalculationConstant.MAX_OCCUPIED_SEATS_TO_BE_USABLE;
     }
 }
