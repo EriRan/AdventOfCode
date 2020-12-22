@@ -12,7 +12,7 @@ public class CharacterToPositionConverter {
             case '.':
                 return Position.FLOOR;
             case 'L':
-                return Position.FREE_SEAT;
+                return Position.EMPTY_SEAT;
             case '#':
                 return Position.OCCUPIED_SEAT;
             default:

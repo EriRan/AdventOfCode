@@ -4,7 +4,7 @@ public enum Position {
     //.
     FLOOR,
     //L
-    FREE_SEAT,
+    EMPTY_SEAT,
     //#
     OCCUPIED_SEAT
 }
