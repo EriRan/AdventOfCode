@@ -4,10 +4,10 @@ import fi.eriran.day11.pojo.seat.SeatMap;
 
 public class AdjacentCalculator {
 
-    private final OccupiedDirectionChecker directionChecker;
+    private final OccupiedAdjacentDirectionChecker directionChecker;
 
     public AdjacentCalculator() {
-        directionChecker = new OccupiedDirectionChecker();
+        directionChecker = new OccupiedAdjacentDirectionChecker();
     }
 
     public boolean hasAdjacentOccupied(SeatMap seatMap, int x, int y) {

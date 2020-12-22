@@ -22,6 +22,5 @@ class OccupiedSeatCounterTest {
                 );
         System.out.println("Evolved: \n" + new SeatMapStringifier().print(evolvedMap));
         assertEquals(37, new OccupiedSeatCounter().count(evolvedMap));
-
     }
 }

@@ -1,10 +1,11 @@
 package fi.eriran.day11.calculation.evolution.rule.adjacent;
 
+import fi.eriran.day11.calculation.evolution.rule.DirectionChecker;
 import fi.eriran.day11.pojo.seat.SeatMap;
 
 import static fi.eriran.day11.util.SeatMapCondition.isOccupied;
 
-public class OccupiedDirectionChecker {
+public class OccupiedAdjacentDirectionChecker implements DirectionChecker {
 
     public boolean upperLeft(SeatMap seatMap, int x, int y) {
         return y > 0 && x > 0 && isOccupied(seatMap, x - 1, y - 1);
