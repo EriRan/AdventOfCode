@@ -58,8 +58,13 @@ public class OccupiedLineOfSightDirectionChecker implements DirectionChecker {
         int currentY = startY + rayRule.getyIncrement();
         while (currentPositionIsWithinBounds(seatMap, currentX, currentY)) {
             Position currentPosition = seatMap.getCoordinate(currentX, currentY);
-            if (Position.OCCUPIED_SEAT.equals(currentPosition)) {
-                return true;
+            switch (currentPosition) {
+                case OCCUPIED_SEAT:
+                    return true;
+                case EMPTY_SEAT:
+                    return false;
+                default:
+                    break;
             }
             currentX = currentX + rayRule.getxIncrement();
             currentY = currentY + rayRule.getyIncrement();

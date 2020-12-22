@@ -4,10 +4,14 @@ import fi.eriran.day11.calculation.evolution.rule.lineofsight.LineOfSightRuleEng
 import fi.eriran.day11.pojo.Position;
 import fi.eriran.day11.pojo.seat.Coordinate;
 import fi.eriran.day11.pojo.seat.SeatMap;
+import fi.eriran.day11.util.SeatMapStringifier;
+
+import java.util.logging.Logger;
 
 public class SeatStateLineOfSightEvolver implements SeatStateEvolver {
 
     private final LineOfSightRuleEngine ruleEngine;
+    private final Logger logger = Logger.getGlobal();
 
     public SeatStateLineOfSightEvolver() {
         ruleEngine = new LineOfSightRuleEngine();
@@ -40,6 +44,7 @@ public class SeatStateLineOfSightEvolver implements SeatStateEvolver {
                     }
                 }
             }
+            logger.info("Current state:\n" + new SeatMapStringifier().print(nextEvolution));
             if (hasChanged) {
                 previousState = nextEvolution;
             }
