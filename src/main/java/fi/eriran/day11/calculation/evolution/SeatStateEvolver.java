@@ -20,8 +20,8 @@ public class SeatStateEvolver {
         do {
             SeatMap nextEvolution = new SeatMap(previousState.getMaxX(), previousState.getMaxY());
             hasChanged = false;
-            for (int x = 0; x <= previousState.getMaxX(); x++) {
-                for (int y = 0; y <= previousState.getMaxY(); y++) {
+            for (int y = 0; y <= previousState.getMaxX(); y++) {
+                for (int x = 0; x <= previousState.getMaxX(); x++) {
                     Position currentPosition = previousState.getCoordinate(x, y);
                     //Check if adjacent have any occupied seats. If they don't, this seat becomes occupied
                     if (ruleEngine.shouldBecomeOccupied(previousState, x, y, currentPosition)) {

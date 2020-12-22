@@ -7,8 +7,8 @@ public class SeatMapStringifier {
 
     public String print(SeatMap seatMap) {
         StringBuilder stringMapBuilder = new StringBuilder();
-        for (int x = 0; x <= seatMap.getMaxX(); x++) {
-            for (int y = 0; y <= seatMap.getMaxY(); y++) {
+        for (int y = 0; y <= seatMap.getMaxY(); y++) {
+            for (int x = 0; x <= seatMap.getMaxX(); x++) {
                 stringMapBuilder.append(PositionToCharacterConverter.convert(seatMap.getCoordinate(x,y)));
             }
             stringMapBuilder.append("\n");
