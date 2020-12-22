@@ -44,7 +44,7 @@ public class FlightState {
         int newDirection = currentDirection - amount;
         newDirection = newDirection % 360;
         if (newDirection < 0) {
-            currentDirection = -newDirection;
+            currentDirection = 360 + newDirection;
         } else {
             currentDirection = newDirection;
         }
