@@ -31,6 +31,13 @@ class LineOfSightCalculatorTest {
         assertEquals(1, lineOfSightCalculator.countOccupiedSeatsInSight(seatMap, 3,3));
     }
 
+    @Test
+    void moreThanFiveInSight() {
+        SeatMap seatMap = new SeatMapParser().parse(createPartTwoSecondEvolutionState());
+        //The mid point that should not have any sight to any occupied seats
+        assertEquals(5, lineOfSightCalculator.countOccupiedSeatsInSight(seatMap, 8,3));
+    }
+
     private List<String> createNoOccupiedInSightData() {
         List<String> lines = new ArrayList<>();
         lines.add(".##.##.");
@@ -52,6 +59,21 @@ class LineOfSightCalculatorTest {
         lines.add("##...##");
         lines.add("#.#.#.#");
         lines.add(".##.##.");
+        return lines;
+    }
+
+    private List<String> createPartTwoSecondEvolutionState() {
+        List<String> lines = new ArrayList<>();
+        lines.add("#.##.##.##");
+        lines.add("#######.##");
+        lines.add("#.#.#..#..");
+        lines.add("####.##.##");
+        lines.add("#.##.##.##");
+        lines.add("#.#####.##");
+        lines.add("..#.#.....");
+        lines.add("##########");
+        lines.add("#.######.#");
+        lines.add(".#####.##");
         return lines;
     }
 
