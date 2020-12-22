@@ -4,6 +4,7 @@ import fi.eriran.day11.parser.converter.CharacterToPositionConverter;
 import fi.eriran.day11.pojo.Position;
 import fi.eriran.day11.pojo.seat.Coordinate;
 import fi.eriran.day11.pojo.seat.SeatMap;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
@@ -17,7 +18,10 @@ public class SeatMapParser {
     }
 
     public SeatMap parse(List<String> input) {
-        SeatMap seatMap = new SeatMap();
+        if (CollectionUtils.isEmpty(input)) {
+            new SeatMap(0,0);
+        }
+        SeatMap seatMap = new SeatMap(findMaxX(input), input.size() - 1);
         for (int y = 0; y < input.size(); y++) {
             String oneLine = input.get(y);
             if (StringUtils.isBlank(oneLine)) {
@@ -30,5 +34,13 @@ public class SeatMapParser {
             }
         }
         return seatMap;
+    }
+
+    /**
+     * Assumption is that all the lines have the same length
+     */
+    private int findMaxX(List<String> input) {
+        String firstLine = input.get(0);
+        return firstLine.length() - 1;
     }
 }
