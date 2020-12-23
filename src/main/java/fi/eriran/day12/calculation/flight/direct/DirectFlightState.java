@@ -40,19 +40,12 @@ class DirectFlightState extends AbstractFlightState {
 
     @Override
     public void turnLeft(int amount) {
-        int newDirection = currentDirection - amount;
-        newDirection = newDirection % 360;
-        if (newDirection < 0) {
-            currentDirection = 360 + newDirection;
-        } else {
-            currentDirection = newDirection;
-        }
+        changeCurrenDirectionLeft(amount);
     }
 
     @Override
     public void turnRight(int amount) {
-        int newDirection = currentDirection + amount;
-        currentDirection = newDirection % 360;
+        changeCurrentDirectionRight(amount);
     }
 
     @Override
