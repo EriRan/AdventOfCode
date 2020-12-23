@@ -3,18 +3,22 @@ package fi.eriran.day4;
 import fi.eriran.day4.processor.PartOnePassportProcessor;
 import fi.eriran.day4.processor.PartTwoPassportProcessor;
 
-import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PassportProcessingMain {
 
-    public static void main(String[] args) throws IOException {
-        System.out.println(
-                "Part one Valid passports: "
+    private static final Logger logger = Logger.getGlobal();
+
+    public static void main(String[] args) {
+        logger.log(
+                Level.INFO,
+                () -> "Part one Valid passports: "
                         + new PartOnePassportProcessor().process("day4Input")
         );
-
-        System.out.println(
-                "Part two Valid passports: "
+        logger.log(
+                Level.INFO,
+                () -> "Part two Valid passports: "
                         + new PartTwoPassportProcessor().process("day4Input")
         );
     }

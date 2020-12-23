@@ -2,20 +2,27 @@ package fi.eriran.day5;
 
 import fi.eriran.day5.seat.SeatFactory;
 
-import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class BinaryBoardingMain {
 
-    public static void main(String[] args) throws IOException {
-        System.out.println("Part one highest id is: " + new HighestSeatIdCalculator()
-                .calculate(
-                        new SeatFactory().build("day5Input")
-                )
+    private static final Logger logger = Logger.getGlobal();
+
+    public static void main(String[] args) {
+        logger.log(
+                Level.INFO,
+                () -> "Part one highest id is: " + new HighestSeatIdCalculator()
+                        .calculate(
+                                new SeatFactory().build("day5Input")
+                        )
         );
-        System.out.println("Part two the free seat is: " + new FreeSeatFinder()
-                .find(
-                        new SeatFactory().build("day5Input")
-                )
+        logger.log(
+                Level.INFO,
+                () -> "Part two the free seat is: " + new FreeSeatFinder()
+                        .find(
+                                new SeatFactory().build("day5Input")
+                        )
         );
     }
 }

@@ -8,32 +8,39 @@ import fi.eriran.day6.parser.GroupCustomFormEveryoneFactory;
 import fi.eriran.day6.parser.raw.PositiveQuestionCodesParserPerGroup;
 import fi.eriran.day6.parser.raw.PositiveQuestionCodesParserPerPerson;
 
-import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class CustomCustomsMain {
 
-    public static void main(String[] args) throws IOException {
-        System.out.println("Part one total sum: " +
-                new UniqueQuestionSumCalculator()
-                        .calculate(
-                                new GroupCustomFormAnyoneFactory().build(
-                                        new PositiveQuestionCodesParserPerGroup().parse(
-                                                new LineInputParserProxy()
-                                                        .parse("day6Input")
+    private static final Logger logger = Logger.getGlobal();
+
+    public static void main(String[] args) {
+        logger.log(
+                Level.INFO,
+                () -> "Part one total sum: " +
+                        new UniqueQuestionSumCalculator()
+                                .calculate(
+                                        new GroupCustomFormAnyoneFactory().build(
+                                                new PositiveQuestionCodesParserPerGroup().parse(
+                                                        new LineInputParserProxy()
+                                                                .parse("day6Input")
+                                                )
                                         )
                                 )
-                        )
         );
-        System.out.println("Part two total sum: " +
-                new CommonQuestionSumCalculator()
-                        .calculate(
-                                new GroupCustomFormEveryoneFactory().build(
-                                        new PositiveQuestionCodesParserPerPerson().parse(
-                                                new LineInputParserProxy()
-                                                        .parse("day6Input")
+        logger.log(
+                Level.INFO,
+                () -> "Part two total sum: " +
+                        new CommonQuestionSumCalculator()
+                                .calculate(
+                                        new GroupCustomFormEveryoneFactory().build(
+                                                new PositiveQuestionCodesParserPerPerson().parse(
+                                                        new LineInputParserProxy()
+                                                                .parse("day6Input")
+                                                )
                                         )
                                 )
-                        )
         );
     }
 }

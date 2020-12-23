@@ -5,11 +5,9 @@ import fi.eriran.day4.processor.parser.PassportMapper;
 import fi.eriran.day4.processor.validator.PartOnePassportValidator;
 import fi.eriran.day4.processor.validator.ValidPassportCounter;
 
-import java.io.IOException;
-
 public class PartOnePassportProcessor implements PassportProcessor {
 
-    public long process(String resorceFolderFilename) throws IOException {
+    public long process(String resorceFolderFilename) {
         return new ValidPassportCounter(new PartOnePassportValidator()).count(
                 new PassportMapper().map(
                         new LineInputParserProxy().parse(resorceFolderFilename)

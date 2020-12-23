@@ -4,17 +4,26 @@ import fi.eriran.common.parser.LineInputParserProxy;
 import fi.eriran.day3.parser.MapGenerator;
 import fi.eriran.day3.pojo.TrajectoryDefinition;
 
-import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TobogganTreeCounterMain {
 
-    public static void main(String[] args) throws IOException {
+    private static final Logger logger = Logger.getGlobal();
+
+    public static void main(String[] args) {
         int partOneResult = countTrees(3, 1);
-        System.out.println("Part one trees encountered: " + partOneResult);
-        System.out.println("Part Two result: " + calculatePartTwoResult(partOneResult));
+        logger.log(
+                Level.INFO,
+                () -> "Part one trees encountered: " + partOneResult
+        );
+        logger.log(
+                Level.INFO,
+                () -> "Part Two result: " + calculatePartTwoResult(partOneResult)
+        );
     }
 
-    private static long calculatePartTwoResult(int partOneResult) throws IOException {
+    private static long calculatePartTwoResult(int partOneResult) {
         return (long) countTrees(1, 1) *
                 partOneResult *
                 countTrees(5, 1) *
@@ -22,7 +31,7 @@ public class TobogganTreeCounterMain {
                 countTrees(1, 2);
     }
 
-    private static int countTrees(int right, int down) throws IOException {
+    private static int countTrees(int right, int down) {
         int treesFound = new TobogganTreeCounter()
                 .count(
                         new MapGenerator().generate(
@@ -30,7 +39,7 @@ public class TobogganTreeCounterMain {
                         ),
                         new TrajectoryDefinition(right, down)
                 );
-        System.out.println("Found " + treesFound + " trees!");
+        logger.log(Level.INFO, () -> "Found " + treesFound + " trees!");
         return treesFound;
     }
 }
