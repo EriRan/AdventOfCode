@@ -2,7 +2,7 @@ package fi.eriran.day12.calculation.flight.waypoint;
 
 import fi.eriran.day12.calculation.flight.AbstractFlightState;
 
-public class WaypointFlightState extends AbstractFlightState {
+class WaypointFlightState extends AbstractFlightState {
 
     private int waypointEast;
     private int waypointNorth;

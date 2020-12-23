@@ -4,8 +4,11 @@ import fi.eriran.day12.calculation.flight.AbstractFlightState;
 
 class DirectFlightState extends AbstractFlightState {
 
+    private int currentDirection;
+
     public DirectFlightState() {
         super();
+        currentDirection = 90;
     }
 
     @Override
@@ -40,12 +43,23 @@ class DirectFlightState extends AbstractFlightState {
 
     @Override
     public void turnLeft(int amount) {
-        changeCurrenDirectionLeft(amount);
+        int newDirection = currentDirection - amount;
+        newDirection = newDirection % 360;
+        if (newDirection < 0) {
+            currentDirection = 360 + newDirection;
+        } else {
+            currentDirection = newDirection;
+        }
     }
 
     @Override
     public void turnRight(int amount) {
-        changeCurrentDirectionRight(amount);
+        int newDirection = currentDirection + amount;
+        currentDirection = newDirection % 360;
+    }
+
+    public int getCurrentDirection() {
+        return currentDirection;
     }
 
     @Override
