@@ -1,7 +1,7 @@
 package fi.eriran.day13.pojo;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Timetable {
 
@@ -10,7 +10,7 @@ public class Timetable {
 
     public Timetable(int earliestPossibleTimestamp) {
         this.earliestPossibleTimestamp = earliestPossibleTimestamp;
-        buslines = new HashSet<>();
+        buslines = new TreeSet<>();
     }
 
     public int getEarliestPossibleTimestamp() {

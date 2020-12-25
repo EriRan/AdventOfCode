@@ -1,7 +1,6 @@
 package fi.eriran.day13.calculation.earliest;
 
 import fi.eriran.common.parser.LineInputParserProxy;
-import fi.eriran.day13.calculation.EarliestBuslineResponseHandler;
 import fi.eriran.day13.parser.TimetableParser;
 import org.junit.jupiter.api.Test;
 

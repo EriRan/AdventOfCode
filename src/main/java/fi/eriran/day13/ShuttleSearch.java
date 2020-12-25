@@ -1,7 +1,7 @@
 package fi.eriran.day13;
 
 import fi.eriran.common.parser.LineInputParserProxy;
-import fi.eriran.day13.calculation.EarliestBuslineResponseHandler;
+import fi.eriran.day13.calculation.earliest.EarliestBuslineResponseHandler;
 import fi.eriran.day13.calculation.earliest.EarliestBuslineFinder;
 import fi.eriran.day13.parser.TimetableParser;
 

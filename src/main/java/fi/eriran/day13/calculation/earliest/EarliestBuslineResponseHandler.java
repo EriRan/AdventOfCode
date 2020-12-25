@@ -1,4 +1,4 @@
-package fi.eriran.day13.calculation;
+package fi.eriran.day13.calculation.earliest;
 
 import fi.eriran.day13.pojo.EarliestBuslineResponse;
 
