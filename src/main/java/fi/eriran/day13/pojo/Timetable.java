@@ -6,18 +6,18 @@ import java.util.Set;
 public class Timetable {
 
     private final int earliestPossibleTimestamp;
-    private final Set<Integer> buslineIds;
+    private final Set<Busline> buslines;
 
     public Timetable(int earliestPossibleTimestamp) {
         this.earliestPossibleTimestamp = earliestPossibleTimestamp;
-        buslineIds = new HashSet<>();
+        buslines = new HashSet<>();
     }
 
     public int getEarliestPossibleTimestamp() {
         return earliestPossibleTimestamp;
     }
 
-    public Set<Integer> getBuslineIds() {
-        return buslineIds;
+    public Set<Busline> getBuslines() {
+        return buslines;
     }
 }

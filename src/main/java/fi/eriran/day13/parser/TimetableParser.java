@@ -1,10 +1,12 @@
 package fi.eriran.day13.parser;
 
 import fi.eriran.day13.parser.constant.TimetableConstant;
+import fi.eriran.day13.pojo.Busline;
 import fi.eriran.day13.pojo.Timetable;
 import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 public class TimetableParser {
@@ -22,22 +24,31 @@ public class TimetableParser {
 
     private void addBuslines(Timetable timetable, String buslinesRawString) {
         String[] splitByComma = buslinesRawString.split(",");
-        for (String busLine : splitByComma) {
-            parseOneBusline(timetable, busLine);
+        for (int i = 0; i < splitByComma.length; i++) {
+            String busLine = splitByComma[i];
+            createOneBusline(timetable, busLine, i).ifPresent(
+                    busline -> timetable.getBuslines().add(busline)
+            );
         }
     }
 
-    private void parseOneBusline(Timetable timetable, String busLine) {
+    private Optional<Busline> createOneBusline(Timetable timetable, String busLine, int index) {
         if (TimetableConstant.IGNORE_BUSLINE.equals(busLine)) {
-            return;
+            return Optional.of(new Busline(null, index));
         }
         int buslineId = Integer.parseInt(busLine);
-        if (timetable.getBuslineIds().contains(buslineId)) {
+        if (isBuslineAlreadyIncluded(timetable, buslineId)) {
             logger.warning(
                     () -> "Encountered a busline id that had been added already! Id was: " + buslineId);
-        } else {
-            timetable.getBuslineIds().add(buslineId);
+            return Optional.empty();
         }
+        return Optional.of(new Busline(buslineId, index));
+    }
+
+    private boolean isBuslineAlreadyIncluded(Timetable timetable, int buslineId) {
+        return timetable.getBuslines().stream()
+                .filter(busline -> busline.getId() != null)
+                .anyMatch(busline -> buslineId == busline.getId());
     }
 
     private int findEarliestPossibleStart(String earliestPossibleTimestampString) {

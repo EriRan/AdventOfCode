@@ -1,17 +1,21 @@
 package fi.eriran.day13.calculation.earliest;
 
+import fi.eriran.day13.pojo.Busline;
 import fi.eriran.day13.pojo.EarliestBuslineResponse;
 import fi.eriran.day13.pojo.Timetable;
 
 import java.util.Comparator;
 import java.util.Map;
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class EarliestBuslineFinder {
 
     public EarliestBuslineResponse find(Timetable timetable) {
-        Map<Integer, Integer> timeToWaitMap = timetable.getBuslineIds().stream()
+        Map<Integer, Integer> timeToWaitMap = timetable.getBuslines().stream()
+                .map(Busline::getId)
+                .filter(Objects::nonNull)
                 .collect(Collectors.toMap(
                         Function.identity(),
                         buslineId -> calculateTimeToWait(buslineId, timetable.getEarliestPossibleTimestamp())
