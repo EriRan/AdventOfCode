@@ -34,7 +34,7 @@ public class TimetableParser {
 
     private Optional<Busline> createOneBusline(Timetable timetable, String busLine, int index) {
         if (TimetableConstant.IGNORE_BUSLINE.equals(busLine)) {
-            return Optional.of(new Busline(null, index));
+            return Optional.empty();
         }
         int buslineId = Integer.parseInt(busLine);
         if (isBuslineAlreadyIncluded(timetable, buslineId)) {
