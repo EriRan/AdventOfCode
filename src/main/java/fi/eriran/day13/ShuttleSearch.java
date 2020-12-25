@@ -1,8 +1,9 @@
 package fi.eriran.day13;
 
 import fi.eriran.common.parser.LineInputParserProxy;
-import fi.eriran.day13.calculation.earliest.EarliestBuslineResponseHandler;
 import fi.eriran.day13.calculation.earliest.EarliestBuslineFinder;
+import fi.eriran.day13.calculation.earliest.EarliestBuslineResponseHandler;
+import fi.eriran.day13.calculation.sequential.SequentialBuslinesFinder;
 import fi.eriran.day13.parser.TimetableParser;
 
 import java.util.logging.Level;
@@ -21,6 +22,14 @@ public class ShuttleSearch {
                                 )
                         )
                 )
+        );
+        logger.log(Level.INFO,
+                () -> "Part two result: " +
+                        new SequentialBuslinesFinder().find(
+                                new TimetableParser().parse(
+                                        new LineInputParserProxy().parse("Day13Input")
+                                )
+                        )
         );
     }
 }
