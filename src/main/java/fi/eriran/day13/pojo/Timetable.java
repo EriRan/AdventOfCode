@@ -1,23 +1,23 @@
 package fi.eriran.day13.pojo;
 
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Timetable {
 
     private final int earliestPossibleTimestamp;
-    private final Set<Busline> buslines;
+    private final List<Busline> buslines;
 
     public Timetable(int earliestPossibleTimestamp) {
         this.earliestPossibleTimestamp = earliestPossibleTimestamp;
-        buslines = new TreeSet<>();
+        buslines = new ArrayList<>();
     }
 
     public int getEarliestPossibleTimestamp() {
         return earliestPossibleTimestamp;
     }
 
-    public Set<Busline> getBuslines() {
+    public List<Busline> getBuslines() {
         return buslines;
     }
 }
