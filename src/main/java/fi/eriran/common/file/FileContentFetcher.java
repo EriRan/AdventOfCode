@@ -11,6 +11,11 @@ import java.nio.charset.StandardCharsets;
  */
 public class FileContentFetcher {
 
+    /**
+     * Get a file and turn its contents into a String
+     * @param resourceFolderFileName filepath of a file to be fetched
+     * @return Contentes of the file in a String
+     */
     public String fetch(String resourceFolderFileName) {
         try {
             return Resources.toString(Resources.getResource(resourceFolderFileName), StandardCharsets.UTF_8);
