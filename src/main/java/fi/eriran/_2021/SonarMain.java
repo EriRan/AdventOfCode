@@ -14,7 +14,7 @@ public class SonarMain {
         List<Integer> input = new IntegerInputParserProxy().parse("2021/day1Input");
         logger.log(
                 Level.INFO,
-                () -> "Part One: "
+                () -> "Part One: " + new SonarDepthIncreaseCalculator().calculate(input)
         );
         logger.log(
                 Level.INFO,
