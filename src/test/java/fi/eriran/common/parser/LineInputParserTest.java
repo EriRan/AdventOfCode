@@ -5,14 +5,22 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static fi.eriran.common.parser.constant.ParserConstant.WINDOWS_LINE_BREAK;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LineInputParserTest {
 
     @Test
     void windowsLinesParsed() {
-        List<String> parseResponse = new LineInputParser().parse("Hello" + WINDOWS_LINE_BREAK + "World");
+        List<String> parseResponse = new LineInputParser().parse("Hello\r\nWorld");
+        assertFalse(CollectionUtils.isEmpty(parseResponse));
+        assertEquals(2, parseResponse.size());
+        assertEquals("Hello", parseResponse.get(0));
+        assertEquals("World", parseResponse.get(1));
+    }
+
+    @Test
+    void unixLinesParsed() {
+        List<String> parseResponse = new LineInputParser().parse("Hello\nWorld");
         assertFalse(CollectionUtils.isEmpty(parseResponse));
         assertEquals(2, parseResponse.size());
         assertEquals("Hello", parseResponse.get(0));

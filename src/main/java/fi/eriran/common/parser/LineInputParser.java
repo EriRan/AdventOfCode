@@ -16,7 +16,7 @@ class LineInputParser implements InputParser<String> {
         if (StringUtils.isBlank(content)) {
             return Collections.emptyList();
         }
-        String[] splitByLineEscape = content.split(ParserConstant.WINDOWS_LINE_BREAK);
+        String[] splitByLineEscape = content.split(ParserConstant.LINE_BREAK_REGEX);
         return Arrays.asList(splitByLineEscape);
     }
 }

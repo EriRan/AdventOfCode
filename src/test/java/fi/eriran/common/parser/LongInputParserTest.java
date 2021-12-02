@@ -5,15 +5,14 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static fi.eriran.common.parser.constant.ParserConstant.WINDOWS_LINE_BREAK;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LongInputParserTest {
 
     @Test
-    void succesfulParse() {
+    void successfulParse() {
         List<Long> parseResponse = new LongInputParser()
-                .parse("123" + WINDOWS_LINE_BREAK + "456");
+                .parse("123" + System.lineSeparator() + "456");
         assertFalse(CollectionUtils.isEmpty(parseResponse));
         assertEquals(2, parseResponse.size());
         assertEquals(123, parseResponse.get(0));

@@ -5,14 +5,14 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static fi.eriran.common.parser.constant.ParserConstant.WINDOWS_LINE_BREAK;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class IntegerInputParserTest {
 
     @Test
     void successfulParse() {
-        List<Integer> parseResponse = new IntegerInputParser().parse("123" + WINDOWS_LINE_BREAK + "456");
+        List<Integer> parseResponse = new IntegerInputParser().parse("123" + System.lineSeparator() + "456");
         assertFalse(CollectionUtils.isEmpty(parseResponse));
         assertEquals(2, parseResponse.size());
         assertEquals(123, parseResponse.get(0));

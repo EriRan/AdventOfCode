@@ -9,7 +9,7 @@ class IntegerInputParser implements InputParser<Integer> {
 
     public List<Integer> parse(String content) {
         //Get file content
-        String[] splitByLineEscape = content.split(ParserConstant.WINDOWS_LINE_BREAK);
+        String[] splitByLineEscape = content.split(ParserConstant.LINE_BREAK_REGEX);
         List<Integer> numbers = new ArrayList<>();
         //Assuming they are all valid numbers
         for (String numberString : splitByLineEscape) {
