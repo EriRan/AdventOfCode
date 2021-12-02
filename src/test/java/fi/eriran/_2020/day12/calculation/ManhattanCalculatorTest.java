@@ -17,7 +17,7 @@ class ManhattanCalculatorTest {
                 new ManhattanCalculator().calculate(
                         new DirectFlightPathCalculator().calculate(
                                 new DirectionCommandParser().parse(
-                                        new LineInputParserProxy().parse("Day12TestInput")
+                                        new LineInputParserProxy().parse("2020/Day12TestInput")
                                 )
                         )
                 )
@@ -31,7 +31,7 @@ class ManhattanCalculatorTest {
                 new ManhattanCalculator().calculate(
                         new WaypointFlightPathCalculator().calculate(
                                 new DirectionCommandParser().parse(
-                                        new LineInputParserProxy().parse("Day12TestInput")
+                                        new LineInputParserProxy().parse("2020/Day12TestInput")
                                 )
                         )
                 )

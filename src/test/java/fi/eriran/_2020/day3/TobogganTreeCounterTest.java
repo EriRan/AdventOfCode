@@ -70,7 +70,7 @@ class TobogganTreeCounterTest {
                         new MapGenerator()
                                 .generate(
                                         new LineInputParserProxy()
-                                                .parse("day3TestInput")
+                                                .parse("2020/day3TestInput")
                                 ),
                         new TrajectoryDefinition(right, down)
                 );

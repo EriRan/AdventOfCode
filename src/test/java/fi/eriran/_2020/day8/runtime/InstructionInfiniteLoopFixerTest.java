@@ -12,7 +12,7 @@ class InstructionInfiniteLoopFixerTest {
     @Test
     void example() {
         InstructionRunnerResponse runnerResponse = new InstructionInfiniteLoopFixer().fix(
-                new InstructionParser().parse(new LineInputParserProxy().parse("Day8TestInput"))
+                new InstructionParser().parse(new LineInputParserProxy().parse("2020/Day8TestInput"))
         );
         assertNotNull(runnerResponse);
         assertFalse(runnerResponse.isRanIntoInfiniteLoop());

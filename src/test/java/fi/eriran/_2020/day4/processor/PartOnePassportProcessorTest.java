@@ -12,7 +12,7 @@ class PartOnePassportProcessorTest {
     void example() throws IOException {
         assertEquals(
                 2,
-                new PartOnePassportProcessor().process("day4PartOneTestInput")
+                new PartOnePassportProcessor().process("2020/day4PartOneTestInput")
         );
     }
 }

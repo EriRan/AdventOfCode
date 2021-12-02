@@ -15,7 +15,7 @@ class EarliestBuslineResponseHandlerTest {
                 new EarliestBuslineResponseHandler().handle(
                         new EarliestBuslineFinder().find(
                                 new TimetableParser().parse(
-                                        new LineInputParserProxy().parse("Day13TestInput")
+                                        new LineInputParserProxy().parse("2020/Day13TestInput")
                                 )
                         )
                 )

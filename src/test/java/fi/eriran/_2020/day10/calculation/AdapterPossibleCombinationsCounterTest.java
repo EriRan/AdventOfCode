@@ -12,7 +12,7 @@ class AdapterPossibleCombinationsCounterTest {
         assertEquals(
                 19208,
                 new AdapterPossibleCombinationsCounter().count(
-                        new IntegerInputParserProxy().parse("Day10TestInput")
+                        new IntegerInputParserProxy().parse("2020/Day10TestInput")
                 )
         );
 

@@ -12,7 +12,7 @@ class PartTwoPassportProcessorTest {
     void exampleInvalids() throws IOException {
         assertEquals(
                 0,
-                new PartTwoPassportProcessor().process("day4PartTwoInvalidTestInput")
+                new PartTwoPassportProcessor().process("2020/day4PartTwoInvalidTestInput")
         );
     }
 
@@ -20,7 +20,7 @@ class PartTwoPassportProcessorTest {
     void exampleValids() throws IOException {
         assertEquals(
                 4,
-                new PartTwoPassportProcessor().process("day4PartTwoValidTestInput")
+                new PartTwoPassportProcessor().process("2020/day4PartTwoValidTestInput")
         );
     }
 }

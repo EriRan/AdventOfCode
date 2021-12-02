@@ -13,7 +13,7 @@ class PasswordPhilosopherPartOneTest {
     void sameResultAsExample() throws IOException {
         assertEquals(
                 2,
-                new PasswordPhilosopherPartOne().countValidPasswords("day2TestInput")
+                new PasswordPhilosopherPartOne().countValidPasswords("2020/day2TestInput")
         );
     }
 }

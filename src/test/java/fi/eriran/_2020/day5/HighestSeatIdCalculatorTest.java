@@ -14,7 +14,7 @@ class HighestSeatIdCalculatorTest {
         assertEquals(
                 820,
                 new HighestSeatIdCalculator().calculate(
-                        new SeatFactory().build("day5TestInput")
+                        new SeatFactory().build("2020/day5TestInput")
                 )
         );
     }

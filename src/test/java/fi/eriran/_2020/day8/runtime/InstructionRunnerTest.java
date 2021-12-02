@@ -13,7 +13,7 @@ class InstructionRunnerTest {
     @Test
     void example() {
         InstructionRunnerResponse runnerResponse = new InstructionRunner().findAccumulatorValueAtInfiniteLoop(
-                new InstructionParser().parse(new LineInputParserProxy().parse("Day8TestInput"))
+                new InstructionParser().parse(new LineInputParserProxy().parse("2020/Day8TestInput"))
         );
         assertTrue(runnerResponse.isRanIntoInfiniteLoop());
         assertEquals(

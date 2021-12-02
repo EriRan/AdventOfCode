@@ -15,7 +15,7 @@ class BitStateSumCalculatorTest {
                 new BitStateSumCalculator().calculate(
                         new BitCommandRunner().run(
                                 new BitCommandParser().parse(
-                                        new LineInputParserProxy().parse("Day14TestInput")
+                                        new LineInputParserProxy().parse("2020/Day14TestInput")
                                 )
                         )
                 )

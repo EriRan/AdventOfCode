@@ -13,7 +13,7 @@ class JoltDifferenceCalculatorTest {
                 220,
                 new JoltDifferenceCalculator().oneJoltsMultipliedWithThreeJolts(
                         new JoltDifferenceContainerFactory().find(
-                                new IntegerInputParserProxy().parse("Day10TestInput")
+                                new IntegerInputParserProxy().parse("2020/Day10TestInput")
                         )
                 )
         );

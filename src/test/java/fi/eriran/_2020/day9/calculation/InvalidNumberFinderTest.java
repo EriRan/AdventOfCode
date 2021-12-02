@@ -15,7 +15,7 @@ class InvalidNumberFinderTest {
                 127,
                 new InvalidNumberFinder().find(
                         new PreambleContainerFactory().parser(
-                                new LongInputParserProxy().parse("Day9TestInput"),
+                                new LongInputParserProxy().parse("2020/Day9TestInput"),
                                 PART_ONE_PREAMBLE_TEST_SIZE
                         )
                 )

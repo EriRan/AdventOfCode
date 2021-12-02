@@ -16,7 +16,7 @@ class BagContentSizeCounterTest {
                 new BagContentSizeCounter()
                         .count(
                                 CalculationConstant.TARGET_BAG,
-                                new BagMapParser().parse(new LineInputParserProxy().parse("Day7PartTwoTestInput"))
+                                new BagMapParser().parse(new LineInputParserProxy().parse("2020/Day7PartTwoTestInput"))
                         )
         );
     }

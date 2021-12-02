@@ -44,7 +44,7 @@ class SequentialBuslinesFinderTest {
                 1068781,
                 new SequentialBuslinesFinder().find(
                         new TimetableParser().parse(
-                                new LineInputParserProxy().parse("Day13TestInput")
+                                new LineInputParserProxy().parse("2020/Day13TestInput")
                         )
                 )
         );

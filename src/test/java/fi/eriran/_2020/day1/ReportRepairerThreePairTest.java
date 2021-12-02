@@ -12,7 +12,7 @@ class ReportRepairerThreePairTest {
     @Test
     void threePairFound() throws IOException {
         int result = new ReportRepairerThreePair()
-                .repair(new IntegerInputParserProxy().parse("day1TestInput"));
+                .repair(new IntegerInputParserProxy().parse("2020/day1TestInput"));
         assertEquals(241861950, result);
     }
 }

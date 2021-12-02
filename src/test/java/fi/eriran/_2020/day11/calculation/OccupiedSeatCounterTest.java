@@ -13,7 +13,7 @@ class OccupiedSeatCounterTest {
 
     @Test
     void example() {
-        SeatMap originalSeatMap = new SeatMapParser().parse(new LineInputParserProxy().parse("Day11TestInput"));
+        SeatMap originalSeatMap = new SeatMapParser().parse(new LineInputParserProxy().parse("2020/Day11TestInput"));
         System.out.println("Original: \n" + new SeatMapStringifier().print(originalSeatMap));
         new SeatMapStringifier().print(originalSeatMap);
         SeatMap evolvedMap = new SeatStateAdjacentEvolver()

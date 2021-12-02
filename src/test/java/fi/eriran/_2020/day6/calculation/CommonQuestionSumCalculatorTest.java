@@ -20,7 +20,7 @@ class CommonQuestionSumCalculatorTest {
                                 new GroupCustomFormEveryoneFactory().build(
                                         new PositiveQuestionCodesParserPerPerson().parse(
                                                 new LineInputParserProxy()
-                                                        .parse("day6TestInput")
+                                                        .parse("2020/day6TestInput")
                                         )
                                 )
                         )

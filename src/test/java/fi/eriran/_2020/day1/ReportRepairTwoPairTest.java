@@ -12,7 +12,7 @@ class ReportRepairTwoPairTest {
     @Test
     void pairFound() throws IOException {
         int result = new ReportRepairerTwoPair()
-                .repair(new IntegerInputParserProxy().parse("day1TestInput"));
+                .repair(new IntegerInputParserProxy().parse("2020/day1TestInput"));
         assertEquals(514579, result);
     }
 }

@@ -14,7 +14,7 @@ class NumberLineInputParserProxyTest {
 
     @Test
     void inputFetched() throws IOException {
-        Collection<Integer> inputNumbers = new IntegerInputParserProxy().parse("day1TestInput");
+        Collection<Integer> inputNumbers = new IntegerInputParserProxy().parse("2020/day1TestInput");
         assertFalse(CollectionUtils.isEmpty(inputNumbers));
         assertTrue(inputNumbers.stream().allMatch(Objects::nonNull));
         assertEquals(6, inputNumbers.size());
