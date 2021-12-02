@@ -14,7 +14,7 @@ public class AdapterArrayMain {
     private static final Logger logger = Logger.getGlobal();
 
     public static void main(String[] args) {
-        List<Integer> day10Input = new IntegerInputParserProxy().parse("Day10Input");
+        List<Integer> day10Input = new IntegerInputParserProxy().parse("2020/Day10Input");
         logger.log(
                 Level.INFO,
                 () ->

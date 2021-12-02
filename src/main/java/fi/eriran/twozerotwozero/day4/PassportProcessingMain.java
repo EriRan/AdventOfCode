@@ -14,12 +14,12 @@ public class PassportProcessingMain {
         logger.log(
                 Level.INFO,
                 () -> "Part one Valid passports: "
-                        + new PartOnePassportProcessor().process("day4Input")
+                        + new PartOnePassportProcessor().process("2020/day4Input")
         );
         logger.log(
                 Level.INFO,
                 () -> "Part two Valid passports: "
-                        + new PartTwoPassportProcessor().process("day4Input")
+                        + new PartTwoPassportProcessor().process("2020/day4Input")
         );
     }
 }

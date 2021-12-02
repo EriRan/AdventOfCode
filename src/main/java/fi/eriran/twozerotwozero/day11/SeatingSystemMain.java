@@ -21,7 +21,7 @@ public class SeatingSystemMain {
                                 + new OccupiedSeatCounter().count(
                                 new SeatStateAdjacentEvolver().createEvolved(
                                         new SeatMapParser().parse(
-                                                new LineInputParserProxy().parse("Day11Input")
+                                                new LineInputParserProxy().parse("2020/Day11Input")
                                         )
                                 )
                         )
@@ -33,7 +33,7 @@ public class SeatingSystemMain {
                         + new OccupiedSeatCounter().count(
                         new SeatStateLineOfSightEvolver().createEvolved(
                                 new SeatMapParser().parse(
-                                        new LineInputParserProxy().parse("Day11Input")
+                                        new LineInputParserProxy().parse("2020/Day11Input")
                                 )
                         )
                 ));

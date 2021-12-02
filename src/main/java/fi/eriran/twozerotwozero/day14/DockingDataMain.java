@@ -17,7 +17,7 @@ public class DockingDataMain {
                 () -> "Part one result: " + new BitStateSumCalculator().calculate(
                         new BitCommandRunner().run(
                                 new BitCommandParser().parse(
-                                        new LineInputParserProxy().parse("Day14Input")
+                                        new LineInputParserProxy().parse("2020/Day14Input")
                                 )
                         )
                 )
