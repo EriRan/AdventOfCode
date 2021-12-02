@@ -14,7 +14,7 @@ public class FileContentFetcher {
     public String fetch(String resourceFolderFileName) {
         try {
             return Resources.toString(Resources.getResource(resourceFolderFileName), StandardCharsets.UTF_8);
-        } catch (IOException e) {
+        } catch (IOException | IllegalArgumentException e) {
             throw new InputParserException(e);
         }
 
