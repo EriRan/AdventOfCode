@@ -1,4 +1,4 @@
-package fi.eriran._2021;
+package fi.eriran._2021.day1;
 
 import fi.eriran.common.parser.IntegerInputParserProxy;
 

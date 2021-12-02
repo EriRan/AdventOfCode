@@ -1,5 +1,6 @@
-package fi.eriran._2021;
+package fi.eriran._2021.day1;
 
+import fi.eriran._2021.day1.SonarDepthIncreaseCalculator;
 import fi.eriran.common.parser.IntegerInputParserProxy;
 import org.junit.jupiter.api.Test;
 
