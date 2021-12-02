@@ -14,12 +14,15 @@ public class SonarThreeMeasurementSlidingWindowCalculator {
         // sumOne is taken from current index plus two indexes below it
         // Sum two climbs one index up: It is taken from one index above the current i index plus the current index
         // and one below it.
+        int previousSum = depthMeasurements.get(2) + depthMeasurements.get(1) + depthMeasurements.get(0);
         for (int i = 2; i < depthMeasurements.size() - 1; i++) {
-            int sumOne = depthMeasurements.get(i) + depthMeasurements.get(i - 1) + depthMeasurements.get(i - 2);
+            int sumOne = previousSum;
+
             int sumTwo = depthMeasurements.get(i + 1) + depthMeasurements.get(i) + depthMeasurements.get(i - 1);
             if (sumTwo > sumOne) {
                 increases++;
             }
+            previousSum = sumTwo;
         }
         return increases;
     }
