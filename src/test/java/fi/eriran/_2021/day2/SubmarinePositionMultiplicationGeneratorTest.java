@@ -8,7 +8,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class SubmarinePositionMultiplicationGeneratorTest {
 
     @Test
-    void example() {
-        assertEquals(150, new SubmarinePositionMultiplicationGenerator().generate(new LineInputParserProxy().parse("2021/day2")));
+    void examplePartOne() {
+        assertEquals(150, new SubmarinePositionMultiplicationGenerator().generateSimple(new LineInputParserProxy().parse("2021/day2")));
+    }
+
+    @Test
+    void examplePartTwo() {
+        assertEquals(900, new SubmarinePositionMultiplicationGenerator().generateAim(new LineInputParserProxy().parse("2021/day2")));
     }
 }

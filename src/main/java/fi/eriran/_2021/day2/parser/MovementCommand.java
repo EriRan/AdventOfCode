@@ -3,11 +3,11 @@ package fi.eriran._2021.day2.parser;
 public class MovementCommand {
 
     private MovementDirection direction;
-    private int distance;
+    private int value;
 
-    public MovementCommand(MovementDirection direction, int distance) {
+    public MovementCommand(MovementDirection direction, int value) {
         this.direction = direction;
-        this.distance = distance;
+        this.value = value;
     }
 
     public MovementDirection getDirection() {
@@ -18,11 +18,11 @@ public class MovementCommand {
         this.direction = direction;
     }
 
-    public int getDistance() {
-        return distance;
+    public int getValue() {
+        return value;
     }
 
-    public void setDistance(int distance) {
-        this.distance = distance;
+    public void setValue(int value) {
+        this.value = value;
     }
 }

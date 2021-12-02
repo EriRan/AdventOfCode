@@ -5,24 +5,26 @@ import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.List;
 
-public class SubmarineControl {
-
+public class SubmarineAimControl implements Submarine {
+    @Override
     public int pilot(List<MovementCommand> commands) {
         if (CollectionUtils.isEmpty(commands)) {
             return 0;
         }
         int horizontalPosition = 0;
         int depth = 0;
+        int aim = 0;
         for (MovementCommand command : commands) {
             switch (command.getDirection()) {
                 case FORWARD:
-                    horizontalPosition += command.getDistance();
+                    horizontalPosition += command.getValue();
+                    depth += aim * command.getValue();
                     break;
                 case UP:
-                    depth -= command.getDistance();
+                    aim -= command.getValue();
                     break;
                 case DOWN:
-                    depth += command.getDistance();
+                    aim += command.getValue();
                     break;
                 default:
                     throw new IllegalArgumentException("Unknown direction encountered: " + command.getDirection());

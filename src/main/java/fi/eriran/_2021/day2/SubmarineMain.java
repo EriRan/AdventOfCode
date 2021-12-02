@@ -14,11 +14,11 @@ public class SubmarineMain {
         List<String> input = new LineInputParserProxy().parse("2021/day2Input");
         logger.log(
                 Level.INFO,
-                () -> "Part One: " + new SubmarinePositionMultiplicationGenerator().generate(input)
+                () -> "Part One: " + new SubmarinePositionMultiplicationGenerator().generateSimple(input)
         );
         logger.log(
                 Level.INFO,
-                () -> "Part two: "
+                () -> "Part two: " + new SubmarinePositionMultiplicationGenerator().generateAim(input)
         );
     }
 }

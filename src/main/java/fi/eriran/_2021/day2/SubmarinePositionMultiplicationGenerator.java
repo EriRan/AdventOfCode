@@ -6,8 +6,14 @@ import java.util.List;
 
 public class SubmarinePositionMultiplicationGenerator {
 
-    public int generate(List<String> input) {
-        return new SubmarineControl().pilot(
+    public int generateSimple(List<String> input) {
+        return new SubmarineSimpleControl().pilot(
+                new MovementCommandParser().parse(input)
+        );
+    }
+
+    public int generateAim(List<String> input) {
+        return new SubmarineAimControl().pilot(
                 new MovementCommandParser().parse(input)
         );
     }
