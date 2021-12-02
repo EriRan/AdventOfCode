@@ -18,7 +18,7 @@ public class SonarMain {
         );
         logger.log(
                 Level.INFO,
-                () -> "Part two: "
+                () -> "Part two: " + new SonarThreeMeasurementSlidingWindowCalculator().calculate(input)
         );
     }
 }
