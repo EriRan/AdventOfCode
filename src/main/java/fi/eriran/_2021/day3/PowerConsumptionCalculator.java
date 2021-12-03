@@ -1,6 +1,6 @@
 package fi.eriran._2021.day3;
 
-import fi.eriran._2021.day3.enums.BitPreference;
+import fi.eriran._2021.day3.enums.EqualScenarioPreference;
 import fi.eriran._2021.day3.enums.DegreePreference;
 
 import java.util.List;
@@ -22,7 +22,7 @@ public class PowerConsumptionCalculator extends DiagnosticCalculator {
     private String buildGammaRate(List<String> lines, int width) {
         StringBuilder gammaRateBuilder = new StringBuilder();
         for (int x = 0; x < width; x++) {
-            gammaRateBuilder.append(findBit(lines, x, BitPreference.ONE, DegreePreference.MOST));
+            gammaRateBuilder.append(findBit(lines, x, EqualScenarioPreference.ONE, DegreePreference.MOST));
         }
         return gammaRateBuilder.toString();
     }

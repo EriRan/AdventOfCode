@@ -1,6 +1,6 @@
 package fi.eriran._2021.day3;
 
-import fi.eriran._2021.day3.enums.BitPreference;
+import fi.eriran._2021.day3.enums.EqualScenarioPreference;
 import fi.eriran._2021.day3.enums.DegreePreference;
 
 import java.util.ArrayList;
@@ -18,9 +18,8 @@ public class LifeSupportCalculator extends DiagnosticCalculator {
         List<String> remainingOptions = new ArrayList<>(lines);
         int currentIndex = 0;
 
-        // Oxygen calculation
         do {
-            char mostCommonBit = findBit(remainingOptions, currentIndex, BitPreference.ONE, DegreePreference.MOST);
+            char mostCommonBit = findBit(remainingOptions, currentIndex, EqualScenarioPreference.ONE, DegreePreference.MOST);
             int finalCurrentIndex = currentIndex;
             remainingOptions = remainingOptions.stream()
                     .filter(line -> line.charAt(finalCurrentIndex) == mostCommonBit)
@@ -34,9 +33,8 @@ public class LifeSupportCalculator extends DiagnosticCalculator {
         List<String> remainingOptions = new ArrayList<>(lines);
         int currentIndex = 0;
 
-        //CO2
         do {
-            char leastCommonBit = findBit(remainingOptions, currentIndex, BitPreference.ZERO, DegreePreference.LEAST);
+            char leastCommonBit = findBit(remainingOptions, currentIndex, EqualScenarioPreference.ZERO, DegreePreference.LEAST);
             int finalCurrentIndex = currentIndex;
             remainingOptions = remainingOptions.stream()
                     .filter(line -> line.charAt(finalCurrentIndex) == leastCommonBit)
