@@ -14,7 +14,7 @@ public class BinaryDiagnosticMain {
         List<String> input = new LineInputParserProxy().parse("2021/day3Input");
         logger.log(
                 Level.INFO,
-                () -> "Part One: " + new RateCalculator().calculate(input)
+                () -> "Part One: " + new PowerConsumptionCalculator().calculate(input)
         );
         logger.log(
                 Level.INFO,

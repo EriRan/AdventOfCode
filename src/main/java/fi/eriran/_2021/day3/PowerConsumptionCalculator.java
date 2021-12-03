@@ -2,12 +2,12 @@ package fi.eriran._2021.day3;
 
 import java.util.List;
 
-public class RateCalculator {
+public class PowerConsumptionCalculator extends DiagnosticCalculator {
 
-    public int calculate(List<String> input) {
-        int width = input.get(0).length();
+    public int calculate(List<String> lines) {
+        int width = lines.get(0).length();
 
-        String gammaRate = buildGammaRate(input, width);
+        String gammaRate = buildGammaRate(lines, width);
         String epsilonRate = buildEpsilonRate(gammaRate);
         int gammaRateInt = Integer.parseInt(gammaRate, 2);
         int epsilonRateInt = Integer.parseInt(epsilonRate, 2);
@@ -16,30 +16,10 @@ public class RateCalculator {
 
 
 
-    private String buildGammaRate(List<String> input, int width) {
+    private String buildGammaRate(List<String> lines, int width) {
         StringBuilder gammaRateBuilder = new StringBuilder();
         for (int x = 0; x < width; x++) {
-            int zeroes = 0;
-            int ones = 0;
-            for (String oneLine : input) {
-                char bit = oneLine.charAt(x);
-                switch (bit) {
-                    case '0':
-                        zeroes++;
-                        break;
-                    case '1':
-                        ones++;
-                        break;
-                    default:
-                        throw new IllegalArgumentException("Unknown character encountered: " + bit);
-                }
-            }
-            // I guess the amount of zeroes and ones can't be equal
-            if (zeroes > ones) {
-                gammaRateBuilder.append('0');
-            } else {
-                gammaRateBuilder.append('1');
-            }
+            gammaRateBuilder.append(findMostCommonBit(lines, x));
         }
         return gammaRateBuilder.toString();
     }

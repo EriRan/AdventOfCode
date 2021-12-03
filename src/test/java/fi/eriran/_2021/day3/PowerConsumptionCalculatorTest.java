@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RateCalculatorTest {
+class PowerConsumptionCalculatorTest {
 
     @Test
     void exampleCase() {
         assertEquals(
                 198,
-                new RateCalculator().calculate(new LineInputParserProxy().parse("2021/day3"))
+                new PowerConsumptionCalculator().calculate(new LineInputParserProxy().parse("2021/day3"))
         );
     }
 }
