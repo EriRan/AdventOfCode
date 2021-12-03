@@ -12,9 +12,10 @@ public abstract class DiagnosticCalculator {
     /**
      * Find a bit from a vertical line with provided parameters
      *
-     * @param lines         all lines to iterate
-     * @param currentIndex  current "x" coordinate where we are at
-     * @param bitPreference Whether to prefer 1 or zero in case there are equal amount of bits
+     * @param lines            all lines to iterate
+     * @param currentIndex     current "x" coordinate where we are at
+     * @param bitPreference    Whether to prefer 1 or zero in case there are equal amount of bits
+     * @param degreePreference Whether to search for the most common or least common bit
      * @return most common bit (1 or 0)
      */
     protected char findBit(List<String> lines, int currentIndex, BitPreference bitPreference, DegreePreference degreePreference) {
@@ -34,26 +35,20 @@ public abstract class DiagnosticCalculator {
             }
         }
 
-        return calculateBitWithPreferences(bitPreference, degreePreference, zeroes, ones);
+        return calculateBitWithPreferences(zeroes, ones, bitPreference, degreePreference);
     }
 
-    private char calculateBitWithPreferences(BitPreference bitPreference, DegreePreference degreePreference, int zeroes, int ones) {
-        if (BitPreference.ONE.equals(bitPreference)) {
-            if (zeroes > ones) {
-                return degreePreference == DegreePreference.MOST ? '0' : '1';
-            } else if (zeroes == ones) {
-                return '1';
-            } else {
+    private char calculateBitWithPreferences(int zeroes, int ones, BitPreference bitPreference, DegreePreference degreePreference) {
+        int comparison = Integer.compare(zeroes, ones);
+        switch (comparison) {
+            case -1:
                 return degreePreference == DegreePreference.MOST ? '1' : '0';
-            }
-        } else {
-            if (ones > zeroes) {
-                return degreePreference == DegreePreference.MOST ? '1' : '0';
-            } else if (ones == zeroes) {
-                return '0';
-            } else {
+            case 0:
+                return bitPreference == BitPreference.ONE ? '1' : '0';
+            case 1:
                 return degreePreference == DegreePreference.MOST ? '0' : '1';
-            }
+            default:
+                throw new IllegalStateException("Prevent compilation error");
         }
     }
 }
