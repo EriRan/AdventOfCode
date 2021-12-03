@@ -20,7 +20,7 @@ public class LifeSupportCalculator extends DiagnosticCalculator {
 
         // Oxygen calculation
         do {
-            char mostCommonBit = findBit(lines, currentIndex, BitPreference.ONE, DegreePreference.MOST);
+            char mostCommonBit = findBit(remainingOptions, currentIndex, BitPreference.ONE, DegreePreference.MOST);
             int finalCurrentIndex = currentIndex;
             remainingOptions = remainingOptions.stream()
                     .filter(line -> line.charAt(finalCurrentIndex) == mostCommonBit)
@@ -31,12 +31,12 @@ public class LifeSupportCalculator extends DiagnosticCalculator {
     }
 
     private int calculateCO2(List<String> lines) {
-        List<String> remainingOptions = new ArrayList<>(lines);;
+        List<String> remainingOptions = new ArrayList<>(lines);
         int currentIndex = 0;
 
         //CO2
         do {
-            char leastCommonBit = findBit(lines, currentIndex, BitPreference.ZERO, DegreePreference.LEAST);
+            char leastCommonBit = findBit(remainingOptions, currentIndex, BitPreference.ZERO, DegreePreference.LEAST);
             int finalCurrentIndex = currentIndex;
             remainingOptions = remainingOptions.stream()
                     .filter(line -> line.charAt(finalCurrentIndex) == leastCommonBit)
