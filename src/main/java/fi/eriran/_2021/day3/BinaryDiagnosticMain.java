@@ -18,7 +18,7 @@ public class BinaryDiagnosticMain {
         );
         logger.log(
                 Level.INFO,
-                () -> "Part two: "
+                () -> "Part two: " + new LifeSupportCalculator().calculate(input)
         );
     }
 }
