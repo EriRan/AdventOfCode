@@ -18,7 +18,7 @@ public class BingoMain {
         );
         logger.log(
                 Level.INFO,
-                () -> "Part two: "
+                () -> "Part two: " + new BingoPartTwo().calculateFinalScore(input)
         );
     }
 }
