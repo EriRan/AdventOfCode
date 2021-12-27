@@ -32,26 +32,34 @@ public class BingoBoardLastWinningBoardCalculator {
             int drawnNumber = bingoNumbers[drawnNumberIndex];
 
             for (int boardIndex = 0; boardIndex < boards.size(); boardIndex++) {
-                // If a board has already won, don't bother processing it
-                if (winningBoardIndexes.contains(boardIndex)) {
-                    continue;
-                }
                 BingoBoard board = boards.get(boardIndex);
-                drawnNumberMarker.mark(board, drawnNumber);
-                if (!isVictoryPossible(drawnNumberIndex)) {
-                    continue;
-                }
-                if (winningBingoScanner.hasBoardWon(board)) {
-                    winningBoardIndexes.add(boardIndex);
-                }
-
-                // Did we just find the last board? If so, calculate the final score for it
+                processBoard(board, boardIndex, winningBoardIndexes, drawnNumber, drawnNumberIndex);
+                // Did we just process the last winning board? If so, calculate the final score for it
                 if (winningBoardIndexes.size() == boards.size()) {
                     return winningFinalScoreCalculator.calculate(board, drawnNumber);
                 }
             }
         }
         throw new IllegalArgumentException("All boards did not win!");
+    }
+
+    private void processBoard(BingoBoard board,
+                              int boardIndex,
+                              Collection<Integer> winningBoardIndexes,
+                              int drawnNumber,
+                              int drawnNumberIndex) {
+        // If a board has already won, don't bother processing it
+        if (winningBoardIndexes.contains(boardIndex)) {
+            return;
+        }
+        // Try to find drawn number from the board and mark it
+        drawnNumberMarker.mark(board, drawnNumber);
+        if (!isVictoryPossible(drawnNumberIndex)) {
+            return;
+        }
+        if (winningBingoScanner.hasBoardWon(board)) {
+            winningBoardIndexes.add(boardIndex);
+        }
     }
 
     /**
