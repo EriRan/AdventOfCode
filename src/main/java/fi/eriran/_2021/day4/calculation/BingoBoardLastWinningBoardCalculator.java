@@ -28,33 +28,26 @@ public class BingoBoardLastWinningBoardCalculator {
         List<BingoBoard> boards = state.getBoards();
         Collection<Integer> winningBoardIndexes = new ArrayList<>();
 
-        for (int i = 0, bingoNumbersLength = bingoNumbers.length; i < bingoNumbersLength; i++) {
-            int drawnNumber = bingoNumbers[i];
+        for (int drawnNumberIndex = 0, bingoNumbersLength = bingoNumbers.length; drawnNumberIndex < bingoNumbersLength; drawnNumberIndex++) {
+            int drawnNumber = bingoNumbers[drawnNumberIndex];
 
             for (int boardIndex = 0; boardIndex < boards.size(); boardIndex++) {
-                // If a board has already won, don't bother marking a new number for it
+                // If a board has already won, don't bother processing it
                 if (winningBoardIndexes.contains(boardIndex)) {
                     continue;
                 }
                 BingoBoard board = boards.get(boardIndex);
                 drawnNumberMarker.mark(board, drawnNumber);
-            }
-            // Check if it is possible for a board to have won at this point
-            // E.g. If we have dimensions of 5x5, a board can't have won before the fifth number
-            if (!isVictoryPossible(i)) {
-                continue;
-            }
-            for (int boardIndex = 0, boardsSize = boards.size(); boardIndex < boardsSize; boardIndex++) {
-                // If a board has already won, don't bother checking if it won
-                if (winningBoardIndexes.contains(boardIndex)) {
+                if (!isVictoryPossible(drawnNumberIndex)) {
                     continue;
                 }
-                BingoBoard board = boards.get(boardIndex);
                 if (winningBingoScanner.hasBoardWon(board)) {
                     winningBoardIndexes.add(boardIndex);
-                    if (winningBoardIndexes.size() == boards.size()) {
-                        return winningFinalScoreCalculator.calculate(board, drawnNumber);
-                    }
+                }
+
+                // Did we just find the last board? If so, calculate the final score for it
+                if (winningBoardIndexes.size() == boards.size()) {
+                    return winningFinalScoreCalculator.calculate(board, drawnNumber);
                 }
             }
         }
@@ -64,7 +57,7 @@ public class BingoBoardLastWinningBoardCalculator {
     /**
      * When we have a 5x5 board, 5 numbers must be drawn before a board can win the game
      */
-    private boolean isVictoryPossible(int currentIndex) {
-        return currentIndex >= BingoConstant.BOARD_DIMENSIONS - 1;
+    private boolean isVictoryPossible(int numbersDrawn) {
+        return numbersDrawn >= BingoConstant.BOARD_DIMENSIONS - 1;
     }
 }
