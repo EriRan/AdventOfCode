@@ -9,8 +9,8 @@ public class WinningFinalScoreCalculator {
         long finalScore = 0;
         for (int x = 0; x < BingoConstant.BOARD_DIMENSIONS; x++) {
             for (int y = 0; y < BingoConstant.BOARD_DIMENSIONS; y++) {
-                if (!board.getDrawnLocations()[x][y]) {
-                    finalScore += board.getBoardMatrix()[x][y];
+                if (!board.getDrawnLocations()[y][x]) {
+                    finalScore += board.getBoardMatrix()[y][x];
                 }
             }
         }

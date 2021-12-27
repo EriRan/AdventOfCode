@@ -7,14 +7,14 @@ public class WinningBingoScanner {
 
     public boolean hasBoardWon(BingoBoard bingoBoard) {
         // Search wins from vertical lines
-        for (int x = 0; x < BingoConstant.BOARD_DIMENSIONS; x++) {
-            if (verticalLineHasWon(bingoBoard, x)) {
+        for (int y = 0; y < BingoConstant.BOARD_DIMENSIONS; y++) {
+            if (verticalLineHasWon(bingoBoard, y)) {
                 return true;
             }
         }
         // Search wins from horizontal lines
-        for (int y = 0; y < BingoConstant.BOARD_DIMENSIONS; y++) {
-            if (horizontalLineHasWon(bingoBoard, y)) {
+        for (int x = 0; x < BingoConstant.BOARD_DIMENSIONS; x++) {
+            if (horizontalLineHasWon(bingoBoard, x)) {
                 return true;
             }
         }
@@ -41,6 +41,6 @@ public class WinningBingoScanner {
     }
 
     private boolean locationHasBeenDrawn(BingoBoard bingoBoard, int x, int y) {
-        return bingoBoard.getDrawnLocations()[x][y];
+        return bingoBoard.getDrawnLocations()[y][x];
     }
 }

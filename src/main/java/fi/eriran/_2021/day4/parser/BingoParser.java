@@ -30,17 +30,19 @@ public class BingoParser {
                 currentBoardY = 0;
                 continue;
             }
-            String[] currentBoardLine = currentLine.split(BingoConstant.REGEX_SPLIT_BY_WHITESPACE);
+            String[] currentBoardLine = currentLine.trim().split(BingoConstant.REGEX_SPLIT_BY_WHITESPACE);
             for (int currentBoardX = 0; currentBoardX < currentBoardLine.length; currentBoardX++) {
                 setOneBoardNumber(currentBingoBoard, currentBoardLine, currentBoardX, currentBoardY);
             }
             currentBoardY++;
         }
+        // Add the last board
+        bingoBoards.add(currentBingoBoard);
         return bingoBoards;
     }
 
     private void setOneBoardNumber(BingoBoard currentBingoBoard, String[] currentBoardLine, int currentBoardX, int currentBoardY) {
-        currentBingoBoard.getBoardMatrix()[currentBoardX][currentBoardY] = Integer.parseInt(currentBoardLine[currentBoardX]);
+        currentBingoBoard.getBoardMatrix()[currentBoardY][currentBoardX] = Integer.parseInt(currentBoardLine[currentBoardX]);
     }
 
     private int[] parseBingoNumbers(List<String> lines) {

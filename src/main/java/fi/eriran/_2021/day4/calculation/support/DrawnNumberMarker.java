@@ -14,8 +14,8 @@ public class DrawnNumberMarker {
     public void mark(BingoBoard board, int drawnNumber) {
         for (int x = 0; x < BingoConstant.BOARD_DIMENSIONS; x++) {
             for (int y = 0; y < BingoConstant.BOARD_DIMENSIONS; y++) {
-                if (board.getBoardMatrix()[x][y] == drawnNumber) {
-                    board.getDrawnLocations()[x][y] = true;
+                if (board.getBoardMatrix()[y][x] == drawnNumber) {
+                    board.getDrawnLocations()[y][x] = true;
                 }
             }
         }
