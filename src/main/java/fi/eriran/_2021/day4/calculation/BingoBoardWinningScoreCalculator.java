@@ -7,13 +7,13 @@ import fi.eriran._2021.day4.constant.BingoConstant;
 import fi.eriran._2021.day4.parser.objects.BingoBoard;
 import fi.eriran._2021.day4.parser.objects.BingoState;
 
-public class BingoBoardFinalScoreCalculator {
+public class BingoBoardWinningScoreCalculator {
 
     private final WinningBingoScanner winningBingoScanner;
     private final DrawnNumberMarker drawnNumberMarker;
     private final WinningFinalScoreCalculator winningFinalScoreCalculator;
 
-    public BingoBoardFinalScoreCalculator() {
+    public BingoBoardWinningScoreCalculator() {
         winningBingoScanner = new WinningBingoScanner();
         drawnNumberMarker = new DrawnNumberMarker();
         winningFinalScoreCalculator = new WinningFinalScoreCalculator();
