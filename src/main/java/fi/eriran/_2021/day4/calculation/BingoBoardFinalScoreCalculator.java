@@ -28,7 +28,7 @@ public class BingoBoardFinalScoreCalculator {
             }
             // Check if it is possible for a board to have won at this point
             // E.g. If we have dimensions of 5x5, a board can't have won before the fifth number
-            if (!haveOneLineLengthAmountBeenDrawn(i)) {
+            if (!isVictoryPossible(i)) {
                 continue;
             }
             for (BingoBoard board : state.getBoards()) {
@@ -40,7 +40,10 @@ public class BingoBoardFinalScoreCalculator {
         throw new IllegalArgumentException("No board won!");
     }
 
-    private boolean haveOneLineLengthAmountBeenDrawn(int i) {
-        return i < BingoConstant.BOARD_DIMENSIONS - 1;
+    /**
+     * When we have a 5x5 board, 5 numbers must be drawn before a board can win the game
+     */
+    private boolean isVictoryPossible(int currentIndex) {
+        return currentIndex >= BingoConstant.BOARD_DIMENSIONS - 1;
     }
 }
