@@ -14,7 +14,7 @@ public class HydrothermalVentMain {
         List<String> input = new LineInputParserProxy().parse("2021/day5Input");
         logger.log(
                 Level.INFO,
-                () -> "Part One: "
+                () -> "Part One: " + new PartOneOverlappingNonDiagonalLines().count(input)
         );
         logger.log(
                 Level.INFO,
