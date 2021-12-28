@@ -7,7 +7,10 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-public class VentNonDiagonalMapFactory {
+/**
+ * Creates only horizontal and vertical lines
+ */
+public class VentNonDiagonalMapFactory extends AbstractVentMapFactory {
 
     public Map<CoordinateKey, Integer> create(Collection<VentLine> vents) {
         Map<CoordinateKey, Integer> ventCoordinateCountMap = new HashMap<>();
@@ -24,7 +27,7 @@ public class VentNonDiagonalMapFactory {
         }
     }
 
-    private void generateHorizontal(VentLine vent, Map<CoordinateKey, Integer> ventCoordinateCountMap) {
+    protected void generateHorizontal(VentLine vent, Map<CoordinateKey, Integer> ventCoordinateCountMap) {
         if (vent.getX1() > vent.getX2()) {
             for (int i = vent.getX2(); i <= vent.getX1(); i++) {
                 CoordinateKey coordinateKey = new CoordinateKey(i, vent.getY1());
@@ -38,7 +41,7 @@ public class VentNonDiagonalMapFactory {
         }
     }
 
-    private void generateVertical(VentLine vent, Map<CoordinateKey, Integer> ventCoordinateCountMap) {
+    protected void generateVertical(VentLine vent, Map<CoordinateKey, Integer> ventCoordinateCountMap) {
         if (vent.getY1() > vent.getY2()) {
             for (int i = vent.getY2(); i <= vent.getY1(); i++) {
                 CoordinateKey coordinateKey = new CoordinateKey(vent.getX1(), i);
@@ -49,15 +52,6 @@ public class VentNonDiagonalMapFactory {
                 CoordinateKey coordinateKey = new CoordinateKey(vent.getX1(), i);
                 updateMap(ventCoordinateCountMap, coordinateKey);
             }
-        }
-    }
-
-    private void updateMap(Map<CoordinateKey, Integer> ventCoordinateCountMap, CoordinateKey coordinateKey) {
-        Integer existingCount = ventCoordinateCountMap.get(coordinateKey);
-        if (existingCount != null) {
-            ventCoordinateCountMap.put(coordinateKey, ++existingCount);
-        } else {
-            ventCoordinateCountMap.put(coordinateKey, 1);
         }
     }
 }
