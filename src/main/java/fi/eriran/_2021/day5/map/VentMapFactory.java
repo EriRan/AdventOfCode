@@ -32,14 +32,13 @@ public class VentMapFactory extends VentNonDiagonalMapFactory {
         boolean yOneIsLarger = vent.getY1() > vent.getY2();
 
         // Start the line from x1,y1. Draw to direction that depends on whether point one has larger coordinates or not
-        // Upper right direction
         if (!xOneIsLarger && yOneIsLarger) {
             drawUpperRight(vent, ventCoordinateCountMap);
-        } else if (!xOneIsLarger) { // Lower right direction
+        } else if (!xOneIsLarger) {
             drawLowerRight(vent, ventCoordinateCountMap);
-        } else if (!yOneIsLarger) { // Lower left direction
+        } else if (!yOneIsLarger) {
             drawLowerLeft(vent, ventCoordinateCountMap);
-        } else { // Upper left direction
+        } else {
             drawUpperLeft(vent, ventCoordinateCountMap);
         }
     }
