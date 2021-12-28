@@ -18,7 +18,7 @@ public class HydrothermalVentMain {
         );
         logger.log(
                 Level.INFO,
-                () -> "Part two: "
+                () -> "Part two: " + new PartTwoOverlappingLines().count(input)
         );
     }
 
