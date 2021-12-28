@@ -44,23 +44,13 @@ public class VentMapFactory extends VentNonDiagonalMapFactory {
         }
     }
 
-    private void drawUpperLeft(VentLine vent, Map<CoordinateKey, Integer> ventCoordinateCountMap) {
+    private void drawUpperRight(VentLine vent, Map<CoordinateKey, Integer> ventCoordinateCountMap) {
         int x = vent.getX1();
         int y = vent.getY1();
-        while (x >= vent.getX2() && y >= vent.getY2()) {
+        while (x <= vent.getX2() && y >= vent.getY2()) {
             updateMap(ventCoordinateCountMap, new CoordinateKey(x, y));
-            x--;
+            x++;
             y--;
-        }
-    }
-
-    private void drawLowerLeft(VentLine vent, Map<CoordinateKey, Integer> ventCoordinateCountMap) {
-        int x = vent.getX1();
-        int y = vent.getY1();
-        while (x >= vent.getX2() && y <= vent.getY2()) {
-            updateMap(ventCoordinateCountMap, new CoordinateKey(x, y));
-            x--;
-            y++;
         }
     }
 
@@ -74,12 +64,22 @@ public class VentMapFactory extends VentNonDiagonalMapFactory {
         }
     }
 
-    private void drawUpperRight(VentLine vent, Map<CoordinateKey, Integer> ventCoordinateCountMap) {
+    private void drawLowerLeft(VentLine vent, Map<CoordinateKey, Integer> ventCoordinateCountMap) {
         int x = vent.getX1();
         int y = vent.getY1();
-        while (x <= vent.getX2() && y >= vent.getY2()) {
+        while (x >= vent.getX2() && y <= vent.getY2()) {
             updateMap(ventCoordinateCountMap, new CoordinateKey(x, y));
-            x++;
+            x--;
+            y++;
+        }
+    }
+
+    private void drawUpperLeft(VentLine vent, Map<CoordinateKey, Integer> ventCoordinateCountMap) {
+        int x = vent.getX1();
+        int y = vent.getY1();
+        while (x >= vent.getX2() && y >= vent.getY2()) {
+            updateMap(ventCoordinateCountMap, new CoordinateKey(x, y));
+            x--;
             y--;
         }
     }
