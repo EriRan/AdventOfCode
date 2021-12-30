@@ -18,7 +18,7 @@ public class LanterfishMain {
         );
         logger.log(
                 Level.INFO,
-                () -> "Part two: "
+                () -> "Part two: " + new PartTwoLanterfishCounter().count(input)
         );
     }
 }
