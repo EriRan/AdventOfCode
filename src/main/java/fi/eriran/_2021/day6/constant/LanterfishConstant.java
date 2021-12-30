@@ -9,4 +9,5 @@ public class LanterfishConstant {
     public static final int BREED_TIME_AFTER_RESET = 6;
 
     public static final int PART_ONE_DAYS_ELAPSED = 80;
+    public static final int PART_TWO_DAYS_ELAPSED = 256;
 }
