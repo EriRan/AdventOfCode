@@ -21,7 +21,7 @@ public class LanterfishBreedingModelerNaive {
             modelledLanterfish.forEach(lanterfish -> {
                 if (lanterfish.getTimeToBreed() == 0) {
                     lanterfish.setTimeToBreed(LanterfishConstant.BREED_TIME_AFTER_RESET);
-                    bornLanterfish.add(new Lanterfish(LanterfishConstant.NEW_FISH_TIME_TO_BREED));
+                    bornLanterfish.add(new Lanterfish(LanterfishConstant.BREED_TIME_NEW_FISH));
                 } else {
                     lanterfish.setTimeToBreed(lanterfish.getTimeToBreed() - 1);
                 }

@@ -32,10 +32,11 @@ public class LanterfishBreedingModelerOptimized {
                     fishFromLastMove = fishAlreadyOnDay;
                 }
             }
-            // Process day zero: Existing fish move their count on day 6
+            // Process day zero:
+            // Existing fish move to day 6, so we increment their count with the current count on that day
             fishBreedingStates[LanterfishConstant.BREED_TIME_AFTER_RESET] = fishBreedingStates[LanterfishConstant.BREED_TIME_AFTER_RESET] + fishBreedingStates[0];
             // Create same count into day 8 as newborn fish
-            fishBreedingStates[LanterfishConstant.NEW_FISH_TIME_TO_BREED] = fishBreedingStates[0];
+            fishBreedingStates[LanterfishConstant.BREED_TIME_NEW_FISH] = fishBreedingStates[0];
             // Finally, move the fish from day 1 into day zero
             fishBreedingStates[0] = fishFromLastMove;
             elapsedDays++;
