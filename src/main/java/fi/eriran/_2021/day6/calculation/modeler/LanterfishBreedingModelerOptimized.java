@@ -19,18 +19,14 @@ public class LanterfishBreedingModelerOptimized {
 
         int elapsedDays = 0;
         while (elapsedDays < days) {
-            // Move fishes with days 1-8 into next day
-            Long fishFromLastMove = null;
+            // Process days 1-8
+            // Move fishes with days 1-8 to next day
+            long fishFromLastMove = 0L;
             for (int i = LanterfishConstant.POSSIBLE_DAYS_INDEX - 1; i > 0; i--) {
                 // All fish from last possible day move to next one
-                if (fishFromLastMove == null) {
-                    fishFromLastMove = fishBreedingStates[i];
-                    fishBreedingStates[i] = 0;
-                } else {
-                    long fishAlreadyOnDay = fishBreedingStates[i];
-                    fishBreedingStates[i] = fishFromLastMove;
-                    fishFromLastMove = fishAlreadyOnDay;
-                }
+                long fishAlreadyOnDay = fishBreedingStates[i];
+                fishBreedingStates[i] = fishFromLastMove;
+                fishFromLastMove = fishAlreadyOnDay;
             }
             // Process day zero:
             // Existing fish move to day 6, so we increment their count with the current count on that day
