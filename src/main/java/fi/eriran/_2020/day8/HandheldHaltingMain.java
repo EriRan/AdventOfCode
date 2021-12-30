@@ -16,7 +16,7 @@ public class HandheldHaltingMain {
 
     public static void main(String[] args) {
         List<Instruction> instructions = new InstructionParser().parse(
-                new LineInputParserProxy().parse("2020/day8Input")
+                new LineInputParserProxy().parse("2020/day8")
         );
         logger.log(
                 Level.INFO,

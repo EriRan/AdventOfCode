@@ -18,7 +18,7 @@ public class ShuttleSearch {
                 () -> "Part one result: " + new EarliestBuslineResponseHandler().handle(
                         new EarliestBuslineFinder().find(
                                 new TimetableParser().parse(
-                                        new LineInputParserProxy().parse("2020/Day13Input")
+                                        new LineInputParserProxy().parse("2020/day13")
                                 )
                         )
                 )
@@ -27,7 +27,7 @@ public class ShuttleSearch {
                 () -> "Part two result: " +
                         new SequentialBuslinesFinder().find(
                                 new TimetableParser().parse(
-                                        new LineInputParserProxy().parse("2020/Day13Input")
+                                        new LineInputParserProxy().parse("2020/day13")
                                 )
                         )
         );

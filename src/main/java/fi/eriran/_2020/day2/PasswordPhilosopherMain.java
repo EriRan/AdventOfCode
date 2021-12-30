@@ -14,13 +14,13 @@ public class PasswordPhilosopherMain {
         logger.log(
                 Level.INFO,
                 () -> "Part one valid passwords: " +
-                        new PasswordPhilosopherPartOne().countValidPasswords("2020/day2Input")
+                        new PasswordPhilosopherPartOne().countValidPasswords("2020/day2")
         );
 
         logger.log(
                 Level.INFO,
                 () -> "Part two valid passwords: " +
-                        new PasswordPhilosopherPartTwo().countValidPasswords("2020/day2Input")
+                        new PasswordPhilosopherPartTwo().countValidPasswords("2020/day2")
         );
     }
 }

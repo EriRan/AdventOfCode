@@ -24,7 +24,7 @@ public class CustomCustomsMain {
                                         new GroupCustomFormAnyoneFactory().build(
                                                 new PositiveQuestionCodesParserPerGroup().parse(
                                                         new LineInputParserProxy()
-                                                                .parse("2020/day6Input")
+                                                                .parse("2020/day6")
                                                 )
                                         )
                                 )
@@ -37,7 +37,7 @@ public class CustomCustomsMain {
                                         new GroupCustomFormEveryoneFactory().build(
                                                 new PositiveQuestionCodesParserPerPerson().parse(
                                                         new LineInputParserProxy()
-                                                                .parse("2020/day6Input")
+                                                                .parse("2020/day6")
                                                 )
                                         )
                                 )

@@ -21,7 +21,7 @@ public class RainRiskMain {
                                 + new ManhattanCalculator().calculate(
                                 new DirectFlightPathCalculator().calculate(
                                         new DirectionCommandParser().parse(
-                                                new LineInputParserProxy().parse("2020/Day12Input")
+                                                new LineInputParserProxy().parse("2020/day12")
                                         )
                                 )
                         )
@@ -33,7 +33,7 @@ public class RainRiskMain {
                         + new ManhattanCalculator().calculate(
                         new WaypointFlightPathCalculator().calculate(
                                 new DirectionCommandParser().parse(
-                                        new LineInputParserProxy().parse("2020/Day12Input")
+                                        new LineInputParserProxy().parse("2020/day12")
                                 )
                         )
                 )

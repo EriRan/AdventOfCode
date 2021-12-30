@@ -35,7 +35,7 @@ public class TobogganTreeCounterMain {
         int treesFound = new TobogganTreeCounter()
                 .count(
                         new MapGenerator().generate(
-                                new LineInputParserProxy().parse("2020/day3Input")
+                                new LineInputParserProxy().parse("2020/day3")
                         ),
                         new TrajectoryDefinition(right, down)
                 );

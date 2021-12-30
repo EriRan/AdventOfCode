@@ -14,14 +14,14 @@ public class BinaryBoardingMain {
                 Level.INFO,
                 () -> "Part one highest id is: " + new HighestSeatIdCalculator()
                         .calculate(
-                                new SeatFactory().build("2020/day5Input")
+                                new SeatFactory().build("2020/day5")
                         )
         );
         logger.log(
                 Level.INFO,
                 () -> "Part two the free seat is: " + new FreeSeatFinder()
                         .find(
-                                new SeatFactory().build("2020/day5Input")
+                                new SeatFactory().build("2020/day5")
                         )
         );
     }

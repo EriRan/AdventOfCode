@@ -19,7 +19,7 @@ public class EncodingErrorMain {
                 () -> "Part one first invalid number: " +
                         new InvalidNumberFinder().find(
                                 new PreambleContainerFactory().parser(
-                                        new LongInputParserProxy().parse("2020/Day9Input"),
+                                        new LongInputParserProxy().parse("2020/day9"),
                                         PreambleConstant.PART_ONE_PREAMBLE_SIZE
                                 )
                         )
@@ -29,7 +29,7 @@ public class EncodingErrorMain {
                 () -> "Part two encryption weakness: " +
                         new EncryptionWeaknessFinder().find(
                                 new PreambleContainerFactory().parser(
-                                        new LongInputParserProxy().parse("2020/Day9Input"),
+                                        new LongInputParserProxy().parse("2020/day9"),
                                         PreambleConstant.PART_ONE_PREAMBLE_SIZE
                                 )
                         )

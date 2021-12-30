@@ -18,7 +18,7 @@ public class HandyHaversacksMain {
 
     public static void main(String[] args) {
         Map<Description, Bag> bagMap = new BagMapParser()
-                .parse(new LineInputParserProxy().parse("2020/day7Input"));
+                .parse(new LineInputParserProxy().parse("2020/day7"));
         logger.log(
                 Level.INFO,
                 () -> "Part one bags that contain the target: "

@@ -11,7 +11,7 @@ public class BingoMain {
     private static final Logger logger = Logger.getGlobal();
 
     public static void main(String[] args) {
-        List<String> input = new LineInputParserProxy().parse("2021/day4Input");
+        List<String> input = new LineInputParserProxy().parse("2021/day4");
         logger.log(
                 Level.INFO,
                 () -> "Part One: " + new BingoPartOne().calculateFinalScore(input)

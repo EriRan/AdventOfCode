@@ -11,7 +11,7 @@ public class SonarMain {
     private static final Logger logger = Logger.getGlobal();
 
     public static void main(String[] args) {
-        List<Integer> input = new IntegerInputParserProxy().parse("2021/day1Input");
+        List<Integer> input = new IntegerInputParserProxy().parse("2021/day1");
         logger.log(
                 Level.INFO,
                 () -> "Part One: " + new SonarDepthIncreaseCalculator().calculate(input)

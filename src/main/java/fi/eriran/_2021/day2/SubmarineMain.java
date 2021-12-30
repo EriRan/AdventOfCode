@@ -11,7 +11,7 @@ public class SubmarineMain {
     private static final Logger logger = Logger.getGlobal();
 
     public static void main(String[] args) {
-        List<String> input = new LineInputParserProxy().parse("2021/day2Input");
+        List<String> input = new LineInputParserProxy().parse("2021/day2");
         logger.log(
                 Level.INFO,
                 () -> "Part One: " + new SubmarinePositionMultiplicationGenerator().generateSimple(input)

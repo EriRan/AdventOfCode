@@ -11,7 +11,7 @@ public class LanterfishMain {
     private static final Logger logger = Logger.getGlobal();
 
     public static void main(String[] args) {
-        List<String> input = new LineInputParserProxy().parse("2021/day6Input");
+        List<String> input = new LineInputParserProxy().parse("2021/day6");
         logger.log(
                 Level.INFO,
                 () -> "Part One: " + new PartOneLanterfishCounter().countAfterBreeding(input)
