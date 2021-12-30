@@ -14,7 +14,7 @@ public class LanterfishMain {
         List<String> input = new LineInputParserProxy().parse("2021/day6Input");
         logger.log(
                 Level.INFO,
-                () -> "Part One: "
+                () -> "Part One: " + new PartOneLanterfishCounter().countAfterBreeding(input)
         );
         logger.log(
                 Level.INFO,
