@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class LanterfishBreedingModeler {
+public class LanterfishBreedingModelerNaive {
 
     public List<Lanterfish> model(Collection<Lanterfish> initialLanterfish, int days) {
         // Create copy of the collection and all objects in it
