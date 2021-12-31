@@ -11,7 +11,7 @@ public abstract class AbstractInputParserProxy<T> {
 
     protected AbstractInputParserProxy(InputParser<T> concreteParser) {
         this.concreteParser = concreteParser;
-        fileContentFetcher = new FileContentFetcher();
+        this.fileContentFetcher = new FileContentFetcher();
     }
 
     public List<T> parse(String resourceFolderFileName) {
