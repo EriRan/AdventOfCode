@@ -2,7 +2,7 @@ package fi.eriran.common.parser;
 
 import java.util.List;
 
-public class AbstractOneLineInputParserProxy<T> extends AbstractInputParserProxy {
+public abstract class AbstractOneLineInputParserProxy<T> extends AbstractInputParserProxy {
 
     private final OneLineInputParser<T> concreteParser;
 
