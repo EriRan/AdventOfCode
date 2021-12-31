@@ -1,6 +1,6 @@
 package fi.eriran._2021.day1;
 
-import fi.eriran.common.parser.IntegerInputParserProxy;
+import fi.eriran.common.parser.multiline.IntegerInputParserProxy;
 
 import java.util.List;
 import java.util.logging.Level;

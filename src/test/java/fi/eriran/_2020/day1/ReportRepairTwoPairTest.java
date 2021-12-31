@@ -1,6 +1,6 @@
 package fi.eriran._2020.day1;
 
-import fi.eriran.common.parser.IntegerInputParserProxy;
+import fi.eriran.common.parser.multiline.IntegerInputParserProxy;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

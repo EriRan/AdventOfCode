@@ -1,4 +1,6 @@
-package fi.eriran.common.parser;
+package fi.eriran.common.parser.multiline;
+
+import fi.eriran.common.parser.AbstractInputParserProxy;
 
 import java.util.List;
 

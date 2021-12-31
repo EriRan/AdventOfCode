@@ -1,6 +1,6 @@
 package fi.eriran._2020.day6.calculation;
 
-import fi.eriran.common.parser.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.LineInputParserProxy;
 import fi.eriran._2020.day6.parser.GroupCustomFormEveryoneFactory;
 import fi.eriran._2020.day6.parser.raw.PositiveQuestionCodesParserPerPerson;
 import org.junit.jupiter.api.Test;

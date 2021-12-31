@@ -1,6 +1,6 @@
 package fi.eriran._2020.day13;
 
-import fi.eriran.common.parser.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.LineInputParserProxy;
 import fi.eriran._2020.day13.calculation.earliest.EarliestBuslineFinder;
 import fi.eriran._2020.day13.calculation.earliest.EarliestBuslineResponseHandler;
 import fi.eriran._2020.day13.calculation.sequential.SequentialBuslinesFinder;

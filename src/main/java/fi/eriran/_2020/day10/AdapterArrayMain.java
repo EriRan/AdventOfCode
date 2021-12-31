@@ -1,6 +1,6 @@
 package fi.eriran._2020.day10;
 
-import fi.eriran.common.parser.IntegerInputParserProxy;
+import fi.eriran.common.parser.multiline.IntegerInputParserProxy;
 import fi.eriran._2020.day10.calculation.AdapterPossibleCombinationsCounter;
 import fi.eriran._2020.day10.calculation.JoltDifferenceCalculator;
 import fi.eriran._2020.day10.calculation.JoltDifferenceContainerFactory;

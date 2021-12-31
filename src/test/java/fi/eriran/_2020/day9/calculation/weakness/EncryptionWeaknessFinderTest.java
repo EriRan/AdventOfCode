@@ -1,6 +1,6 @@
 package fi.eriran._2020.day9.calculation.weakness;
 
-import fi.eriran.common.parser.LongInputParserProxy;
+import fi.eriran.common.parser.multiline.LongInputParserProxy;
 import fi.eriran._2020.day9.parser.PreambleContainerFactory;
 import org.junit.jupiter.api.Test;
 

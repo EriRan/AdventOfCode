@@ -1,6 +1,6 @@
 package fi.eriran._2020.day11;
 
-import fi.eriran.common.parser.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.LineInputParserProxy;
 import fi.eriran._2020.day11.calculation.OccupiedSeatCounter;
 import fi.eriran._2020.day11.calculation.evolution.SeatStateAdjacentEvolver;
 import fi.eriran._2020.day11.calculation.evolution.SeatStateLineOfSightEvolver;

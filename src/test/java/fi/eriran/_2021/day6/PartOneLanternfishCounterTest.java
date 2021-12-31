@@ -1,7 +1,7 @@
 package fi.eriran._2021.day6;
 
 import fi.eriran._2021.day6.constant.LanternfishConstant;
-import fi.eriran.common.parser.IntegerOneLineInputParserProxy;
+import fi.eriran.common.parser.oneline.IntegerOneLineInputParserProxy;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

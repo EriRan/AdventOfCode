@@ -1,6 +1,6 @@
 package fi.eriran._2020.day8.parser;
 
-import fi.eriran.common.parser.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.LineInputParserProxy;
 import fi.eriran._2020.day8.pojo.Instruction;
 import fi.eriran._2020.day8.pojo.Operation;
 import fi.eriran.testcommon.util.Outboxer;

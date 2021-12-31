@@ -1,5 +1,6 @@
-package fi.eriran.common.parser;
+package fi.eriran.common.parser.multiline;
 
+import fi.eriran.common.parser.multiline.LongMultiLineInputParser;
 import org.apache.commons.collections4.CollectionUtils;
 import org.junit.jupiter.api.Test;
 

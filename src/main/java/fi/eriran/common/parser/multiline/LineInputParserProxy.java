@@ -1,4 +1,4 @@
-package fi.eriran.common.parser;
+package fi.eriran.common.parser.multiline;
 
 /**
  * Get the file from URL and split it by line breaks

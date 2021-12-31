@@ -1,6 +1,6 @@
 package fi.eriran._2020.day2.philosopher;
 
-import fi.eriran.common.parser.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.LineInputParserProxy;
 import fi.eriran._2020.day2.philosopher.counter.PartTwoValidPasswordCounter;
 
 public class PasswordPhilosopherPartTwo implements PasswordPhilosopher {

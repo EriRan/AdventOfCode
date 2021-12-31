@@ -1,6 +1,6 @@
 package fi.eriran._2020.day7;
 
-import fi.eriran.common.parser.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.LineInputParserProxy;
 import fi.eriran._2020.day7.calculation.BagContentSizeCounter;
 import fi.eriran._2020.day7.calculation.BagFinder;
 import fi.eriran._2020.day7.constant.CalculationConstant;

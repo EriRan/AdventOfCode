@@ -1,6 +1,6 @@
 package fi.eriran._2020.day10.calculation;
 
-import fi.eriran.common.parser.IntegerInputParserProxy;
+import fi.eriran.common.parser.multiline.IntegerInputParserProxy;
 import fi.eriran._2020.day10.pojo.JoltDifferencesContainer;
 import org.junit.jupiter.api.Test;
 

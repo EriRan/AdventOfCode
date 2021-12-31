@@ -1,6 +1,6 @@
 package fi.eriran._2020.day6;
 
-import fi.eriran.common.parser.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.LineInputParserProxy;
 import fi.eriran._2020.day6.calculation.CommonQuestionSumCalculator;
 import fi.eriran._2020.day6.calculation.UniqueQuestionSumCalculator;
 import fi.eriran._2020.day6.parser.GroupCustomFormAnyoneFactory;

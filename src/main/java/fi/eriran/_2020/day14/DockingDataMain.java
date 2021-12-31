@@ -1,6 +1,6 @@
 package fi.eriran._2020.day14;
 
-import fi.eriran.common.parser.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.LineInputParserProxy;
 import fi.eriran._2020.day14.calculation.BitCommandRunner;
 import fi.eriran._2020.day14.calculation.BitStateSumCalculator;
 import fi.eriran._2020.day14.parser.BitCommandParser;

@@ -2,7 +2,7 @@ package fi.eriran._2021.day7;
 
 import fi.eriran._2021.day7.calculation.AlignmentFuelIncrementingCalculator;
 import fi.eriran._2021.day7.calculation.AlignmentFuelSimpleCalculator;
-import fi.eriran.common.parser.IntegerOneLineInputParserProxy;
+import fi.eriran.common.parser.oneline.IntegerOneLineInputParserProxy;
 
 import java.util.List;
 import java.util.logging.Level;

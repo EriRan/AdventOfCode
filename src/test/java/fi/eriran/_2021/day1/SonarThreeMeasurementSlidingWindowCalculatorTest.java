@@ -1,7 +1,6 @@
 package fi.eriran._2021.day1;
 
-import fi.eriran._2021.day1.SonarThreeMeasurementSlidingWindowCalculator;
-import fi.eriran.common.parser.IntegerInputParserProxy;
+import fi.eriran.common.parser.multiline.IntegerInputParserProxy;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

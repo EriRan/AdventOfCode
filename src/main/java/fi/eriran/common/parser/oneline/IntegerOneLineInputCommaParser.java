@@ -1,4 +1,4 @@
-package fi.eriran.common.parser;
+package fi.eriran.common.parser.oneline;
 
 import java.util.ArrayList;
 import java.util.List;

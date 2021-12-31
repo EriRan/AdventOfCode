@@ -1,6 +1,6 @@
 package fi.eriran._2021.day7.calculation;
 
-import fi.eriran.common.parser.IntegerOneLineInputParserProxy;
+import fi.eriran.common.parser.oneline.IntegerOneLineInputParserProxy;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

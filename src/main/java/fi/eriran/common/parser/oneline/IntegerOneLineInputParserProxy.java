@@ -1,4 +1,4 @@
-package fi.eriran.common.parser;
+package fi.eriran.common.parser.oneline;
 
 public class IntegerOneLineInputParserProxy extends AbstractOneLineInputParserProxy<Integer> {
 

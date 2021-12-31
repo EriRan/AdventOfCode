@@ -1,4 +1,4 @@
-package fi.eriran.common.parser;
+package fi.eriran.common.parser.multiline;
 
 import fi.eriran.common.parser.constant.ParserConstant;
 import org.apache.commons.lang3.StringUtils;
