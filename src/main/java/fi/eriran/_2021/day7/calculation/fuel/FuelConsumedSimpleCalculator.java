@@ -1,8 +1,8 @@
-package fi.eriran._2021.day7.calculation;
+package fi.eriran._2021.day7.calculation.fuel;
 
 import java.util.List;
 
-public class FuelConsumedCalculator {
+public class FuelConsumedSimpleCalculator {
 
     public int calculate(List<Integer> sortedPositions, int alignmentPosition) {
         int fuelConsumed = 0;
