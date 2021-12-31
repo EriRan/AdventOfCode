@@ -9,7 +9,7 @@ import java.util.Collection;
 
 public class PartTwoLanterfishCounter {
 
-    public long count(Collection<String> lines) {
+    public long count(Collection<Integer> lines) {
         return new LanterfishCounterOptimized()
                 .count(new LanterfishBreedingModelerOptimized()
                         .model(new LanterfishParser().parse(lines), LanterfishConstant.PART_TWO_DAYS_ELAPSED));

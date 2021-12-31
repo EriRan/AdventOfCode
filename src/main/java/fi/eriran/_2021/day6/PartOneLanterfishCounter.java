@@ -9,15 +9,15 @@ import java.util.Collection;
 
 public class PartOneLanterfishCounter {
 
-    public long countAfterBreeding(Collection<String> lines) {
+    public long countAfterBreeding(Collection<Integer> lines) {
         return countWithDays(lines, LanterfishConstant.PART_ONE_DAYS_ELAPSED);
     }
 
-    public long countAfterBreeding(Collection<String> lines, int daysToCount) {
+    public long countAfterBreeding(Collection<Integer> lines, int daysToCount) {
         return countWithDays(lines, daysToCount);
     }
 
-    private long countWithDays(Collection<String> lines, int daysToCount) {
+    private long countWithDays(Collection<Integer> lines, int daysToCount) {
         return new LanterfishCounter()
                 .count(new LanterfishBreedingModelerNaive()
                         .model(new LanterfishParser().parse(lines), daysToCount));
