@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class UniqueQuestionSumCalculatorTest {
 
     @Test
-    void example() throws IOException {
+    void example() {
         assertEquals(
                 11,
                 new UniqueQuestionSumCalculator()

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class TobogganTreeCounterTest {
 
     @Test
-    void partOneExample() throws IOException {
+    void partOneExample() {
         assertEquals(
                 7,
                 countTrees(3, 1)
@@ -20,7 +20,7 @@ class TobogganTreeCounterTest {
     }
 
     @Test
-    void partTwoExampleOne() throws IOException {
+    void partTwoExampleOne() {
         assertEquals(
                 2,
                 countTrees(1, 1)
@@ -29,7 +29,7 @@ class TobogganTreeCounterTest {
 
     //Example two of part two is the same partOne example
     @Test
-    void partTwoExampleThree() throws IOException {
+    void partTwoExampleThree() {
         assertEquals(
                 3,
                 countTrees(5, 1)
@@ -37,7 +37,7 @@ class TobogganTreeCounterTest {
     }
 
     @Test
-    void partTwoExampleFour() throws IOException {
+    void partTwoExampleFour() {
         assertEquals(
                 4,
                 countTrees(7, 1)
@@ -45,7 +45,7 @@ class TobogganTreeCounterTest {
     }
 
     @Test
-    void partTwoExampleFive() throws IOException {
+    void partTwoExampleFive() {
         assertEquals(
                 2,
                 countTrees(1, 2)
@@ -53,7 +53,7 @@ class TobogganTreeCounterTest {
     }
 
     @Test
-    void multiplyResultIsCorrect() throws IOException {
+    void multiplyResultIsCorrect() {
         assertEquals(
                 336,
                 countTrees(1, 1) *
@@ -64,7 +64,7 @@ class TobogganTreeCounterTest {
         );
     }
 
-    private int countTrees(int right, int down) throws IOException {
+    private int countTrees(int right, int down) {
         return new TobogganTreeCounter()
                 .count(
                         new MapGenerator()

@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ReportRepairerThreePairTest {
 
     @Test
-    void threePairFound() throws IOException {
+    void threePairFound() {
         int result = new ReportRepairerThreePair()
                 .repair(new IntegerInputParserProxy().parse("2020/day1TestInput"));
         assertEquals(241861950, result);
