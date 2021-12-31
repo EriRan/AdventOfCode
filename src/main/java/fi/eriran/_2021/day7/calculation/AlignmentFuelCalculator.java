@@ -23,6 +23,8 @@ public class AlignmentFuelCalculator {
         if (median % 1 == 0) {
             return fuelConsumedCalculator.calculate(sortedPositions, (int) median);
         } else {
+            // If the median is not whole but something like 12.5, we need to check fuel consumed for two positions:
+            // 12 and 13, so the both sides.
             // Without decimals
             int fuelConsumedCandidateOne = fuelConsumedCalculator.calculate(sortedPositions, (int) median);
             // Rounded one increment up
