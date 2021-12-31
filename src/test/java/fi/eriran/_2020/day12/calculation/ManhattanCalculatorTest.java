@@ -1,6 +1,6 @@
 package fi.eriran._2020.day12.calculation;
 
-import fi.eriran.common.parser.multiline.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.MultiLineInputParserProxy;
 import fi.eriran._2020.day12.calculation.flight.direct.DirectFlightPathCalculator;
 import fi.eriran._2020.day12.calculation.flight.waypoint.WaypointFlightPathCalculator;
 import fi.eriran._2020.day12.parser.DirectionCommandParser;
@@ -17,7 +17,7 @@ class ManhattanCalculatorTest {
                 new ManhattanCalculator().calculate(
                         new DirectFlightPathCalculator().calculate(
                                 new DirectionCommandParser().parse(
-                                        new LineInputParserProxy().parse("2020/Day12TestInput")
+                                        new MultiLineInputParserProxy().parse("2020/Day12TestInput")
                                 )
                         )
                 )
@@ -31,7 +31,7 @@ class ManhattanCalculatorTest {
                 new ManhattanCalculator().calculate(
                         new WaypointFlightPathCalculator().calculate(
                                 new DirectionCommandParser().parse(
-                                        new LineInputParserProxy().parse("2020/Day12TestInput")
+                                        new MultiLineInputParserProxy().parse("2020/Day12TestInput")
                                 )
                         )
                 )

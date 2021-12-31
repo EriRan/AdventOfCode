@@ -1,6 +1,6 @@
 package fi.eriran._2020.day8;
 
-import fi.eriran.common.parser.multiline.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.MultiLineInputParserProxy;
 import fi.eriran._2020.day8.parser.InstructionParser;
 import fi.eriran._2020.day8.pojo.Instruction;
 import fi.eriran._2020.day8.runtime.InstructionInfiniteLoopFixer;
@@ -16,7 +16,7 @@ public class HandheldHaltingMain {
 
     public static void main(String[] args) {
         List<Instruction> instructions = new InstructionParser().parse(
-                new LineInputParserProxy().parse("2020/day8")
+                new MultiLineInputParserProxy().parse("2020/day8")
         );
         logger.log(
                 Level.INFO,

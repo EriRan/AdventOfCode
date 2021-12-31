@@ -1,6 +1,6 @@
 package fi.eriran._2020.day11;
 
-import fi.eriran.common.parser.multiline.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.MultiLineInputParserProxy;
 import fi.eriran._2020.day11.calculation.OccupiedSeatCounter;
 import fi.eriran._2020.day11.calculation.evolution.SeatStateAdjacentEvolver;
 import fi.eriran._2020.day11.calculation.evolution.SeatStateLineOfSightEvolver;
@@ -21,7 +21,7 @@ public class SeatingSystemMain {
                                 + new OccupiedSeatCounter().count(
                                 new SeatStateAdjacentEvolver().createEvolved(
                                         new SeatMapParser().parse(
-                                                new LineInputParserProxy().parse("2020/day11")
+                                                new MultiLineInputParserProxy().parse("2020/day11")
                                         )
                                 )
                         )
@@ -33,7 +33,7 @@ public class SeatingSystemMain {
                         + new OccupiedSeatCounter().count(
                         new SeatStateLineOfSightEvolver().createEvolved(
                                 new SeatMapParser().parse(
-                                        new LineInputParserProxy().parse("2020/day11")
+                                        new MultiLineInputParserProxy().parse("2020/day11")
                                 )
                         )
                 ));

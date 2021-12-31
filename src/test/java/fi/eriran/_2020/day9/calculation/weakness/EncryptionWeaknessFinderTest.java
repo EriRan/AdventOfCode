@@ -1,6 +1,6 @@
 package fi.eriran._2020.day9.calculation.weakness;
 
-import fi.eriran.common.parser.multiline.LongInputParserProxy;
+import fi.eriran.common.parser.multiline.LongMultiLineInputParserProxy;
 import fi.eriran._2020.day9.parser.PreambleContainerFactory;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +15,7 @@ class EncryptionWeaknessFinderTest {
                 62,
                 new EncryptionWeaknessFinder().find(
                         new PreambleContainerFactory().parser(
-                                new LongInputParserProxy().parse("2020/Day9TestInput"),
+                                new LongMultiLineInputParserProxy().parse("2020/Day9TestInput"),
                                 PART_ONE_PREAMBLE_TEST_SIZE
                         )
                 )

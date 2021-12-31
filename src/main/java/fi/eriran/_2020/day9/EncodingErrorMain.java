@@ -1,6 +1,6 @@
 package fi.eriran._2020.day9;
 
-import fi.eriran.common.parser.multiline.LongInputParserProxy;
+import fi.eriran.common.parser.multiline.LongMultiLineInputParserProxy;
 import fi.eriran._2020.day9.calculation.InvalidNumberFinder;
 import fi.eriran._2020.day9.calculation.weakness.EncryptionWeaknessFinder;
 import fi.eriran._2020.day9.constant.PreambleConstant;
@@ -19,7 +19,7 @@ public class EncodingErrorMain {
                 () -> "Part one first invalid number: " +
                         new InvalidNumberFinder().find(
                                 new PreambleContainerFactory().parser(
-                                        new LongInputParserProxy().parse("2020/day9"),
+                                        new LongMultiLineInputParserProxy().parse("2020/day9"),
                                         PreambleConstant.PART_ONE_PREAMBLE_SIZE
                                 )
                         )
@@ -29,7 +29,7 @@ public class EncodingErrorMain {
                 () -> "Part two encryption weakness: " +
                         new EncryptionWeaknessFinder().find(
                                 new PreambleContainerFactory().parser(
-                                        new LongInputParserProxy().parse("2020/day9"),
+                                        new LongMultiLineInputParserProxy().parse("2020/day9"),
                                         PreambleConstant.PART_ONE_PREAMBLE_SIZE
                                 )
                         )

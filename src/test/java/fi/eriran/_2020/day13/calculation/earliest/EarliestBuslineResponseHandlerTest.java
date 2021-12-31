@@ -1,6 +1,6 @@
 package fi.eriran._2020.day13.calculation.earliest;
 
-import fi.eriran.common.parser.multiline.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.MultiLineInputParserProxy;
 import fi.eriran._2020.day13.parser.TimetableParser;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +15,7 @@ class EarliestBuslineResponseHandlerTest {
                 new EarliestBuslineResponseHandler().handle(
                         new EarliestBuslineFinder().find(
                                 new TimetableParser().parse(
-                                        new LineInputParserProxy().parse("2020/Day13TestInput")
+                                        new MultiLineInputParserProxy().parse("2020/Day13TestInput")
                                 )
                         )
                 )

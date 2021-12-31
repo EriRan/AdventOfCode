@@ -1,6 +1,6 @@
 package fi.eriran._2020.day11.calculation.evolution;
 
-import fi.eriran.common.parser.multiline.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.MultiLineInputParserProxy;
 import fi.eriran._2020.day11.calculation.OccupiedSeatCounter;
 import fi.eriran._2020.day11.parser.SeatMapParser;
 import fi.eriran._2020.day11.pojo.seat.SeatMap;
@@ -16,7 +16,7 @@ class SeatStateLineOfSightEvolverTest {
 
     @Test
     void example() {
-        SeatMap originalSeatMap = new SeatMapParser().parse(new LineInputParserProxy().parse("2020/Day11TestInput"));
+        SeatMap originalSeatMap = new SeatMapParser().parse(new MultiLineInputParserProxy().parse("2020/Day11TestInput"));
         System.out.println("Original: \n" + new SeatMapStringifier().print(originalSeatMap));
         new SeatMapStringifier().print(originalSeatMap);
         SeatMap evolvedMap = new SeatStateLineOfSightEvolver()

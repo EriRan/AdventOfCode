@@ -1,6 +1,6 @@
 package fi.eriran._2020.day14.calculation;
 
-import fi.eriran.common.parser.multiline.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.MultiLineInputParserProxy;
 import fi.eriran._2020.day14.parser.BitCommandParser;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +15,7 @@ class BitStateSumCalculatorTest {
                 new BitStateSumCalculator().calculate(
                         new BitCommandRunner().run(
                                 new BitCommandParser().parse(
-                                        new LineInputParserProxy().parse("2020/Day14TestInput")
+                                        new MultiLineInputParserProxy().parse("2020/Day14TestInput")
                                 )
                         )
                 )

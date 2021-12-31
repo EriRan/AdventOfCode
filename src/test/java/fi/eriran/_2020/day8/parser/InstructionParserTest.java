@@ -1,6 +1,6 @@
 package fi.eriran._2020.day8.parser;
 
-import fi.eriran.common.parser.multiline.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.MultiLineInputParserProxy;
 import fi.eriran._2020.day8.pojo.Instruction;
 import fi.eriran._2020.day8.pojo.Operation;
 import fi.eriran.testcommon.util.Outboxer;
@@ -17,7 +17,7 @@ class InstructionParserTest {
     @Test
     void buildExample() {
         List<Instruction> instructions = new InstructionParser()
-                .parse(new LineInputParserProxy().parse("2020/Day8TestInput"));
+                .parse(new MultiLineInputParserProxy().parse("2020/Day8TestInput"));
         assertFalse(CollectionUtils.isEmpty(instructions));
         assertEquals(9, instructions.size());
         instructions.forEach(instruction -> assertNotNull(instruction.getOperation()));

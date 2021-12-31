@@ -1,6 +1,6 @@
 package fi.eriran._2021.day3;
 
-import fi.eriran.common.parser.multiline.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.MultiLineInputParserProxy;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,7 +11,7 @@ class LifeSupportCalculatorTest {
     void example() {
         assertEquals(
                 230,
-                new LifeSupportCalculator().calculate(new LineInputParserProxy().parse("2021/day3"))
+                new LifeSupportCalculator().calculate(new MultiLineInputParserProxy().parse("2021/day3"))
         );
     }
 }

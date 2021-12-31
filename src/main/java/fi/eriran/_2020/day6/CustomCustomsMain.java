@@ -1,6 +1,6 @@
 package fi.eriran._2020.day6;
 
-import fi.eriran.common.parser.multiline.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.MultiLineInputParserProxy;
 import fi.eriran._2020.day6.calculation.CommonQuestionSumCalculator;
 import fi.eriran._2020.day6.calculation.UniqueQuestionSumCalculator;
 import fi.eriran._2020.day6.parser.GroupCustomFormAnyoneFactory;
@@ -23,7 +23,7 @@ public class CustomCustomsMain {
                                 .calculate(
                                         new GroupCustomFormAnyoneFactory().build(
                                                 new PositiveQuestionCodesParserPerGroup().parse(
-                                                        new LineInputParserProxy()
+                                                        new MultiLineInputParserProxy()
                                                                 .parse("2020/day6")
                                                 )
                                         )
@@ -36,7 +36,7 @@ public class CustomCustomsMain {
                                 .calculate(
                                         new GroupCustomFormEveryoneFactory().build(
                                                 new PositiveQuestionCodesParserPerPerson().parse(
-                                                        new LineInputParserProxy()
+                                                        new MultiLineInputParserProxy()
                                                                 .parse("2020/day6")
                                                 )
                                         )

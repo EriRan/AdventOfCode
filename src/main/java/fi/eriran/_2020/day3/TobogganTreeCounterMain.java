@@ -1,6 +1,6 @@
 package fi.eriran._2020.day3;
 
-import fi.eriran.common.parser.multiline.LineInputParserProxy;
+import fi.eriran.common.parser.multiline.MultiLineInputParserProxy;
 import fi.eriran._2020.day3.parser.MapGenerator;
 import fi.eriran._2020.day3.pojo.TrajectoryDefinition;
 
@@ -35,7 +35,7 @@ public class TobogganTreeCounterMain {
         int treesFound = new TobogganTreeCounter()
                 .count(
                         new MapGenerator().generate(
-                                new LineInputParserProxy().parse("2020/day3")
+                                new MultiLineInputParserProxy().parse("2020/day3")
                         ),
                         new TrajectoryDefinition(right, down)
                 );

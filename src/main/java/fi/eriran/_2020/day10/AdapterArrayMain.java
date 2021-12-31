@@ -1,6 +1,6 @@
 package fi.eriran._2020.day10;
 
-import fi.eriran.common.parser.multiline.IntegerInputParserProxy;
+import fi.eriran.common.parser.multiline.IntegerMultiLineInputParserProxy;
 import fi.eriran._2020.day10.calculation.AdapterPossibleCombinationsCounter;
 import fi.eriran._2020.day10.calculation.JoltDifferenceCalculator;
 import fi.eriran._2020.day10.calculation.JoltDifferenceContainerFactory;
@@ -14,7 +14,7 @@ public class AdapterArrayMain {
     private static final Logger logger = Logger.getGlobal();
 
     public static void main(String[] args) {
-        List<Integer> day10Input = new IntegerInputParserProxy().parse("2020/day10");
+        List<Integer> day10Input = new IntegerMultiLineInputParserProxy().parse("2020/day10");
         logger.log(
                 Level.INFO,
                 () ->
