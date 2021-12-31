@@ -1,6 +1,7 @@
 package fi.eriran.common.file;
 
 import fi.eriran.common.parser.exception.InputParserException;
+import fi.eriran.common.parser.file.FileContentFetcher;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

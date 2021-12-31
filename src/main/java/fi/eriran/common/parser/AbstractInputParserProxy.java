@@ -1,6 +1,6 @@
 package fi.eriran.common.parser;
 
-import fi.eriran.common.file.FileContentFetcher;
+import fi.eriran.common.parser.file.FileContentFetcher;
 
 public abstract class AbstractInputParserProxy {
 

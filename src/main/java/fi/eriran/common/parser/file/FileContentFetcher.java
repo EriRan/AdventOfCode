@@ -1,4 +1,4 @@
-package fi.eriran.common.file;
+package fi.eriran.common.parser.file;
 
 import com.google.common.io.Resources;
 import fi.eriran.common.parser.exception.InputParserException;
