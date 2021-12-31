@@ -5,18 +5,18 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-class AlignmentFuelCalculatorTest {
+class AlignmentFuelIncrementingCalculatorTest {
 
-    private final AlignmentFuelCalculator alignmentFuelCalculator = new AlignmentFuelCalculator();
+    private final AlignmentFuelIncrementingCalculator calculator = new AlignmentFuelIncrementingCalculator();
 
     @Test
     void example() {
         List<Integer> input = new IntegerOneLineInputCommaParserProxy().parse("2021/day7");
         assertEquals(
-                37,
-                alignmentFuelCalculator.calculate(input)
+                168,
+                calculator.calculate(input)
         );
     }
 }

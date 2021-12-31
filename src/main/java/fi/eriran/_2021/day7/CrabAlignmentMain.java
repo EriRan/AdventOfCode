@@ -1,6 +1,6 @@
 package fi.eriran._2021.day7;
 
-import fi.eriran._2021.day7.calculation.AlignmentFuelCalculator;
+import fi.eriran._2021.day7.calculation.AlignmentFuelSimpleCalculator;
 import fi.eriran.common.parser.IntegerOneLineInputCommaParserProxy;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public class CrabAlignmentMain {
         List<Integer> input = new IntegerOneLineInputCommaParserProxy().parse("2021/day7");
         logger.log(
                 Level.INFO,
-                () -> "Part One: " + new AlignmentFuelCalculator().calculate(input)
+                () -> "Part One: " + new AlignmentFuelSimpleCalculator().calculate(input)
         );
         logger.log(
                 Level.INFO,

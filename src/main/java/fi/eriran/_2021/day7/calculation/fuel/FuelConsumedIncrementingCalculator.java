@@ -7,15 +7,20 @@ public class FuelConsumedIncrementingCalculator implements FuelConsumedCalculato
     public int calculate(List<Integer> sortedPositions, int alignmentPosition) {
         int fuelConsumed = 0;
         for (Integer sortedPosition : sortedPositions) {
-            if (sortedPosition > alignmentPosition) {
-                int difference = sortedPosition - alignmentPosition;
-                fuelConsumed += calculateWithIncrementing(difference);
-            } else {
-                int difference = alignmentPosition - sortedPosition;
-                fuelConsumed += calculateWithIncrementing(difference);
-            }
+            int difference = calculateDifference(alignmentPosition, sortedPosition);
+            fuelConsumed += calculateWithIncrementing(difference);
         }
         return fuelConsumed;
+    }
+
+    private int calculateDifference(int alignmentPosition, Integer sortedPosition) {
+        int difference;
+        if (sortedPosition > alignmentPosition) {
+            difference = sortedPosition - alignmentPosition;
+        } else {
+            difference = alignmentPosition - sortedPosition;
+        }
+        return difference;
     }
 
     private int calculateWithIncrementing(int difference) {

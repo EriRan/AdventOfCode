@@ -1,4 +1,4 @@
-package fi.eriran._2021.day7.calculation;
+package fi.eriran._2021.day7.calculation.alignment;
 
 import java.util.List;
 import java.util.stream.Collectors;

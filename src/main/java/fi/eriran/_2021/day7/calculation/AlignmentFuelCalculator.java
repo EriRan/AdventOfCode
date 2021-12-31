@@ -1,38 +1,8 @@
 package fi.eriran._2021.day7.calculation;
 
-import fi.eriran._2021.day7.calculation.fuel.FuelConsumedSimpleCalculator;
-
-import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class AlignmentFuelCalculator {
+public interface AlignmentFuelCalculator {
 
-    private final IntegerMedianCalculator integerMedianCalculator;
-    private final FuelConsumedSimpleCalculator fuelConsumedSimpleCalculator;
-
-    public AlignmentFuelCalculator() {
-        integerMedianCalculator = new IntegerMedianCalculator();
-        fuelConsumedSimpleCalculator = new FuelConsumedSimpleCalculator();
-    }
-
-    public int calculate(Collection<Integer> initialPositions) {
-        List<Integer> sortedPositions = initialPositions.stream()
-                .sorted(Integer::compareTo)
-                .collect(Collectors.toList());
-        double median = integerMedianCalculator.calculate(sortedPositions);
-        // Is median a whole? If it is, we only need to check one possible position
-        if (median % 1 == 0) {
-            return fuelConsumedSimpleCalculator.calculate(sortedPositions, (int) median);
-        } else {
-            // If the median is not whole but something like 12.5, we need to check fuel consumed for two positions:
-            // 12 and 13, so the both sides.
-            // Without decimals
-            int fuelConsumedCandidateOne = fuelConsumedSimpleCalculator.calculate(sortedPositions, (int) median);
-            // Rounded one increment up
-            int fuelConsumedCandidateTwo = fuelConsumedSimpleCalculator.calculate(sortedPositions, (int) median + 1);
-            // Return the smaller one
-            return Math.min(fuelConsumedCandidateOne, fuelConsumedCandidateTwo);
-        }
-    }
+    int calculate(List<Integer> initialPositions);
 }
