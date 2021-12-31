@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class NumberLineMultiLineInputParserProxyTest {
 
     @Test
-    void inputFetched() throws IOException {
+    void inputFetched() {
         Collection<Integer> inputNumbers = new IntegerInputParserProxy().parse("2020/day1TestInput");
         assertFalse(CollectionUtils.isEmpty(inputNumbers));
         assertTrue(inputNumbers.stream().allMatch(Objects::nonNull));
