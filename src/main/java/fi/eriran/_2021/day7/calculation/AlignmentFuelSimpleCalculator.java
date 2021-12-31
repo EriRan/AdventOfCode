@@ -16,6 +16,12 @@ public class AlignmentFuelSimpleCalculator implements AlignmentFuelCalculator{
         fuelConsumedSimpleCalculator = new FuelConsumedSimpleCalculator();
     }
 
+    /**
+     * I think I just got lucky here with the right answer. To have a correct answer in every case, we should select
+     * the average as a starting point, then start going through numbers both plus and minus from the average point.
+     * When the number starts increasing compared to the last number, we stop the search from that direction. Once we
+     * have the smallest possible number, we return that.
+     */
     public int calculate(List<Integer> initialPositions) {
         List<Integer> sortedPositions = initialPositions.stream()
                 .sorted(Integer::compareTo)
