@@ -1,8 +1,8 @@
 package fi.eriran._2021.day6.constant;
 
-public class LanterfishConstant {
+public class LanternfishConstant {
 
-    private LanterfishConstant() {
+    private LanternfishConstant() {
     }
 
     public static final int BREED_TIME_NEW_FISH = 8;

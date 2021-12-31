@@ -1,6 +1,6 @@
 package fi.eriran._2021.day6;
 
-import fi.eriran._2021.day6.constant.LanterfishConstant;
+import fi.eriran._2021.day6.constant.LanternfishConstant;
 import fi.eriran.common.parser.IntegerOneLineInputParserProxy;
 import org.junit.jupiter.api.Test;
 
@@ -8,9 +8,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class PartOneLanterfishCounterTest {
+class PartOneLanternfishCounterTest {
 
-    private final PartOneLanterfishCounter lanterfishCounter = new PartOneLanterfishCounter();
+    private final PartOneLanternfishCounter lanterfishCounter = new PartOneLanternfishCounter();
 
     @Test
     void example() {
@@ -21,7 +21,7 @@ class PartOneLanterfishCounterTest {
         );
         assertEquals(
                 5934,
-                lanterfishCounter.countAfterBreeding(lines, LanterfishConstant.PART_ONE_DAYS_ELAPSED)
+                lanterfishCounter.countAfterBreeding(lines, LanternfishConstant.PART_ONE_DAYS_ELAPSED)
         );
     }
 }

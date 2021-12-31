@@ -7,9 +7,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class PartTwoLanterfishCounterTest {
+class PartTwoLanternfishCounterTest {
 
-    private final PartTwoLanterfishCounter lanterfishCounter = new PartTwoLanterfishCounter();
+    private final PartTwoLanternfishCounter lanterfishCounter = new PartTwoLanternfishCounter();
 
     @Test
     void example() {

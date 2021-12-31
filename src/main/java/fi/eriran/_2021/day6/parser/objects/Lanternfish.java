@@ -1,11 +1,11 @@
 package fi.eriran._2021.day6.parser.objects;
 
 
-public class Lanterfish {
+public class Lanternfish {
 
     private int timeToBreed;
 
-    public Lanterfish(int timeToBreed) {
+    public Lanternfish(int timeToBreed) {
         this.timeToBreed = timeToBreed;
     }
 

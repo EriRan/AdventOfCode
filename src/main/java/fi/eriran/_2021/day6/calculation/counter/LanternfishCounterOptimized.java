@@ -1,6 +1,6 @@
 package fi.eriran._2021.day6.calculation.counter;
 
-public class LanterfishCounterOptimized {
+public class LanternfishCounterOptimized {
 
     public long count(long[] lanterfishBreedingStates) {
         long sum = 0;
