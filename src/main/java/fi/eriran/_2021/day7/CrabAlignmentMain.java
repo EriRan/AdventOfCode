@@ -1,5 +1,6 @@
 package fi.eriran._2021.day7;
 
+import fi.eriran._2021.day7.calculation.AlignmentFuelIncrementingCalculator;
 import fi.eriran._2021.day7.calculation.AlignmentFuelSimpleCalculator;
 import fi.eriran.common.parser.IntegerOneLineInputCommaParserProxy;
 
@@ -19,7 +20,7 @@ public class CrabAlignmentMain {
         );
         logger.log(
                 Level.INFO,
-                () -> "Part two: "
+                () -> "Part two: " + new AlignmentFuelIncrementingCalculator().calculate(input)
         );
     }
 }
