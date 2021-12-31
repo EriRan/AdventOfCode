@@ -1,21 +1,19 @@
 package fi.eriran.common.parser;
 
-import fi.eriran.common.parser.constant.ParserConstant;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Parse input file that has one integer per line
+ * Parser for an input file that has only one line with commas splitting the numbers
  */
-class IntegerInputParser implements InputParser<Integer> {
+class IntegerOneLineInputCommaParser implements InputParser<Integer> {
 
     public List<Integer> parse(String content) {
         //Get file content
-        String[] splitByLineEscape = content.split(ParserConstant.LINE_BREAK_REGEX);
+        String[] splitByRegex = content.split(",");
         List<Integer> numbers = new ArrayList<>();
         //Assuming they are all valid numbers
-        for (String numberString : splitByLineEscape) {
+        for (String numberString : splitByRegex) {
             numbers.add(Integer.parseInt(numberString));
         }
         return numbers;
