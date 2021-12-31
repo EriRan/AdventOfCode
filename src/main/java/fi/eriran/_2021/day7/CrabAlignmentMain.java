@@ -13,7 +13,7 @@ public class CrabAlignmentMain {
     private static final Logger logger = Logger.getGlobal();
 
     public static void main(String[] args) {
-        List<Integer> input = new IntegerOneLineInputCommaParserProxy().parse("2021/day7");
+        List<Integer> input = new IntegerOneLineInputCommaParserProxy().parse("2021/day7", ",");
         logger.log(
                 Level.INFO,
                 () -> "Part One: " + new AlignmentFuelSimpleCalculator().calculate(input)

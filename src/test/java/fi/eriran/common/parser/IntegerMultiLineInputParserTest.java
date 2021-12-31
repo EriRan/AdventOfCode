@@ -8,11 +8,11 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-class IntegerInputParserTest {
+class IntegerMultiLineInputParserTest {
 
     @Test
     void successfulParse() {
-        List<Integer> parseResponse = new IntegerInputParser().parse("123" + System.lineSeparator() + "456");
+        List<Integer> parseResponse = new IntegerMultiLineInputParser().parse("123" + System.lineSeparator() + "456");
         assertFalse(CollectionUtils.isEmpty(parseResponse));
         assertEquals(2, parseResponse.size());
         assertEquals(123, parseResponse.get(0));

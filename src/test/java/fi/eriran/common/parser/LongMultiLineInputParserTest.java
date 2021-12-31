@@ -7,11 +7,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class LongInputParserTest {
+class LongMultiLineInputParserTest {
 
     @Test
     void successfulParse() {
-        List<Long> parseResponse = new LongInputParser()
+        List<Long> parseResponse = new LongMultiLineInputParser()
                 .parse("123" + System.lineSeparator() + "456");
         assertFalse(CollectionUtils.isEmpty(parseResponse));
         assertEquals(2, parseResponse.size());

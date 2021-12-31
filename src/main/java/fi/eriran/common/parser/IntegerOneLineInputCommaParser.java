@@ -6,11 +6,11 @@ import java.util.List;
 /**
  * Parser for an input file that has only one line with commas splitting the numbers
  */
-class IntegerOneLineInputCommaParser implements InputParser<Integer> {
+class IntegerOneLineInputCommaParser implements OneLineInputParser<Integer> {
 
-    public List<Integer> parse(String content) {
+    public List<Integer> parse(String content, String splitRegex) {
         //Get file content
-        String[] splitByRegex = content.split(",");
+        String[] splitByRegex = content.split(splitRegex);
         List<Integer> numbers = new ArrayList<>();
         //Assuming they are all valid numbers
         for (String numberString : splitByRegex) {

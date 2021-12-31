@@ -1,9 +1,9 @@
 package fi.eriran.common.parser;
 
-public class LongInputParserProxy extends AbstractInputParserProxy<Long> {
+public class LongInputParserProxy extends AbstractMultiLineInputParserProxy<Long> {
 
     public LongInputParserProxy() {
-        super(new LongInputParser());
+        super(new LongMultiLineInputParser());
     }
 
 }

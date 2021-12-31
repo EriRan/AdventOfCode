@@ -13,7 +13,7 @@ class AlignmentFuelIncrementingCalculatorTest {
 
     @Test
     void example() {
-        List<Integer> input = new IntegerOneLineInputCommaParserProxy().parse("2021/day7");
+        List<Integer> input = new IntegerOneLineInputCommaParserProxy().parse("2021/day7", ",");
         assertEquals(
                 168,
                 calculator.calculate(input)

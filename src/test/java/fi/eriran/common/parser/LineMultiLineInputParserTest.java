@@ -7,11 +7,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class LineInputParserTest {
+class LineMultiLineInputParserTest {
 
     @Test
     void windowsLinesParsed() {
-        List<String> parseResponse = new LineInputParser().parse("Hello\r\nWorld");
+        List<String> parseResponse = new LineMultiLineInputParser().parse("Hello\r\nWorld");
         assertFalse(CollectionUtils.isEmpty(parseResponse));
         assertEquals(2, parseResponse.size());
         assertEquals("Hello", parseResponse.get(0));
@@ -20,7 +20,7 @@ class LineInputParserTest {
 
     @Test
     void unixLinesParsed() {
-        List<String> parseResponse = new LineInputParser().parse("Hello\nWorld");
+        List<String> parseResponse = new LineMultiLineInputParser().parse("Hello\nWorld");
         assertFalse(CollectionUtils.isEmpty(parseResponse));
         assertEquals(2, parseResponse.size());
         assertEquals("Hello", parseResponse.get(0));
@@ -29,14 +29,14 @@ class LineInputParserTest {
 
     @Test
     void nullInputReturnsEmptyCollection() {
-        List<String> parseResponse = new LineInputParser().parse(null);
+        List<String> parseResponse = new LineMultiLineInputParser().parse(null);
         assertNotNull(parseResponse);
         assertEquals(0, parseResponse.size());
     }
 
     @Test
     void emptyStringInputReturnsEmptyCollection() {
-        List<String> parseResponse = new LineInputParser().parse(" ");
+        List<String> parseResponse = new LineMultiLineInputParser().parse(" ");
         assertNotNull(parseResponse);
         assertEquals(0, parseResponse.size());
     }

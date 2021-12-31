@@ -2,6 +2,6 @@ package fi.eriran.common.parser;
 
 import java.util.List;
 
-public interface InputParser<T> {
+public interface MultiLineInputParser<T> {
     List<T> parse(String content);
 }
