@@ -1,19 +1,19 @@
 package fi.eriran._2021.day8.parser.raw;
 
-import fi.eriran._2021.day8.parser.objects.SevenSegmentEntry;
+import fi.eriran._2021.day8.parser.objects.RawSevenSegmentEntry;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class RawSevenSegmentParser {
 
-    public List<SevenSegmentEntry> parse(List<String> lines) {
+    public List<RawSevenSegmentEntry> parse(List<String> lines) {
         return lines.stream().map(this::parseOneLine).collect(Collectors.toList());
     }
 
-    private SevenSegmentEntry parseOneLine(String line) {
+    private RawSevenSegmentEntry parseOneLine(String line) {
         String[] signalAndOutput = line.split("\\|");
-        return new SevenSegmentEntry(
+        return new RawSevenSegmentEntry(
                 parseUniqueSignals(signalAndOutput[0]),
                 parseOutput(signalAndOutput[1])
         );

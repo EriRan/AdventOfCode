@@ -1,14 +1,14 @@
 package fi.eriran._2021.day8.calculation;
 
-import fi.eriran._2021.day8.parser.objects.SevenSegmentEntry;
+import fi.eriran._2021.day8.parser.objects.RawSevenSegmentEntry;
 
 import java.util.List;
 
 public class EasyDigitCountCalculator {
 
-    public int count(List<SevenSegmentEntry> entries) {
+    public int count(List<RawSevenSegmentEntry> entries) {
         int count = 0;
-        for (SevenSegmentEntry entry : entries) {
+        for (RawSevenSegmentEntry entry : entries) {
             count += countFromOneEntry(entry.getOutputValues());
         }
         return count;

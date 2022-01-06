@@ -1,10 +1,10 @@
 package fi.eriran._2021.day8.parser.objects;
 
-public class SevenSegmentEntry {
+public class RawSevenSegmentEntry {
     private final String[] uniqueSignals;
     private final String[] outputValues;
 
-    public SevenSegmentEntry(String[] uniqueSignals, String[] outputValues) {
+    public RawSevenSegmentEntry(String[] uniqueSignals, String[] outputValues) {
         this.uniqueSignals = uniqueSignals;
         this.outputValues = outputValues;
     }
