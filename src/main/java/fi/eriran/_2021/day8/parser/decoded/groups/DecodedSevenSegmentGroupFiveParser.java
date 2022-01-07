@@ -7,7 +7,7 @@ import java.util.Map;
 public class DecodedSevenSegmentGroupFiveParser {
 
     /**
-     * 2, 3 and 5. We expect to have 1,4,7 and 8 processed at this point. This class will add 3, 2 and 5
+     * Find 2, 3 and 5. We expect to have 1,4,7 and 8 processed at this point.
      *
      * @param fiveGroup            unique signals that have five letters
      * @param decodedUniqueSignals map of already decoded signals
@@ -34,17 +34,20 @@ public class DecodedSevenSegmentGroupFiveParser {
 
         String[] arrayForTwoAndThree = createArrayForTwoAndThree(fiveGroup, indexOfThree);
         String fiveLetterSignal = arrayForTwoAndThree[0];
-        // Count matches
+        // Count matching segments for three. 2 matches means it is 2, 5 means it is five
         int matches = 0;
         for (char characterFromThree : signalForThree.toCharArray()) {
             if (fiveLetterSignal.indexOf(characterFromThree) != -1) {
                 matches++;
             }
+            if (matches == 3) {
+                break;
+            }
         }
         if (matches == 2) {
             decodedUniqueSignals.put(fiveLetterSignal, 2);
             decodedUniqueSignals.put(arrayForTwoAndThree[1], 5);
-        } else if (matches == 5) {
+        } else if (matches == 3) {
             decodedUniqueSignals.put(fiveLetterSignal, 5);
             decodedUniqueSignals.put(arrayForTwoAndThree[1], 2);
         }
@@ -54,7 +57,7 @@ public class DecodedSevenSegmentGroupFiveParser {
         String[] twoAndThree = new String[2];
         int nextAvailableIndex = 0;
         for (int i = 0; i < 3; i++) {
-            if (i == indexOfThree) {
+            if (i != indexOfThree) {
                 twoAndThree[nextAvailableIndex] = fiveGroup[i];
                 nextAvailableIndex++;
             }
