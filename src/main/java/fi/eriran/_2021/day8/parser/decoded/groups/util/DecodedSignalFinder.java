@@ -8,7 +8,7 @@ public class DecodedSignalFinder {
     }
 
     public static String findDecodedSignalString(int decodedSignal, Map<String, Integer> decodedUniqueSignals) {
-        return decodedUniqueSignals.entrySet().stream().filter(entry -> entry.getValue() == 1)
+        return decodedUniqueSignals.entrySet().stream().filter(entry -> entry.getValue() == decodedSignal)
                 .findFirst()
                 .orElseThrow(() -> new IllegalStateException("Unable to find: " + decodedSignal))
                 .getKey();

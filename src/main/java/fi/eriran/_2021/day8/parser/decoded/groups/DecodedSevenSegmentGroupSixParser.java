@@ -17,13 +17,13 @@ public class DecodedSevenSegmentGroupSixParser {
         String signalForFour = DecodedSignalFinder.findDecodedSignalString(4, decodedUniqueSignals);
         int indexOfNine = -1;
         String signalForNine = null;
-        for (int i = 0, fiveGroupLength = sixGroup.length; i < fiveGroupLength; i++) {
+        for (int i = 0, sixGroupLength = sixGroup.length; i < sixGroupLength; i++) {
             String sixLetterSignal = sixGroup[i];
             // Number 9 has all 4 segments of number four. 0 and 6 have just 3
-            if (sixLetterSignal.indexOf(signalForFour.charAt(0)) != 1
-                    && sixLetterSignal.indexOf(signalForFour.charAt(1)) != 1
-                    && sixLetterSignal.indexOf(signalForFour.charAt(2)) != 1
-                    && sixLetterSignal.indexOf(signalForFour.charAt(3)) != 1) {
+            if (sixLetterSignal.indexOf(signalForFour.charAt(0)) != -1
+                    && sixLetterSignal.indexOf(signalForFour.charAt(1)) != -1
+                    && sixLetterSignal.indexOf(signalForFour.charAt(2)) != -1
+                    && sixLetterSignal.indexOf(signalForFour.charAt(3)) != -1) {
                 decodedUniqueSignals.put(sixLetterSignal, 9);
                 signalForNine = sixLetterSignal;
                 indexOfNine = i;
@@ -31,7 +31,7 @@ public class DecodedSevenSegmentGroupSixParser {
             }
         }
         if (signalForNine == null) {
-            throw new IllegalStateException("Unable to find three!");
+            throw new IllegalStateException("Unable to find nine!");
         }
 
         String[] arrayForZeroAndSix = createArrayForZeroAndSix(sixGroup, indexOfNine);
@@ -61,7 +61,7 @@ public class DecodedSevenSegmentGroupSixParser {
         String[] twoAndThree = new String[2];
         int nextAvailableIndex = 0;
         for (int i = 0; i < 3; i++) {
-            if (i == indexOfNine) {
+            if (i != indexOfNine) {
                 twoAndThree[nextAvailableIndex] = sixGroup[i];
                 nextAvailableIndex++;
             }

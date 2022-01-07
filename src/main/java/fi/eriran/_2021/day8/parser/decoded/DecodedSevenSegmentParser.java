@@ -6,7 +6,6 @@ import fi.eriran._2021.day8.parser.decoded.util.AlphabeticalSorter;
 import fi.eriran._2021.day8.parser.objects.DecodedSevenSegmentEntry;
 import fi.eriran._2021.day8.parser.objects.RawSevenSegmentEntry;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

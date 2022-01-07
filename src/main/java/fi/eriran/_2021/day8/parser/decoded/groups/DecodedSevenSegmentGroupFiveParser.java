@@ -20,8 +20,8 @@ public class DecodedSevenSegmentGroupFiveParser {
         for (int i = 0, fiveGroupLength = fiveGroup.length; i < fiveGroupLength; i++) {
             String fiveLetterSignal = fiveGroup[i];
             // Number 3 has both segments of 1. 2 has only one and so does 5
-            if (fiveLetterSignal.indexOf(signalForOne.charAt(0)) != 1
-                    && fiveLetterSignal.indexOf(signalForOne.charAt(1)) != 1) {
+            if (fiveLetterSignal.indexOf(signalForOne.charAt(0)) != -1
+                    && fiveLetterSignal.indexOf(signalForOne.charAt(1)) != -1) {
                 decodedUniqueSignals.put(fiveLetterSignal, 3);
                 signalForThree = fiveLetterSignal;
                 indexOfThree = i;
