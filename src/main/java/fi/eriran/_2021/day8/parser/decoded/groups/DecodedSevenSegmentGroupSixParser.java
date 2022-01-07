@@ -54,6 +54,8 @@ public class DecodedSevenSegmentGroupSixParser {
         } else if (matches == 5) {
             decodedUniqueSignals.put(sixLetterSignal, 6);
             decodedUniqueSignals.put(arrayForZeroAndSix[1], 0);
+        } else {
+            throw new IllegalStateException("Unexpected amount of matches: " + matches);
         }
     }
 

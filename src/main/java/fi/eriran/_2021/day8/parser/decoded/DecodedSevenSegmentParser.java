@@ -77,6 +77,10 @@ public class DecodedSevenSegmentParser {
             }
         }
 
+        if (decodedUniqueSignals.size() != 4) {
+            throw new IllegalStateException("Expected to have 4 unique signals at this point but ended up with: " + decodedUniqueSignals.size());
+        }
+
         groupFiveParser.process(fiveGroup, decodedUniqueSignals);
         groupSixParser.process(sixGroup, decodedUniqueSignals);
 

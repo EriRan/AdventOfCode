@@ -50,6 +50,8 @@ public class DecodedSevenSegmentGroupFiveParser {
         } else if (matches == 3) {
             decodedUniqueSignals.put(fiveLetterSignal, 5);
             decodedUniqueSignals.put(arrayForTwoAndThree[1], 2);
+        } else {
+            throw new IllegalStateException("Unexpected amount of matches: " + matches);
         }
     }
 
