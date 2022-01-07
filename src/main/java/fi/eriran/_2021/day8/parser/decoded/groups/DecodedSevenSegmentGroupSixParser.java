@@ -13,11 +13,14 @@ public class DecodedSevenSegmentGroupSixParser {
      * @param decodedUniqueSignals map of already decoded signals
      */
     public void process(String[] sixGroup, Map<String, Integer> decodedUniqueSignals) {
+        if (sixGroup.length != 3) {
+            throw new IllegalStateException("Expecting five group to contain 3 numbers but it contained: " + sixGroup.length);
+        }
         // Find 9 first. It should have 4 segment matches to 4
         String signalForFour = DecodedSignalFinder.findDecodedSignalString(4, decodedUniqueSignals);
         int indexOfNine = -1;
         String signalForNine = null;
-        for (int i = 0, sixGroupLength = sixGroup.length; i < sixGroupLength; i++) {
+        for (int i = 0; i < 3; i++) {
             String sixLetterSignal = sixGroup[i];
             // Number 9 has all 4 segments of number four. 0 and 6 have just 3
             if (sixLetterSignal.indexOf(signalForFour.charAt(0)) != -1

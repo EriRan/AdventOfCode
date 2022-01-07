@@ -13,11 +13,14 @@ public class DecodedSevenSegmentGroupFiveParser {
      * @param decodedUniqueSignals map of already decoded signals
      */
     public void process(String[] fiveGroup, Map<String, Integer> decodedUniqueSignals) {
+        if (fiveGroup.length != 3) {
+            throw new IllegalStateException("Expecting five group to contain 3 numbers but it contained: " + fiveGroup.length);
+        }
         // Find the signal that has both segments of 1
         String signalForOne = DecodedSignalFinder.findDecodedSignalString(1, decodedUniqueSignals);
         int indexOfThree = -1;
         String signalForThree = null;
-        for (int i = 0, fiveGroupLength = fiveGroup.length; i < fiveGroupLength; i++) {
+        for (int i = 0; i < 3; i++) {
             String fiveLetterSignal = fiveGroup[i];
             // Number 3 has both segments of 1. 2 has only one and so does 5
             if (fiveLetterSignal.indexOf(signalForOne.charAt(0)) != -1
