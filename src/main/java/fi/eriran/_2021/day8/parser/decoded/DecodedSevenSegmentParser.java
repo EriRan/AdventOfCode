@@ -1,8 +1,9 @@
 package fi.eriran._2021.day8.parser.decoded;
 
+import fi.eriran._2021.day8.parser.decoded.groups.DecodedSevenSegmentGroupFiveParser;
+import fi.eriran._2021.day8.parser.decoded.groups.DecodedSevenSegmentGroupSixParser;
 import fi.eriran._2021.day8.parser.objects.DecodedSevenSegmentEntry;
 import fi.eriran._2021.day8.parser.objects.RawSevenSegmentEntry;
-import fi.eriran._2021.day8.parser.objects.SevenSegmentDisplay;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -12,10 +13,12 @@ import java.util.stream.Collectors;
 
 public class DecodedSevenSegmentParser {
 
-    private final DisplaySignalToIntegerConverter displaySignalToIntegerConverter;
+    private final DecodedSevenSegmentGroupFiveParser groupFiveParser;
+    private final DecodedSevenSegmentGroupSixParser groupSixParser;
 
     public DecodedSevenSegmentParser() {
-        displaySignalToIntegerConverter = new DisplaySignalToIntegerConverter();
+        groupFiveParser = new DecodedSevenSegmentGroupFiveParser();
+        groupSixParser = new DecodedSevenSegmentGroupSixParser();
     }
 
     public List<DecodedSevenSegmentEntry> parse(List<RawSevenSegmentEntry> entries) {
@@ -41,6 +44,12 @@ public class DecodedSevenSegmentParser {
 
     private Map<String, Integer> decodeUniqueSignals(String[] uniqueSignals) {
         Map<String, Integer> decodedUniqueSignals = new HashMap<>();
+        int fiveGroupCounter = 0;
+        String[] fiveGroup = new String[3];
+        int sixGroupCounter = 0;
+        String[] sixGroup = new String[3];
+
+        // decode easy lengths first then collect length groups 5 and 6 for next decoding step
         for (String uniqueSignal : uniqueSignals) {
             switch (uniqueSignal.length()) {
                 case 2:
@@ -56,50 +65,27 @@ public class DecodedSevenSegmentParser {
                     decodedUniqueSignals.put(sortAlphabetically(uniqueSignal), 8);
                     break;
                 case 5:
+                    fiveGroup[fiveGroupCounter] = sortAlphabetically(uniqueSignal);
+                    fiveGroupCounter++;
+                    break;
                 case 6:
-                    decodedUniqueSignals.put(sortAlphabetically(uniqueSignal), parseMoreDifficultSignal(uniqueSignal));
+                    sixGroup[sixGroupCounter] = sortAlphabetically(uniqueSignal);
+                    sixGroupCounter++;
                     break;
                 default:
                     throw new IllegalArgumentException("Unexpected unique signal length: " + uniqueSignal.length());
             }
         }
+
+        groupFiveParser.process(fiveGroup, decodedUniqueSignals);
+        groupSixParser.process(sixGroup, decodedUniqueSignals);
+
         if (decodedUniqueSignals.size() != 10) {
             throw new IllegalStateException("Expected to have 10 unique signals but ended up with: " + decodedUniqueSignals.size());
         }
         return decodedUniqueSignals;
     }
 
-    private Integer parseMoreDifficultSignal(String uniqueSignal) {
-        SevenSegmentDisplay display = new SevenSegmentDisplay();
-        for (char character : uniqueSignal.toCharArray()) {
-            switch (character) {
-                case 'a':
-                    display.setA(true);
-                    break;
-                case 'b':
-                    display.setB(true);
-                    break;
-                case 'c':
-                    display.setC(true);
-                    break;
-                case 'd':
-                    display.setD(true);
-                    break;
-                case 'e':
-                    display.setE(true);
-                    break;
-                case 'f':
-                    display.setF(true);
-                    break;
-                case 'g':
-                    display.setG(true);
-                    break;
-                default:
-                    throw new IllegalArgumentException("Unexpected character encountered: " + character);
-            }
-        }
-        return displaySignalToIntegerConverter.convert(display);
-    }
 
     private String sortAlphabetically(String uniqueSignal) {
         char[] asCharArray = uniqueSignal.toCharArray();
