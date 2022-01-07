@@ -12,6 +12,15 @@ class PartTwoCalculatorTest {
     private final PartTwoCalculator calculator = new PartTwoCalculator();
 
     @Test
+    void shortExample() {
+        List<String> lines = new MultiLineInputParserProxy().parse("2021/day8_short");
+        assertEquals(
+                5353,
+                calculator.calculate(lines)
+        );
+    }
+
+    @Test
     void example() {
         List<String> lines = new MultiLineInputParserProxy().parse("2021/day8");
         assertEquals(
