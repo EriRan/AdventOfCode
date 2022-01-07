@@ -2,6 +2,7 @@ package fi.eriran._2021.day8.parser.decoded;
 
 import fi.eriran._2021.day8.parser.decoded.groups.DecodedSevenSegmentGroupFiveParser;
 import fi.eriran._2021.day8.parser.decoded.groups.DecodedSevenSegmentGroupSixParser;
+import fi.eriran._2021.day8.parser.decoded.util.AlphabeticalSorter;
 import fi.eriran._2021.day8.parser.objects.DecodedSevenSegmentEntry;
 import fi.eriran._2021.day8.parser.objects.RawSevenSegmentEntry;
 
@@ -33,7 +34,7 @@ public class DecodedSevenSegmentParser {
     private DecodedSevenSegmentEntry decodeOutput(String[] outputValues, Map<String, Integer> decodedUniqueSignals) {
         StringBuilder outputStringBuilder = new StringBuilder();
         for (String outputValue : outputValues) {
-            Integer decodedNumber = decodedUniqueSignals.get(sortAlphabetically(outputValue));
+            Integer decodedNumber = decodedUniqueSignals.get(AlphabeticalSorter.sortAlphabetically(outputValue));
             if (decodedNumber == null || decodedNumber == -1) {
                 throw new IllegalStateException("No decoding done for value: " + outputValue);
             }
@@ -53,23 +54,23 @@ public class DecodedSevenSegmentParser {
         for (String uniqueSignal : uniqueSignals) {
             switch (uniqueSignal.length()) {
                 case 2:
-                    decodedUniqueSignals.put(sortAlphabetically(uniqueSignal), 1);
+                    decodedUniqueSignals.put(AlphabeticalSorter.sortAlphabetically(uniqueSignal), 1);
                     break;
                 case 4:
-                    decodedUniqueSignals.put(sortAlphabetically(uniqueSignal), 4);
+                    decodedUniqueSignals.put(AlphabeticalSorter.sortAlphabetically(uniqueSignal), 4);
                     break;
                 case 3:
-                    decodedUniqueSignals.put(sortAlphabetically(uniqueSignal), 7);
+                    decodedUniqueSignals.put(AlphabeticalSorter.sortAlphabetically(uniqueSignal), 7);
                     break;
                 case 7:
-                    decodedUniqueSignals.put(sortAlphabetically(uniqueSignal), 8);
+                    decodedUniqueSignals.put(AlphabeticalSorter.sortAlphabetically(uniqueSignal), 8);
                     break;
                 case 5:
-                    fiveGroup[fiveGroupCounter] = sortAlphabetically(uniqueSignal);
+                    fiveGroup[fiveGroupCounter] = AlphabeticalSorter.sortAlphabetically(uniqueSignal);
                     fiveGroupCounter++;
                     break;
                 case 6:
-                    sixGroup[sixGroupCounter] = sortAlphabetically(uniqueSignal);
+                    sixGroup[sixGroupCounter] = AlphabeticalSorter.sortAlphabetically(uniqueSignal);
                     sixGroupCounter++;
                     break;
                 default:
@@ -84,12 +85,5 @@ public class DecodedSevenSegmentParser {
             throw new IllegalStateException("Expected to have 10 unique signals but ended up with: " + decodedUniqueSignals.size());
         }
         return decodedUniqueSignals;
-    }
-
-
-    private String sortAlphabetically(String uniqueSignal) {
-        char[] asCharArray = uniqueSignal.toCharArray();
-        Arrays.sort(asCharArray);
-        return new String(asCharArray);
     }
 }
