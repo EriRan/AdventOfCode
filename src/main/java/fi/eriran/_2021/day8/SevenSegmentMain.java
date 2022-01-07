@@ -18,7 +18,7 @@ public class SevenSegmentMain {
         );
         logger.log(
                 Level.INFO,
-                () -> "Part two: "
+                () -> "Part two: " + new PartTwoCalculator().calculate(input)
         );
     }
 }
