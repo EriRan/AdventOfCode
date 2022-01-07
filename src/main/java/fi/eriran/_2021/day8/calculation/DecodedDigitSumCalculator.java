@@ -8,7 +8,7 @@ public class DecodedDigitSumCalculator {
 
     public long calculate(List<DecodedSevenSegmentEntry> decodedSevenSegmentEntries) {
         return decodedSevenSegmentEntries.stream()
-                .map(DecodedSevenSegmentEntry::getOutputValue)
-                .reduce(0, Integer::sum);
+                .mapToInt(DecodedSevenSegmentEntry::getOutputValue)
+                .sum();
     }
 }
