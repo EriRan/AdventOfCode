@@ -15,10 +15,12 @@ public class DecodedSevenSegmentParser {
 
     private final DecodedSevenSegmentGroupFiveParser groupFiveParser;
     private final DecodedSevenSegmentGroupSixParser groupSixParser;
+    private final OutputDecoder outputDecoder;
 
     public DecodedSevenSegmentParser() {
         groupFiveParser = new DecodedSevenSegmentGroupFiveParser();
         groupSixParser = new DecodedSevenSegmentGroupSixParser();
+        outputDecoder = new OutputDecoder();
     }
 
     public List<DecodedSevenSegmentEntry> parse(List<RawSevenSegmentEntry> entries) {
@@ -26,20 +28,10 @@ public class DecodedSevenSegmentParser {
     }
 
     private DecodedSevenSegmentEntry decodeOne(RawSevenSegmentEntry entry) {
-        Map<String, Integer> decodedUniqueSignals = decodeUniqueSignals(entry.getUniqueSignals());
-        return decodeOutput(entry.getOutputValues(), decodedUniqueSignals);
-    }
-
-    private DecodedSevenSegmentEntry decodeOutput(String[] outputValues, Map<String, Integer> decodedUniqueSignals) {
-        StringBuilder outputStringBuilder = new StringBuilder();
-        for (String outputValue : outputValues) {
-            Integer decodedNumber = decodedUniqueSignals.get(AlphabeticalSorter.sortAlphabetically(outputValue));
-            if (decodedNumber == null || decodedNumber == -1) {
-                throw new IllegalStateException("No decoding done for value: " + outputValue);
-            }
-            outputStringBuilder.append(decodedNumber);
-        }
-        return new DecodedSevenSegmentEntry(Integer.parseInt(outputStringBuilder.toString()));
+        return outputDecoder.decode(
+                entry.getOutputValues(),
+                decodeUniqueSignals(entry.getUniqueSignals())
+        );
     }
 
     private Map<String, Integer> decodeUniqueSignals(String[] uniqueSignals) {
