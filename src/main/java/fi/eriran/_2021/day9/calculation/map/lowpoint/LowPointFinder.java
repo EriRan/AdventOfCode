@@ -1,6 +1,6 @@
-package fi.eriran._2021.day9.calculation.lowpoint;
+package fi.eriran._2021.day9.calculation.map.lowpoint;
 
-import fi.eriran._2021.day9.calculation.lowpoint.objects.LowPoint;
+import fi.eriran._2021.day9.calculation.map.lowpoint.objects.LowPoint;
 
 import java.util.ArrayList;
 import java.util.Collection;

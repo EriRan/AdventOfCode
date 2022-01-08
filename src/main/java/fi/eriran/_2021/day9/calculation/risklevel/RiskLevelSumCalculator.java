@@ -1,6 +1,6 @@
 package fi.eriran._2021.day9.calculation.risklevel;
 
-import fi.eriran._2021.day9.calculation.lowpoint.objects.LowPoint;
+import fi.eriran._2021.day9.calculation.map.lowpoint.objects.LowPoint;
 
 import java.util.Collection;
 

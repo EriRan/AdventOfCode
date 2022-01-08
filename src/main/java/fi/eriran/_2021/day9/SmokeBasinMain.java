@@ -12,6 +12,6 @@ public class SmokeBasinMain {
     public static void main(String[] args) {
         List<String> input = new MultiLineInputParserProxy().parse("2021/day9");
         logger.info(() -> "Part One: " + new SmokeBasinPartOne().calculate(input));
-        logger.info(() -> "Part two: ");
+        logger.info(() -> "Part two: " + new SmokeBasinPartTwo().calculate(input));
     }
 }

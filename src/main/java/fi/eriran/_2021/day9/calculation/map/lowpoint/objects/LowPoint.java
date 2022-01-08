@@ -1,4 +1,4 @@
-package fi.eriran._2021.day9.calculation.lowpoint.objects;
+package fi.eriran._2021.day9.calculation.map.lowpoint.objects;
 
 public class LowPoint {
     private int x;
