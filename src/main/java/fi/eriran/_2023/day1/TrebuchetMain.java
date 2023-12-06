@@ -11,15 +11,17 @@ public class TrebuchetMain {
     private static final Logger logger = Logger.getGlobal();
 
     public static void main(String[] args) {
+        TrebuchetTasks trebuchetTasks = new TrebuchetTasks();
+        trebuchetTasks.setValueFinder(new CalibrationValueFinder());
         List<String> input = new MultiLineInputParserProxy().parse("2023/day1");
         logger.log(
                 Level.INFO,
-                () -> "Part One: " + new TrebuchetTaskOne().findSum(input)
+                () -> "Part One: " + trebuchetTasks.findSum(input)
         );
-
+        trebuchetTasks.setValueFinder(new CalibrationValueWithNumberNameFinder());
         logger.log(
                 Level.INFO,
-                () -> "Part Two: " + new TrebuchetTaskTwo().findSum(input)
+                () -> "Part Two: " + trebuchetTasks.findSum(input)
         );
     }
 }
