@@ -24,14 +24,7 @@ public class CalibrationValueFinder {
         if (first == null) {
             throw new IllegalStateException("Unable to find the first digit!");
         }
-        if (last == null) {
-            throw new IllegalStateException("Unable to find the last digit!");
-        }
 
-        StringBuilder responseBuilder = new StringBuilder();
-        responseBuilder.append(first);
-        responseBuilder.append(last);
-
-        return Integer.parseInt(responseBuilder.toString());
+        return Integer.parseInt(String.valueOf(first) + last);
     }
 }
