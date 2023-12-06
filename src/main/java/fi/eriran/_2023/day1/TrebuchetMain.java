@@ -16,5 +16,10 @@ public class TrebuchetMain {
                 Level.INFO,
                 () -> "Part One: " + new TrebuchetTaskOne().findSum(input)
         );
+
+        logger.log(
+                Level.INFO,
+                () -> "Part Two: " + new TrebuchetTaskTwo().findSum(input)
+        );
     }
 }

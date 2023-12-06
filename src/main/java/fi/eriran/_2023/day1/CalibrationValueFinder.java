@@ -1,6 +1,6 @@
 package fi.eriran._2023.day1;
 
-public class CalibrationValueFinder {
+public class CalibrationValueFinder implements ValueFinder {
 
     /**
      * Find first and last digit from a String and turn it into an int
